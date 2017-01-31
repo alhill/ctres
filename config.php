@@ -9,5 +9,5 @@
 
 	mysqli_select_db($conexion, $db) or die('No se pudo seleccionar la base de datos');
 
-    if ($conexion){echo ("Todo va bien, todo es fabuloso");}
+    //if ($conexion){echo ("La conexión con la base de datos funciona correctamente");}
 ?>

@@ -21,29 +21,18 @@
 </head>
 
 <body>
-     <div id="loginmodal" class="modal fade" role="dialog">
-        <div class="loginventana">
-            <p><b>Acceso a la zona de usuarios</b></p>
-            <form action="login.php" method="POST" name="formlog" id="formlog">
-                <table>
-                    <tr>
-                        <td><p class="textoform">Usuario:</td> 
-                        <td><input type="text" name="usuario" required /></td>
-                    </tr>
-                    <tr>
-                        <td><p class="textoform">Contraseña:&nbsp;&nbsp;</td>
-                        <td><input type="password" name="contrasena" required /></td>
-                    </tr>
-                </table><br>
-                <button type="submit">Enviar</button>
-            </form>
-            <br>
-            <a class="lanzamodal2">Olvidaste la contraseña?</a><br>
-            <a href="registro.php">Todavía no estás registrado?</a>
-        </div>
-    </div>
     
-    <input type="button" value="Acceso de usuarios" onclick="$('#loginmodal').modal();">
+    <?php
+    
+    $resultado = mysqli_query($conexion, "SELECT * FROM registro");
+    
+    echo ("<table class='tabla_usuarios'><th><b>ID</b></th><th><b>Usuario</b></th><th><b>Contraseña</b></th><th><b>Email</b></th><th><b>Nombre</b></th><th><b>Apellidos</b></th>");
+    while($arrayusuarios = $resultado -> fetch_assoc()){  //Convierte $resultado, que es un objeto mySQL en un array asociativo (clave, valor)
+        echo ("<tr><td>".$arrayusuarios["id"]."</td><td>".$arrayusuarios["usuario"]."</td><td>".$arrayusuarios["contrasena"]."</td><td>".$arrayusuarios["email"]."</td><td>".$arrayusuarios["nombre"]."</td><td>".$arrayusuarios["apellido"]."</td></tr>");
+    }
+    echo ("</table>");
+
+    ?>
     
 </body>
     
