@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 31-01-2017 a las 12:15:28
+-- Tiempo de generación: 31-01-2017 a las 22:16:01
 -- Versión del servidor: 10.1.19-MariaDB
 -- Versión de PHP: 7.0.13
 
@@ -19,14 +19,14 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `ctres_reservas`
 --
+CREATE DATABASE IF NOT EXISTS `ctres_reservas` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `ctres_reservas`;
 
 -- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `lista_reservas`
 --
-CREATE DATABASE `ctres_reservas`;
-USE `ctres_reservas`;
 
 CREATE TABLE `lista_reservas` (
   `id` int(10) UNSIGNED NOT NULL,
@@ -59,16 +59,20 @@ CREATE TABLE `registro` (
   `apellido` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
   `usuario` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `email` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
-  `contrasena` varchar(100) COLLATE utf8_spanish_ci NOT NULL
+  `contrasena` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
+  `privilegios` varchar(1) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `registro`
 --
 
-INSERT INTO `registro` (`id`, `nombre`, `apellido`, `usuario`, `email`, `contrasena`) VALUES
-(1, 'Test', 'Test', 'test', 'test@email.com', '098f6bcd4621d373cade4e832627b4f6'),
-(2, 'testdos', 'tester', 'test2', 'test2@email.com', '098f6bcd4621d373cade4e832627b4f6');
+INSERT INTO `registro` (`id`, `nombre`, `apellido`, `usuario`, `email`, `contrasena`, `privilegios`) VALUES
+(1, 'Test', 'Test', 'test', 'test@email.com', '098f6bcd4621d373cade4e832627b4f6', '1'),
+(2, 'testdos', 'tester', 'test2', 'test2@email.com', '098f6bcd4621d373cade4e832627b4f6', '1'),
+(3, 'Alvaro', 'Gil', 'alhill', 'alvarogil91@gmail.com', 'efe6398127928f1b2e9ef3207fb82663', '3'),
+(4, 'seÃ±or', 'sin privilegios', 'usuario', 'usuario@raso.net', '81dc9bdb52d04dc20036dbd8313ed055', '1'),
+(5, 'un', 'propietario', 'propietario', 'propietario@dela.sala', '81dc9bdb52d04dc20036dbd8313ed055', '0');
 
 --
 -- Índices para tablas volcadas
@@ -99,7 +103,7 @@ ALTER TABLE `lista_reservas`
 -- AUTO_INCREMENT de la tabla `registro`
 --
 ALTER TABLE `registro`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
