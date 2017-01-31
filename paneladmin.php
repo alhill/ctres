@@ -22,15 +22,22 @@
 
 <body>
     
-    <?php $resultado = mysqli_query($conexion, "SELECT * FROM registro"); ?>
+    <?php 
+    session_start();
+    if($_SESSION['privilegios']<3)
+    {
+        die("No tienes privilegios para acceder a esta zona");
+    }
+    $resultado = mysqli_query($conexion, "SELECT * FROM registro"); 
+    ?>
 
     <input type="button" value="Crear nuevo usuario" onclick="window.location = 'registro.php';">
     
     <?php
     
-    echo ("<table class='tabla_usuarios'><th><b>ID</b></th><th><b>Usuario</b></th><th><b>Contraseña</b></th><th><b>Email</b></th><th><b>Nombre</b></th><th><b>Apellidos</b></th>");
+    echo ("<table class='tabla_usuarios'><th><b>ID</b></th><th><b>Usuario</b></th><th><b>Contraseña</b></th><th><b>Email</b></th><th><b>Nombre</b></th><th><b>Apellidos</b></th><th><b>Privilegios</b></th>");
     while($arrayusuarios = $resultado -> fetch_assoc()){  //Convierte $resultado, que es un objeto mySQL en un array asociativo (clave, valor)
-        echo ("<tr><td>".$arrayusuarios["id"]."</td><td>".$arrayusuarios["usuario"]."</td><td>".$arrayusuarios["contrasena"]."</td><td>".$arrayusuarios["email"]."</td><td>".$arrayusuarios["nombre"]."</td><td>".$arrayusuarios["apellido"]."</td><td><input type='button' value='Modificar'></td><td><input type='button' value='Borrar'></td></tr>");
+        echo ("<tr><td>".$arrayusuarios["id"]."</td><td>".$arrayusuarios["usuario"]."</td><td>".$arrayusuarios["contrasena"]."</td><td>".$arrayusuarios["email"]."</td><td>".$arrayusuarios["nombre"]."</td><td>".$arrayusuarios["apellido"]."</td><td>".$arrayusuarios["privilegios"]."</td><td><input type='button' value='Modificar'></td><td><input type='button' value='Borrar'></td></tr>");
     }
     echo ("</table>");
 

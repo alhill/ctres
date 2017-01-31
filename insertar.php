@@ -2,6 +2,10 @@
 
 include 'config.php';
 
+    //DEBUG
+    /* print_r($_POST);
+    die(); */
+
     if (isset($_POST['insertar'])) {
         $nombre = mysqli_real_escape_string ($conexion, $_POST['nombre']); // mysqli_real_escape_string ($con,...) EVITA INYECCIONES SQL
         $apellido = mysqli_real_escape_string ($conexion, $_POST['apellido']);
@@ -10,6 +14,7 @@ include 'config.php';
    
         $contrasena = mysqli_real_escape_string ($conexion, $_POST['contrasena']);
         $contrasena2 = mysqli_real_escape_string ($conexion, $_POST['contrasena2']);
+        $privilegios = mysqli_real_escape_string ($conexion, $_POST['privilegios']);
 
      	if($contrasena!=$contrasena2) {
 				echo "Las contraseñas no coinciden";
@@ -28,12 +33,13 @@ include 'config.php';
 					</script>";
 				}else{
 
-				//Todo parece correcto procedemos con la inserccion
-				$query = "INSERT INTO registro (nombre, apellido, usuario, email, contrasena) VALUES ('$nombre','$apellido', '$usuario', '$email','$contrasena')";
+				//Todo parece correcto procedemos con la insercion
+				$query = "INSERT INTO registro (nombre, apellido, usuario, email, contrasena, privilegios) VALUES ('$nombre','$apellido', '$usuario', '$email','$contrasena', '$privilegios')";
 				
-				$ejecutar = mysqli_query($conexion, $query) or die(mysqli_error());
+				$ejecutar = mysqli_query($conexion, $query) or die('Hubo un error durante el registro: ' . mysqli_error($conexion));
+                    
 			
-				echo "<script> alert('registro exitoso');
+				echo "<script> alert('El registro se completó correctamente');
 					 window.open('inicio_ejemplo.php','_self');
 					 </script>";
 			}

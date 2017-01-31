@@ -20,10 +20,12 @@
 <body>
 
 <div class="row" id="registro">
+    
+    <?php session_start(); ?>
 
 	<div class="col-md-4 col-md-offset-4" >
 		<h2 class="titulo">Crear cuenta</h2>
-		<form method="POST" action="insertar.php">
+		<form method="POST" action="insertar.php" id="formregistro" name="registro">
 			  <div class="form-group" >
 			    <input type="text" class="form-control" id="nom" name="nombre" placeholder="Nombre" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}" required="required">
 			  </div>
@@ -33,7 +35,7 @@
 			  </div>
 
 			  <div class="form-group" >
-			    <input type="text" class="form-control" id="usu" name="usuario" placeholder="Usuario" pattern="[a-zA-Z0-9]{4,10}" required="required">
+			    <input type="text" class="form-control" id="usu" name="usuario" placeholder="Usuario" pattern="[a-zA-Z0-9]{4,20}" required="required">
 			  </div>
 
 			  <div class="form-group" >
@@ -47,32 +49,25 @@
 			 <div class="form-group">
 			    <input type="password" class="form-control" id="contrasena2" name="contrasena2" placeholder="Repita su contraseña" pattern="[A-Za-z0-9!?-]{4,6}" required="required">
 			  </div>
-            
-            
-            
-            <div class="form-group">
-			    <input type="select" class="form-control" id="contrasena2" name="contrasena2" placeholder="Repita su contraseña" pattern="[A-Za-z0-9!?-]{4,6}" required="required">
-			  </div>
 
             <?php
-            
-            
-            
-            if (true){ //CODIGO QUE CONDICIONE QUE ESTO APAREZCA SOLO SI EL USUARIO TIENE PRIVILEGIOS DE ADMINISTRACIÓN
-                echo ("<div class='form-group'>
-                            <select name='carlist' form='carform'>
-                              <option value='1'>Usuario</option>
-                              <option value='2'>Propietario</option>
-                              <option value='3'>Administrador</option>
+                 
+           if ($_SESSION['privilegios'] > 1){ //CODIGO QUE CONDICIONE QUE ESTO APAREZCA SOLO SI EL USUARIO TIENE PRIVILEGIOS DE ADMINISTRACIÓN
+                echo ('<div class="form-group">
+                            <select id="privilegios" name="privilegios" form="formregistro">
+                              <option value="1">Usuario</option>
+                              <option value="2">Propietario</option>
+                              <option value="3">Administrador</option>
                             </select> 
-                        </div>");
-            }
+                        </div>');
+            } 
+            
             
             ?>
 
             <p><a href="index.php">¿Ya eres usuario?</a></p> <br>
 
-			<button type="submit" id="butt" class="btn btn-default" name="insertar">Ingresa </button>
+			<button type="submit" id="butt" class="btn btn-default">Completar registro</button>
 
 			 				
 		</form>
