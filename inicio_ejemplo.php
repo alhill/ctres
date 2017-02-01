@@ -73,15 +73,15 @@ if (isset($_POST['from']))
         <meta charset="utf-8">
         <title>Calendario</title>
         <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="<?=$base_url?>css/calendar.css">
+        <link rel="stylesheet" href="css/calendar.css">
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-        <script type="text/javascript" src="<?=$base_url?>js/es-ES.js"></script>
-        <script src="<?=$base_url?>js/jquery.min.js"></script>
-        <script src="<?=$base_url?>js/moment.js"></script>
-        <script src="<?=$base_url?>js/bootstrap.min.js"></script>
-        <script src="<?=$base_url?>js/bootstrap-datetimepicker.js"></script>
-        <link rel="stylesheet" href="<?=$base_url?>css/bootstrap-datetimepicker.min.css" />
-       <script src="<?=$base_url?>js/bootstrap-datetimepicker.es.js"></script>
+        <script type="text/javascript" src="js/es-ES.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/moment.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/bootstrap-datetimepicker.js"></script>
+        <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css" />
+       <script src="js/bootstrap-datetimepicker.es.js"></script>
     </head>
 
 </head>
@@ -131,8 +131,8 @@ if (isset($_POST['from']))
                 </div><!-- /.modal -->
         </div>
 
-    <script src="<?=$base_url?>js/underscore-min.js"></script>
-    <script src="<?=$base_url?>js/calendar.js"></script>
+    <script src="js/underscore-min.js"></script>
+    <script src="js/calendar.js"></script>
     <script type="text/javascript">
         (function($){
                 //creamos la fecha actual
@@ -151,7 +151,7 @@ if (isset($_POST['from']))
                         modal_type:'iframe',    
 
                         //obtenemos los eventos de la base de datos
-                        events_source: '<?=$base_url?>obtener_eventos.php', 
+                        events_source: 'obtener_eventos.php', 
 
                         // mostramos el calendario en el mes
                         view: 'month',             
@@ -164,12 +164,12 @@ if (isset($_POST['from']))
                         language: 'es-ES', 
 
                         //Template de nuestro calendario
-                        tmpl_path: '<?=$base_url?>tmpls/', 
+                        tmpl_path: 'tmpls/', 
                         tmpl_cache: false,
 
 
                         // Hora de inicio
-                        time_start: '08:00', 
+                        time_start: '09:00', 
 
                         // y Hora final de cada dia
                         time_end: '20:00',   
@@ -241,6 +241,10 @@ if (isset($_POST['from']))
         }(jQuery));
     </script>
 
+
+
+    <!--MODAL DE RESERVA-->
+
 <div class="modal fade" id="add_evento" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -251,7 +255,7 @@ if (isset($_POST['from']))
         <form action="" method="post">
                     <label for="from">Fecha inicio</label>
                     <div class='input-group date' id='from'>
-                        <input type='text' id="from" name="from" class="form-control" readonly />
+                        <input type='text' id="from" name="from" class="form-control"  required /> <!--se eliminio atributo readonly en input-->
                         <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
                     </div>
 
@@ -259,55 +263,105 @@ if (isset($_POST['from']))
 
                     <label for="to">Fecha final</label>
                     <div class='input-group date' id='to'>
-                        <input type='text' name="to" id="to" class="form-control" readonly />
+                        <input type='text' name="to" id="to" class="form-control"  required /> <!--se eliminio atributo readonly en input-->
                         <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
                     </div>
 
                     <br>
 
-                    <label for="tipo">Salas</label>
-                    <select class="form-control" name="class" id="tipo">
-                        <option value="">---------------------------------------Salas---------------------------------------</option>
-                        <option value="01">Sala estudio 1 - Biblioteca</option>
-                        <option value="02">Sala estudio 2- Biblioteca</option>
-                        <option value="03">Sala de informática </option>
-                        <option value="04">Sala de actos</option>
-                        
-                    </select>
+                    <!--Funcion JavaScript para deplegar opciones a artir del checkbox-->
+                    <script type="text/javascript">
+                        function showContent() {
+                            element = document.getElementById("content");
+                            check = document.getElementById("check");
+                            if (check.checked) {
+                                element.style.display='block';
+                            } else {
+                                element.style.display='none';
+                            }
+                        }
+                    </script>
 
-                    <br>
+                     <!--Funcion JavaScript para dehabilitar checkbox al seleccionar una opción-->
+                    <script type="text/javascript">
+                        function hideContent() {
+                           element = document.getElementById("check2");
+                           check = document.getElementById("check");
+                                if (check.checked) {
+                                   element.style.display='none';
+                                } else {
+                                    element.style.display='block';
+                                            }
+                                    }
+                         </script>
 
-
-                    <label for="mat">Material</label>
+                    <label for="tipo">Seleccione una de las siguientes opciones</label>
                     <div class="checkbox">
-                   
-                          <label><input type="checkbox" value="">Proyector</label>
-                        </div>
-                        <div class="checkbox">
-                          <label><input type="checkbox" value="">Ordenador</label>
-                        </div>
-                         <div class="checkbox">
-                          <label><input type="checkbox" value="">Ordenador Portatil</label>
-                        </div>
-                        <div class="checkbox ">
-                          <label><input type="checkbox" value="">Impresora</label>
-                        </div>
-                        <div class="checkbox ">
-                          <label><input type="checkbox" value="">Pizarra</label>
-                        </div>
-                        <div class="checkbox ">
-                          <label><input type="checkbox" value="">Pizarra de caballete</label>
-                        </div>
+                       <label for="tipo"><input type="checkbox" name="check" id="check" value="1" onchange="javascript:showContent();hideContent()" /> Salas</label>
+                    </div>
+
+                    <div id="content" style="display: none;">
+                        <select class="form-control" name="sala" id="tipo">
+                        <!--<option value="">Salas</option>-->
+                            <option value="Biblioteca">Sala Biblioteca</option>
+                            <option value="formacion">Sala de formación </option>
+                            <option value="informatica">Sala de informática </option>
+                            <option value="actos">Sala de actos</option>                        
+                        </select>
+                    </div>
+
+                    <!--Funcion JavaScript para dehabilitar checkbox al seleccionar una opción-->                   
+                    <script type="text/javascript">
+                        function hideContent2() {
+                            element = document.getElementById("check");
+                            check = document.getElementById("check2");
+                                if (check.checked) {
+                                    element.style.display='none';
+                                } else {
+                                    element.style.display='block';
+                                    }
+                                }
+                        </script>
+
+                    <!--Funcion JavaScript para dehabilitar checkbox al seleccionar una opción-->
+                    <script type="text/javascript">
+                        function showContent2() {
+                            element = document.getElementById("content2");
+                                        check = document.getElementById("check2");
+                                        if (check.checked) {
+                                            element.style.display='block';
+                                        } else {
+                                            element.style.display='none';
+                                        }
+                                    }
+                    </script>
+               
+
+                     <div class="checkbox">
+                       <label for="tipo">  <input type="checkbox" name="check" id="check2" value="1" onchange="javascript:showContent2(); hideContent2()" />Materiales (Presione Ctrl + click de ratón para seleccionar varias opciones) </label>
+
+                    </div>
+
+                    <div id="content2" style="display: none;">
+                        <select multiple class="form-control" name="material" id="tipo">
+                            <!--<option value="">Salas</option>-->
+                            <option value="proyector">Proyector</option>
+                            <option value="ordenador">Ordenador</option>
+                            <option value="impresora">Impresora </option>
+                            <option value="pizarra">Pizarra</option>                        
+                        </select>
+                    </div>
+                 
 
 
+
+                    
                    <!-- <label for="title">Título</label>
-                    <input type="text" required autocomplete="off" name="title" class="form-control" id="title" placeholder="Introduce un título">
-
-                    <br>-->
+                    <input type="text" required autocomplete="off" name="title" class="form-control" id="title" placeholder="Introduce un título">              <br>-->
 
 
                     <label for="body">Comentarios</label>
-                    <textarea id="body" name="event" required class="form-control" rows="3"></textarea>
+                    <textarea id="body" name="event"  class="form-control" rows="3"></textarea>
 
     <script type="text/javascript">
         $(function () {
@@ -323,6 +377,7 @@ if (isset($_POST['from']))
         });
     </script>
       </div>
+
       <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Cancelar</button>
           <button type="submit" class="btn btn-success"><i class="fa fa-check"></i> Reservar</button>
