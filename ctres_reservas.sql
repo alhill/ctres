@@ -19,10 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `ctres_reservas`
 --
-
 CREATE DATABASE IF NOT EXISTS `ctres_reservas` DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish_ci;
 USE `ctres_reservas`;
-
 
 -- --------------------------------------------------------
 

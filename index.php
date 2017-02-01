@@ -15,7 +15,9 @@
 </head>
 <body>
 
-<div class="row" id="inicio">	
+<div class="row" id="inicio">
+    
+
 
 	<div class="col-md-4 col-md-offset-1" id="cliente" >
 		<h2 class="titulo">Ya soy usuario - Acceder</h2>
