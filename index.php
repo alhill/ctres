@@ -14,7 +14,7 @@
 
 </head>
 <body>
-
+    
 <div class="row" id="inicio">	
 
 	<div class="col-md-4 col-md-offset-1" id="cliente" >

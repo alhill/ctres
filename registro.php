@@ -67,7 +67,7 @@
 
             <p><a href="index.php">¿Ya eres usuario?</a></p> <br>
 
-			<button type="submit" id="butt" class="btn btn-default">Completar registro</button>
+			<button type="submit" id="butt" class="btn btn-default" name="insertar">Completar registro</button>
 
 			 				
 		</form>

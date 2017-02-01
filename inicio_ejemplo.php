@@ -84,10 +84,16 @@ if (isset($_POST['from']))
        <script src="js/bootstrap-datetimepicker.es.js"></script>
     </head>
 
-</head>
 <body style="background: white;">
 
         <div class="container">
+            
+            <?php include "header.php"; 
+                if($_SESSION['privilegios']<1 || !isset($_SESSION['privilegios']))
+                {
+                    header('Location: index.php');
+                }
+            ?>
 
                 <div class="row">
                         <div class="page-header"><h2></h2></div>
