@@ -25,7 +25,7 @@ if (isset($_POST['from'])) {
         // comentario
         $body   = evaluar($_POST['event']);
 
-        //Creamos una nueva variable para evitar problemas con la palabra reservada "end"
+        //Creamos una nueva variable para evitar problemas con la palabra reservada "end" utilizada como parámetro de la base de datos
         $fin = "end";
         //al seleccionar la opcion de reservas...
         if (isset ($_POST['opciones'])){
