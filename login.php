@@ -19,7 +19,7 @@
 
 
         if ($usuario == $k_usuario && $contrasena == $k_contrasena) {
-            session_start();
+            if (session_status() == PHP_SESSION_NONE) {session_start();}
             $_SESSION['usuario']= $k_usuario;
             $_SESSION['nombre']= $k_nombre;
             $_SESSION['apellido'] = $k_apellido;
@@ -30,7 +30,7 @@
                 header('Location: paneladmin.php');
             }
             else{
-                header('Location: inicio_ejemplo.php');
+                header('Location: calendario_index.php');
             } 
         }
 

@@ -17,7 +17,7 @@ window.calendar_languages['es-ES'] = {
 
 	week:        'Semana {0}',
 	all_day:     'Todo el día',
-	time:        'Tiempo',
+	time:        '',
 	events:      '',
 	before_time: 'Tiempo antes de la cinta final',
 	after_time:  'Fin después de una cinta temporal',

@@ -40,9 +40,9 @@ include 'config.php';
                     
 			
 				echo "<script> alert('El registro se completó correctamente');
-					 window.open('inicio_ejemplo.php','_self');
+					 window.open('calendario_index.php','_self');  
 					 </script>";
-			}
+			} //OJOOO
 		}
 	}
 				

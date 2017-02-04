@@ -6,8 +6,8 @@
 	<title>Registro de usuarios</title>
 
 
-	<!--HOJA CSS-->
-	<link rel="stylesheet" type="text/css" href="estilo.css">
+	<!--HOJA CSS provisional-->
+	<link rel="stylesheet" type="text/css" href="css/estilo.css">
 
 	<!--BOOTSTRAP-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> 
@@ -21,7 +21,7 @@
 
 <div class="row" id="registro">
     
-    <?php session_start(); ?>
+    <?php if (session_status() == PHP_SESSION_NONE) {session_start();} ?>
 
 	<div class="col-md-4 col-md-offset-4" >
 		<h2 class="titulo">Crear cuenta</h2>
@@ -43,16 +43,16 @@
 			  </div>
 
 			  <div class="form-group">
-			    <input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Contraseña" pattern="[A-Za-z0-9!?-]{4,6}" required="required">
+			    <input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Contraseña" pattern="[A-Za-z0-9!?-]{4,10}" required="required">
 			  </div>
 
 			 <div class="form-group">
-			    <input type="password" class="form-control" id="contrasena2" name="contrasena2" placeholder="Repita su contraseña" pattern="[A-Za-z0-9!?-]{4,6}" required="required">
+			    <input type="password" class="form-control" id="contrasena2" name="contrasena2" placeholder="Repita su contraseña" pattern="[A-Za-z0-9!?-]{4,10}" required="required">
 			  </div>
 
             <?php
                  
-          if (isset($_SESSION['privilegios']) && $_SESSION['privilegios'] > 1){ //CODIGO QUE CONDICIONA QUE ESTO APAREZCA SOLO SI EL USUARIO TIENE PRIVILEGIOS DE ADMINISTRACIÓN
+          if (isset($_SESSION['privilegios']) && $_SESSION['privilegios'] > 1){ //CODIGO QUE CONDICIONE QUE ESTO APAREZCA SOLO SI EL USUARIO TIENE PRIVILEGIOS DE ADMINISTRACIÓN
                 echo ('<div class="form-group">
                             <select id="privilegios" name="privilegios" form="formregistro">
                               <option value="1">Usuario</option>
@@ -60,15 +60,12 @@
                               <option value="3">Administrador</option>
                             </select> 
                         </div>');
-            } 
-            
-            
+            }                         
             ?>
 
-            <p><a href="index.php">¿Ya eres usuario?</a></p> <br>
+            <p><a href="pagina_login.php">¿Ya eres usuario?</a></p> <br>
 
-			<button type="submit" id="butt" class="btn btn-default" name="insertar">Completar registro</button>
-
+			<button type="submit" id="butt" class="btn btn-default" name="insertar">Entrar</button>
 			 				
 		</form>
 	</div>

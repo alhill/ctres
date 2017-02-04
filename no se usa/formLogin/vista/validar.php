@@ -11,7 +11,7 @@ if(isset($_POST["usuario"]) || isset($_POST["pass"])){
 
         if(count($usuario) > 0){
 
-            session_start();
+            if (session_status() == PHP_SESSION_NONE) {session_start();}
             $_SESSION["id"] = $usuario["id"];
             $_SESSION["usuario"] = $usuario["usuario"];
             $_SESSION["privilegio"] = $usuario["privilegio"];

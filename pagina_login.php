@@ -4,7 +4,7 @@
 	<title>Bienvenido</title>
 
 	<!--HOJA CSS-->
-	<link rel="stylesheet" type="text/css" href="estilo.css">
+	<link rel="stylesheet" type="text/css" href="css/estilo.css">
 
 	<!--BOOTSTRAP-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> 
@@ -14,7 +14,16 @@
 
 </head>
 <body>
-
+    
+    <?php
+    
+    if (session_status() == PHP_SESSION_NONE) {session_start();}
+    if (isset($_SESSION['privilegios']) && $_SESSION['privilegios'] > 0){
+        header('Location: calendario_index.php');
+    } 
+    
+    ?>
+    
 <div class="row" id="inicio">	
 
 	<div class="col-md-4 col-md-offset-1" id="cliente" >
@@ -30,17 +39,13 @@
 			    <input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Escriba su contraseña">
 			  </div>
 
-			  <!--<div class="checkbox">
-			    <label><input type="checkbox"> Recuerdame</label>
-			  </div>-->
-
-			  <button type="submit" id="butt" class="btn btn-default" name="log">Acceder</button>
+			   <button type="submit" id="butt" class="btn btn-default" name="log">Acceder</button>
 		</form>
 	</div>
 
 	<div class="col-md-4 col-md-offset-2" id="nocliente" >
 		<h2 class="titulo">Soy nueva@ - Quiero registrarme</h2>
-			<p>Al crear tu cuenta, podrás realizar acceder a las reservas de forma más rápida</p>
+			<p>Al crear tu cuenta, podrás acceder y realizar reservas de salas o materiales de forma más rápida</p>
 			  <a href="registro.php" id="butt" class="btn btn-default">Crear cuenta</a>		
 	</div>
 </div>
