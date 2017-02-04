@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 
-<html lang="es">
+<html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,26 +38,47 @@
         </div>
     </div>
     
+    <div class="container">
+    
     <?php 
     include "header.php";
     if($_SESSION['privilegios']<3)
     {
         die("No tienes privilegios para acceder a esta zona");
     }
-    $resultado = mysqli_query($conexion, "SELECT * FROM registro"); 
+    $bbddusuarios = mysqli_query($conexion, "SELECT * FROM registro"); 
+    $bbddsalas = mysqli_query($conexion, "SELECT * FROM salas");
     ?>
-
+    
     <input type="button" value="Crear nuevo usuario" onclick="window.location = 'registro.php';">
     
+    <h2>Lista de usuarios</h2>
     <?php
     
-    echo ("<table class='tabla_usuarios'><th><b>ID</b></th><th><b>Usuario</b></th><th><b>Contraseña</b></th><th><b>Email</b></th><th><b>Nombre</b></th><th><b>Apellidos</b></th><th><b>Privilegios</b></th>");
-    while($arrayusuarios = $resultado -> fetch_assoc()){  //Convierte $resultado, que es un objeto mySQL en un array asociativo (clave, valor)
-        echo ("<tr><td>".$arrayusuarios["id"]."</td><td>".$arrayusuarios["usuario"]."</td><td>".$arrayusuarios["contrasena"]."</td><td>".$arrayusuarios["email"]."</td><td>".$arrayusuarios["nombre"]."</td><td>".$arrayusuarios["apellido"]."</td><td>".$arrayusuarios["privilegios"]."</td><td><input type='button' value='Modificar' onclick=modalModif(&#34;".$arrayusuarios["usuario"]."&#34;);></td><td><input type='button' value='Borrar' class='botonmodif' onclick=modalBorr(&#34;".$arrayusuarios["usuario"]."&#34;);></tclass=/tr>");
+    echo ("<table class='tabla_admin'><th><b>ID</b></th><th><b>Usuario</b></th><th><b>Contraseña</b></th><th><b>Email</b></th><th><b>Nombre</b></th><th><b>Apellidos</b></th><th><b>Privilegios</b></th>");
+    while($arrayusuarios = $bbddusuarios -> fetch_assoc()){  //Convierte $resultado, que es un objeto mySQL en un array asociativo (clave, valor)
+        echo ("<tr><td>".$arrayusuarios["id"]."</td><td>".$arrayusuarios["usuario"]."</td><td>".$arrayusuarios["contrasena"]."</td><td>".$arrayusuarios["email"]."</td><td>".$arrayusuarios["nombre"]."</td><td>".$arrayusuarios["apellido"]."</td><td>".$arrayusuarios["privilegios"]."</td><td><input type='button' value='Modificar' onclick=modalModif(&#34;".$arrayusuarios["usuario"]."&#34;);></td><td><input type='button' value='Borrar' class='botonmodif' onclick=modalBorr(&#34;".$arrayusuarios["usuario"]."&#34;);></td></tr>");
     }
     echo ("</table>");
 
     ?>
+    
+    
+    <h2>Lista de salas</h2>
+    <input type="button" value="Crear nueva sala" onclick="window.location = 'nuevasala.php';">
+    
+    <?php 
+        
+        echo ("<table class='tabla_admin'>");
+        while($arraysalas = $bbddsalas -> fetch_assoc()){
+            echo ("<tr><td>" . $arraysalas['nombre'] . "<td><input type='button' value='Modificar' onclick=modalModif(&#34;".$arrayusuarios["usuario"]."&#34;);></td><td><input type='button' value='Borrar' class='botonmodif' onclick=modalBorr(&#34;".$arrayusuarios["usuario"]."&#34;);></td></tr>");
+        }
+        echo ("</table>");
+    
+    ?>
+        
+    </div>
+    
     
 </body>
     
