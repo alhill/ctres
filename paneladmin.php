@@ -38,6 +38,22 @@
         </div>
     </div>
     
+        <div id="borrarsala" class="modal fade ventanamodal" role="dialog">
+        <div class="loginaso">
+            <p>¿Está seguro de que desea borrar la sala número <span class="nombredesala"></span>?</p>
+                <button type="button" id="aceptaborrarsala">Aceptar</button>
+                <button type="button" id="cancelaborrarsala">Cancelar</button>
+        </div>
+    </div>
+    
+    <div id="modifsala" class="modal fade ventanamodal" role="dialog">
+        <div class="loginaso">
+            <p>¿Está seguro de que desea modificar la sala número <span class="nombredesala"></span>?</p>
+                <button type="button" id="aceptamodifsala">Aceptar</button>
+                <button type="button" id="cancelamodifsala">Cancelar</button>
+        </div>
+    </div>
+    
     <div class="container">
     
     <?php 
@@ -53,6 +69,7 @@
     <input type="button" value="Crear nuevo usuario" onclick="window.location = 'registro.php';">
     
     <h2>Lista de usuarios</h2>
+        
     <?php
     
     echo ("<table class='tabla_admin'><th><b>ID</b></th><th><b>Usuario</b></th><th><b>Contraseña</b></th><th><b>Email</b></th><th><b>Nombre</b></th><th><b>Apellidos</b></th><th><b>Privilegios</b></th>");
@@ -63,22 +80,27 @@
 
     ?>
     
-    
     <h2>Lista de salas</h2>
     <input type="button" value="Crear nueva sala" onclick="window.location = 'nuevasala.php';">
     
+    <form method="POST" action="" id="salasmodborr" name="salasmodborr"> 
+        
     <?php 
         
+        $numerodesalas = $bbddsalas->num_rows;
+        $contsala = 0;
         echo ("<table class='tabla_admin'>");
         while($arraysalas = $bbddsalas -> fetch_assoc()){
-            echo ("<tr><td>" . $arraysalas['nombre'] . "<td><input type='button' value='Modificar' onclick=modalModif(&#34;".$arrayusuarios["usuario"]."&#34;);></td><td><input type='button' value='Borrar' class='botonmodif' onclick=modalBorr(&#34;".$arrayusuarios["usuario"]."&#34;);></td></tr>");
-        }
+            echo ("<tr><td>" . $arraysalas["id"] . "<td><td>" . $arraysalas["nombre"] . "<td><input type='button' value='Modificar' onclick=modalModifSala(&#34;".$arraysalas["id"]."&#34;);></td><td><input type='button' value='Borrar' class='botonmodif' onclick=modalBorrSala(&#34;".$arraysalas["id"]."&#34;);></td></tr>");
+        } 
+        
         echo ("</table>");
     
     ?>
         
+    </form>
+        
     </div>
-    
     
 </body>
     
