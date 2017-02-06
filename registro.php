@@ -2,10 +2,9 @@
 
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Registro de usuarios</title>
-
-
 	<!--HOJA CSS provisional-->
 	<link rel="stylesheet" type="text/css" href="css/estilo.css">
 
@@ -14,9 +13,9 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
-
+	<script type="text/javascript" src="validar.js"></script>
 </head>
+
 <body>
 
 <div class="row" id="registro">
@@ -24,33 +23,35 @@
     <?php if (session_status() == PHP_SESSION_NONE) {session_start();} ?>
 
 	<div class="col-md-4 col-md-offset-4" >
+
 		<h2 class="titulo">Crear cuenta</h2>
-		<form method="POST" action="" id="formregistro" name="registro">
+
+		<form method="POST" action="" id="formregistro" name="registro" onsubmit="return validar();">
 			  <div class="form-group" >
-			    <input type="text" class="form-control" id="nom" name="nombre" placeholder="Nombre" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}" required="required">
+			    <input type="text" class="form-control" id="nom" name="nombre" placeholder="Nombre">
 			  </div>
 
 			  <div class="form-group" >
-			    <input type="text" class="form-control" id="ape" name="apellido" placeholder="Apellido" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}" required="required">
+			    <input type="text" class="form-control" id="ape" name="apellido" placeholder="Apellido">
 			  </div>
 
 			  <div class="form-group" >
-			    <input type="text" class="form-control" id="usu" name="usuario" placeholder="Usuario" pattern="[a-zA-Z0-9]{4,20}" required="required">
+			    <input type="text" class="form-control" id="usu" name="usuario" placeholder="Usuario">
 			  </div>
 
 			  <div class="form-group" >
-			    <input type="email" class="form-control" id="email" name="email" placeholder="Email" pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" required="required">
+			    <input type="text" class="form-control" id="email" name="email" placeholder="Email">
 			  </div>
 
 			  <div class="form-group">
-			    <input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Contraseña" pattern="[A-Za-z0-9!?-]{4,10}" required="required">
+			    <input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Contraseña">
 			  </div>
 
 			 <div class="form-group">
-			    <input type="password" class="form-control" id="contrasena2" name="contrasena2" placeholder="Repita su contraseña" pattern="[A-Za-z0-9!?-]{4,10}" required="required">
+			    <input type="password" class="form-control" id="contrasena2" name="contrasena2" placeholder="Repita su contraseña">
 			  </div>
 
-            <?php
+          <?php
                  
           if (isset($_SESSION['privilegios']) && $_SESSION['privilegios'] > 1){ //CODIGO QUE CONDICIONE QUE ESTO APAREZCA SOLO SI EL USUARIO TIENE PRIVILEGIOS DE ADMINISTRACIÓN
                 echo ('<div class="form-group">
@@ -65,12 +66,15 @@
 
             <p><a href="pagina_login.php">¿Ya eres usuario?</a></p> <br>
 
-			<button type="submit" id="butt" class="btn btn-default" name="insertar">Entrar</button>
-			 				
+			<button type="submit" id="butt" class="btn btn-default" name="insertar">Entrar</button> 				
 		</form>
+
 	</div>
 </div>
-    
+
+
+						   <!-- Validación del formulario de registro del lado del servidor (PHP)--> 
+
 <?php
 
 include 'config.php';
@@ -148,6 +152,7 @@ if (isset($_POST['insertar'])) {
 		}
 ?>
 
+<!-- Mostrar errores (en caso de que los haya) con la validación de PHP
 <ul>
 	<?php if(isset($errores)){
 		foreach ($errores as $error){
@@ -155,10 +160,7 @@ if (isset($_POST['insertar'])) {
 		}
 	}
 	?>
-</ul>
-
-
-
+</ul> -->
 
 </body>
 </html>
