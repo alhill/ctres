@@ -21,7 +21,7 @@
     include 'header.php';
     if (session_status() == PHP_SESSION_NONE) {session_start();}
     if (isset($_SESSION['privilegios']) && $_SESSION['privilegios'] > 0){
-        header('Location: index.php');
+        header('Location: calendario_index.php');
     } 
     
     ?>
