@@ -28,9 +28,9 @@ function modalModif(usuario){
     });
 }
 
-function modalBorrSala(sala, nombre){
+function modalBorrSala(sala){
     $(document).ready(function(){
-        $(".nombredesala").html(nombre);
+        $(".nombredesala").html(sala);
         $("#borrarsala").modal();
         
         $("#aceptaborrarsala").click(function(){
