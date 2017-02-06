@@ -8,9 +8,12 @@ include 'funciones.php';
 <head>
         <meta charset="utf-8">
         <title>Calendario</title>
+        <link rel="stylesheet" href="css/reset.css" type="text/css" />
         <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/calendar.css">
+        <link rel="stylesheet" href="css/estilo.css">
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
         <script type="text/javascript" src="js/es-ES.js"></script>
         <script src="js/jquery.min.js"></script>
         <script src="js/moment.js"></script>

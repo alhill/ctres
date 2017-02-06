@@ -30,7 +30,7 @@
                 header('Location: paneladmin.php');
             }
             else{
-                header('Location: calendario_index.php');
+                header('Location: index.php');
             } 
         }
 

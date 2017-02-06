@@ -1,0 +1,47 @@
+/* TEAM */
+	Desarrolladores: xxxx
+	Profesión: xxx
+	Contacto: email
+	Twitter: @NorfiCarrodegua
+	Ciudad: Madrid
+	
+	Desarrolladores: xxxx
+	Profesión: xxx
+	Contacto: email    (Para evitar problemas de S P A M, puedes evitar indicar directamente cuentas de e-mail con [at] en lugar de @.)
+	Twitter: @NorfiCarrodegua
+	Ciudad: Madrid
+
+	Desarrolladores: xxxx
+	Profesión: xxx
+	Contacto: email
+	Twitter: @NorfiCarrodegua
+	Ciudad: Madrid
+
+	Desarrolladores: xxxx
+	Profesión: xxx
+	Contacto: email
+	Twitter: @NorfiCarrodegua
+	Ciudad: Madrid
+
+	Desarrolladores: xxxx
+	Profesión: xxx
+	Contacto: email
+	Twitter: @NorfiCarrodegua
+	Ciudad: Madrid	
+
+/* SITE */
+	Last update: año/mes/dia
+	Idioma: Spanish
+	Standards: HTML5, CSS3, PHP, MySql, JavaScript.
+	Software utilizado para el desarrollo:Sublime Text, FileZilla, Xampp.
+	Protocolos: IPv4, IPv6, HTTP 1.1, SPDY y HTTP/2
+	Servicio de Hosting: https://ifastnet.com/
+	Tipo de alojamiento: Servidor VPS
+
+/* THANKS */
+ 
+Name: Marc Barcelo xxxxxxxx (email)
+Name: Diego Collado xxxxxx  (email)
+	
+
+	
