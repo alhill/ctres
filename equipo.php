@@ -41,7 +41,7 @@
         <div class="row fila_equipo1">            
                 <div class="col-md-4 equipo"><div class="borde_equipo">
                    
-                       <a href="https://es.linkedin.com/in/alvarogilgutierrez" target="_blank"><img src="alvaro_foto.png" alt="Álvaro Gil" title="Álvaro Gil" class="img-responsive profile_foto" ></a> 
+                       <a href="https://es.linkedin.com/in/alvarogilgutierrez" target="_blank"><img src="img/Equipo/alvaro_foto.png" alt="Álvaro Gil" title="Álvaro Gil" class="img-responsive profile_foto" ></a> 
                 
                         <h3><i class="fa fa-user nom" aria-hidden="true"></i> Álvaro Gil</h3>
 
@@ -52,7 +52,7 @@
                 
                 <div class="col-md-4 equipo"> <div class="borde_equipo">
                 
-                    <a href="https://es.linkedin.com/in/carlaecijaharo" target="_blank"><img src="carla_foto.png" alt="Carla Écija" title="Carla Écija" class="img-responsive profile_foto"> </a>
+                    <a href="https://es.linkedin.com/in/carlaecijaharo" target="_blank"><img src="img/Equipo/carla_foto.png" alt="Carla Écija" title="Carla Écija" class="img-responsive profile_foto"> </a>
 
             
                     <h3><i class="fa fa-user nom" aria-hidden="true"></i> Carla Écija</h3>
@@ -65,7 +65,7 @@
 
              <div class="col-md-4 equipo"> <div class="borde_equipo">
               
-                   <a href="https://es.linkedin.com/in/mariavirginiarivas" target="_blank"><img src="maria_foto.png" title="Maria Virginia Rivas" class="img-responsive profile_foto" ></a>
+                   <a href="https://es.linkedin.com/in/mariavirginiarivas" target="_blank"><img src="img/Equipo/maria_foto.png" title="Maria Virginia Rivas" class="img-responsive profile_foto" ></a>
             
                     <h3><i class="fa fa-user nom" aria-hidden="true"></i> Mª Virginia Rivas</h3>
                     <p><i class="fa fa-hand-o-right" aria-hidden="true"></i> Chef</p> 
@@ -78,7 +78,7 @@
             
                 <div class="col-md-4 equipo"><div class="borde_equipo">
                    
-                       <a href="https://es.linkedin.com/in/egonzalezn" target="_blank"><img src="eva_foto.png" alt="Eva Gonzalez" title="Eva Gonzalez" class="img-responsive profile_foto" ></a> 
+                       <a href="https://es.linkedin.com/in/egonzalezn" target="_blank"><img src="img/Equipo/eva_foto.png" alt="Eva Gonzalez" title="Eva Gonzalez" class="img-responsive profile_foto" ></a> 
                 
                         <h3><i class="fa fa-user nom" aria-hidden="true"></i> Eva González</h3>
 
@@ -89,10 +89,10 @@
                 
                 <div class="col-md-4 equipo"> <div class="borde_equipo">
                 
-                    <a href="https://es.linkedin.com/in/carlaecijaharo" target="_blank"><img src="carla_foto.png" alt="Carla Écija" title="Carla Écija" class="img-responsive profile_foto"> </a>
+                    <a href="https://es.linkedin.com/in/carlaecijaharo" target="_blank"><img src="img/Equipo/carlos_foto.png" alt="Carlos de Miguel" title="Carlos de Miguel " class="img-responsive profile_foto"> </a>
 
             
-                    <h3><i class="fa fa-user nom" aria-hidden="true"></i> Carla Écija</h3>
+                    <h3><i class="fa fa-user nom" aria-hidden="true"></i> Carlos de Miguel</h3>
 
                     <p><i class="fa fa-hand-o-right" aria-hidden="true"></i> Chef</p>  
                     <p><i class="fa fa-map-marker" aria-hidden="true"></i> Sevilla</p>                   
@@ -101,9 +101,9 @@
 
              <div class="col-md-4 equipo"> <div class="borde_equipo">
               
-                   <a href="https://es.linkedin.com/in/mariavirginiarivas" target="_blank"><img src="maria_foto.png" title="Maria Virginia Rivas" class="img-responsive profile_foto" ></a>
+                   <a href="https://es.linkedin.com/in/mariavirginiarivas" target="_blank"><img src="img/Equipo/marc_foto.png" title="Maria Virginia Rivas" class="img-responsive profile_foto" ></a>
             
-                    <h3><i class="fa fa-user nom" aria-hidden="true"></i> Mª Virginia Rivas</h3>
+                    <h3><i class="fa fa-user nom" aria-hidden="true"></i> Marc Barcelo</h3>
                     <p><i class="fa fa-hand-o-right" aria-hidden="true"></i> Chef</p> 
                      <p><i class="fa fa-map-marker" aria-hidden="true"></i> Sevilla</p> 
                                  

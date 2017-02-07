@@ -18,11 +18,15 @@
 
 <body>
 
-<div class="row" id="registro">
+ <?php 
+    include 'header.php';
+ ?>
+
+<div class="row">
     
     <?php if (session_status() == PHP_SESSION_NONE) {session_start();} ?>
 
-	<div class="col-md-4 col-md-offset-4" >
+	<div class="col-md-4 col-md-offset-4" id="registro">
 
 		<h2 class="titulo">Crear cuenta</h2>
 
@@ -66,11 +70,13 @@
 
             <p><a href="pagina_login.php">¿Ya eres usuario?</a></p> <br>
 
-			<button type="button" id="butt" class="btn btn-default" name="insertar" onclick=validar();>Entrar</button> 				
+			<button type="button" id="butt" class="btn btn-mio1" name="insertar" onclick=validar();>Entrar</button> 				
 		</form>
 
 	</div>
 </div>
+
+<?php include 'footer.php'; ?>
 
 </body>
 </html>

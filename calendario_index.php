@@ -11,7 +11,6 @@ include 'funciones.php';
         <link rel="stylesheet" href="css/reset.css" type="text/css" />
         <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/calendar.css">
-        <link rel="stylesheet" href="css/estilo.css">
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
         <script type="text/javascript" src="js/es-ES.js"></script>
@@ -21,6 +20,7 @@ include 'funciones.php';
         <script src="js/bootstrap-datetimepicker.js"></script>
         <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css" />
        <script src="js/bootstrap-datetimepicker.es.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/estilo.css">
 </head>
 
 <body style="background: white;">
@@ -41,17 +41,18 @@ include 'funciones.php';
                 <div class="row">
                         <div class="page-header"><h2></h2></div>
                                 <div class="pull-left form-inline"><br>
-                                        <div class="btn-group">
-                                            <button class="btn btn-primary" data-calendar-nav="prev"><< Anterior</button>
+                                         <div class="btn-group">
+                                            <button class="btn btn-primary btn-mio1" data-calendar-nav="prev"><< Anterior</button>
                                             <button class="btn" data-calendar-nav="today">Hoy</button>
-                                            <button class="btn btn-primary" data-calendar-nav="next">Siguiente >></button>
+                                            <button class="btn btn-primary btn-mio1" data-calendar-nav="next">Siguiente >></button>
                                         </div>
                                         <div class="btn-group">
-                                            <button class="btn btn-warning" data-calendar-view="year">Año</button>
-                                            <button class="btn btn-warning active" data-calendar-view="month">Mes</button>
-                                            <button class="btn btn-warning" data-calendar-view="week">Semana</button>
-                                            <button class="btn btn-warning" data-calendar-view="day">Dia</button>
+                                            <button class="btn btn-primary btn-mio1" data-calendar-view="year">Año</button>
+                                            <button class="btn active" data-calendar-view="month">Mes</button>
+                                            <button class="btn btn-primary btn-mio1" data-calendar-view="week">Semana</button>
+                                            <button class="btn btn-primary btn-mio1" data-calendar-view="day">Dia</button>
                                         </div>
+
 
                                 </div>
                                     <div class="pull-right form-inline"><br>
@@ -185,6 +186,155 @@ include 'funciones.php';
         }(jQuery));    </script>
    
 </div>
+  <!--MODAL DE RESERVA-->
+
+<div class="modal fade" id="add_evento" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Agregar reserva</h4>
+      </div>
+      <div class="modal-body">
+        <form action="prueba.php" method="post">
+                    <label for="from">Fecha inicio</label>
+                    <div class='input-group date' id='from'>
+                        <input type='text' id="from" name="from" class="form-control"  required /> <!--se eliminio atributo readonly en input-->
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+                    </div>
+
+                    <br>
+
+                    <label for="to">Fecha final</label>
+                    <div class='input-group date' id='to'>
+                        <input type='text' name="to" id="to" class="form-control"  required /> <!--se eliminio atributo readonly en input-->
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+                    </div>
+
+                    <br>
+
+    <script type="text/javascript">
+        function showContent() {
+        element = document.getElementById("content");
+        checkedd = document.getElementById("checkbox1");
+            if (checkedd.checked) {
+            element.style.display='block';
+            } else {
+            element.style.display='none';
+
+            }
+        }
+    </script>
+<!--Funcion JavaScript para dehabilitar checkbox al seleccionar una opción-->
+    <script type="text/javascript">
+        function hideContent() {
+        element = document.getElementById("checkbox2");
+        checkedd = document.getElementById("checkbox1");
+            if (checkedd.checked) {
+            element.style.display='none';
+            } else {
+            element.style.display='block';
+
+            }
+        }
+    </script>
+
+                <label for="opcion">Seleccione una de las siguientes opciones</label> <!--antes for="tipo"-->
+                    <div class="checkbox">
+                       <label for="tipo"><input type="checkbox" name="opciones[]" id="checkbox1" value="sala" onchange="javascript:showContent(); hideContent()" /> Salas</label>
+                    </div>
+                    <div id="content" style="display: none;">
+                        <select class="form-control" name="listas[]" id="tipo1">
+                            <option disable="disable"></option>
+                            <option value="Biblioteca">Sala Biblioteca</option>
+                            <option value="formacion">Sala de formación </option>
+                            <option value="informatica">Sala de informática </option>
+                            <option value="actos">Sala de actos</option>                        
+                        </select>
+                    </div>
+
+<!--Funcion JavaScript para dehabilitar checkbox al seleccionar una opción-->                   
+    <script type="text/javascript">
+        function hideContent2() {
+        element = document.getElementById("checkbox1");
+        checkedd = document.getElementById("checkbox2");
+            if (checkedd.checked) {
+            element.style.display='none';
+            } else {
+            element.style.display='block';
+            }
+        }
+    </script>
+
+<!--Funcion JavaScript para dehabilitar checkbox al seleccionar una opción-->
+    <script type="text/javascript">
+        function showContent2() {
+        element = document.getElementById("content2");
+        checkedd = document.getElementById("checkbox2");
+            if (checkedd.checked) {
+            element.style.display='block';
+            } else {
+            element.style.display='none';
+            
+            }
+        }
+        function disableLista() {
+        checkedd = document.getElementById("checkbox2");
+            if (checkedd.checked) {
+            document.getElementById('tipo1').disabled = true;
+        }
+    }
+
+
+
+
+    </script>          
+                     <div class="checkbox">
+                       <label for="tipo">  <input type="checkbox" name="opciones[]" id="checkbox2" value="material" onchange="javascript:showContent2(); hideContent2(); disableLista()" />Materiales (Presione Ctrl + click de ratón para seleccionar varias opciones) </label>
+                    </div>
+
+                    <div id="content2" style="display: none;">
+                        <select multiple class="form-control" name="listas[]" id="tipo2">
+                            
+                            <option value="proyector">Proyector</option>
+                            <option value="ordenador">Ordenador</option>
+                            <option value="impresora">Impresora </option>
+                            <option value="pizarra">Pizarra</option>                        
+                        </select>
+                    </div>
+
+                 
+                   <!-- <label for="title">Título</label>  <input type="text" required autocomplete="off" name="title" class="form-control" id="title" placeholder="Introduce un título"> <br>-->
+
+                    <label for="body">Comentarios</label>
+                    <textarea id="body" name="event"  class="form-control" rows="3"></textarea>
+
+    <script type="text/javascript">
+        $(function () {
+            $('#from').datetimepicker({
+                language: 'es',
+                minDate: new Date()
+            });
+            $('#to').datetimepicker({
+                language: 'es',
+                minDate: new Date()
+            });
+        });
+    </script>
+    </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Cancelar</button>
+          <button type="submit" name="submit" class="btn btn-success"><i class="fa fa-check"></i> Reservar</button>
+
+    </form>
+    
+    </div>
+  </div>
+</div>
+</div>
 
 </body>
+
+
+ <?php include 'footer.php'; ?>
 </html>

@@ -1,36 +1,36 @@
 /* TEAM */
-	Desarrolladores: xxxx
-	Profesión: xxx
-	Contacto: email
+	Desarrolladores: Mª Virginia Rivas
+	Profesión: Periodista
+	Contacto: mariav53@gmail.com
 	Twitter: @NorfiCarrodegua
 	Ciudad: Madrid
 	
-	Desarrolladores: xxxx
-	Profesión: xxx
-	Contacto: email    (Para evitar problemas de S P A M, puedes evitar indicar directamente cuentas de e-mail con [at] en lugar de @.)
+	Desarrolladores: Eva González
+	Profesión: E-learning
+	Contacto: evamgonzalezn@gmail.com
 	Twitter: @NorfiCarrodegua
 	Ciudad: Madrid
 
-	Desarrolladores: xxxx
-	Profesión: xxx
-	Contacto: email
+	Desarrolladores: Carla Écija
+	Profesión: Ambientóloga 
+	Contacto: karlaecija@gmail.com
+	Twitter: @
+	Ciudad: Madrid
+
+	Desarrolladores: Álvaro Gil
+	Profesión: Técnico de sonido
+	Contacto: alvarogil91@gmail.com
 	Twitter: @NorfiCarrodegua
 	Ciudad: Madrid
 
-	Desarrolladores: xxxx
-	Profesión: xxx
-	Contacto: email
-	Twitter: @NorfiCarrodegua
-	Ciudad: Madrid
-
-	Desarrolladores: xxxx
-	Profesión: xxx
-	Contacto: email
-	Twitter: @NorfiCarrodegua
+	Desarrolladores: Carlos de Miguel
+	Profesión: Programador Junior PHP
+	Contacto: carlosdmm93@gmail.com
+	Twitter: @Carlosdmm93
 	Ciudad: Madrid	
 
 /* SITE */
-	Last update: año/mes/dia
+	Last update: 2017/2/115
 	Idioma: Spanish
 	Standards: HTML5, CSS3, PHP, MySql, JavaScript.
 	Software utilizado para el desarrollo:Sublime Text, FileZilla, Xampp.
@@ -41,7 +41,7 @@
 /* THANKS */
  
 Name: Marc Barcelo xxxxxxxx (email)
-Name: Diego Collado xxxxxx  (email)
+Name: Diego Collado (email) mbarcelo@itteria.cat 
 	
 
 	

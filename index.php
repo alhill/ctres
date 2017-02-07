@@ -24,7 +24,7 @@
     include 'header.php';
     ?>
     
-    <div class="container-fluid">
+ <div class="container-fluid">
         
    <?php
     if (session_status() == PHP_SESSION_NONE) {session_start();}
@@ -34,7 +34,7 @@
     ?> 
         
         
-    <div class="ui-grid-a ui-responsive">
+
         
     <?php
         $posicion = 0;
@@ -42,8 +42,8 @@
         
         while($arraysalas = $bbddsalas -> fetch_assoc()){
             
-            if ($posicion % 2 == 0) { echo('<div class="row"><div class="col-sm-5 col-sm-offset-1 bloquesala">'); }
-            else{ echo('<div class="col-sm-5 bloquesala">');}
+            if ($posicion % 2 == 0) { echo('<div class="row"><div id="sala" class="col-sm-5 col-sm-offset-1 bloquesala">'); }
+            else{ echo('<div id="sala"  class="col-sm-5 bloquesala">');}
         
         ?>
   
@@ -63,9 +63,15 @@
         
         ?>
 
+
+         
     </div> 
+ 
+        <?php include 'footer.php'; ?>
+   
         
+
     
-    <?php include 'footer.php'; ?>
+   
 
 </body>

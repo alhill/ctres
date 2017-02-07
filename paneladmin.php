@@ -26,32 +26,32 @@
     <div id="borrar" class="modal fade ventanamodal" role="dialog">
         <div class="loginaso">
             <p>¿Está seguro de que desea borrar el usuario <span class="nombredeusuario"></span>?</p>
-                <button type="button" id="aceptaborrar">Aceptar</button>
-                <button type="button" id="cancelaborrar">Cancelar</button>
+                <button class="btn-mio1" type="button" id="aceptaborrar">Aceptar</button>
+                <button class="btn-mio1" type="button" id="cancelaborrar">Cancelar</button>
         </div>
     </div>
     
     <div id="modif" class="modal fade ventanamodal" role="dialog">
         <div class="loginaso">
             <p>¿Está seguro de que desea modificar el usuario <span class="nombredeusuario"></span>?</p>
-                <button type="button" id="aceptamodif">Aceptar</button>
-                <button type="button" id="cancelamodif">Cancelar</button>
+                <button class="btn-mio1" type="button" id="aceptamodif">Aceptar</button>
+                <button class="btn-mio1" type="button" id="cancelamodif">Cancelar</button>
         </div>
     </div>
     
         <div id="borrarsala" class="modal fade ventanamodal" role="dialog">
         <div class="loginaso">
             <p>¿Está seguro de que desea borrar la sala número <span class="nombredesala"></span>?</p>
-                <button type="button" id="aceptaborrarsala">Aceptar</button>
-                <button type="button" id="cancelaborrarsala">Cancelar</button>
+                <button class="btn-mio1" type="button" id="aceptaborrarsala">Aceptar</button>
+                <button class="btn-mio1" type="button" id="cancelaborrarsala">Cancelar</button>
         </div>
     </div>
     
     <div id="modifsala" class="modal fade ventanamodal" role="dialog">
         <div class="loginaso">
             <p>¿Está seguro de que desea modificar la sala número <span class="nombredesala"></span>?</p>
-                <button type="button" id="aceptamodifsala">Aceptar</button>
-                <button type="button" id="cancelamodifsala">Cancelar</button>
+                <button class="btn-mio1" type="button" id="aceptamodifsala">Aceptar</button>
+                <button class="btn-mio1" type="button" id="cancelamodifsala">Cancelar</button>
         </div>
     </div>
     
@@ -68,7 +68,7 @@
     $bbddsalas = mysqli_query($conexion, "SELECT * FROM salas");
     ?>
     
-    <input type="button" value="Crear nuevo usuario" onclick="window.location = 'registro.php';">
+    <input class="btn-mio1" type="button" value="Crear nuevo usuario" onclick="window.location = 'registro.php';">
     
     <h2>Lista de usuarios</h2>
         
@@ -76,14 +76,14 @@
     
     echo ("<table class='tabla_admin'><th><b>ID</b></th><th><b>Usuario</b></th><th><b>Contraseña</b></th><th><b>Email</b></th><th><b>Nombre</b></th><th><b>Apellidos</b></th><th><b>Privilegios</b></th>");
     while($arrayusuarios = $bbddusuarios -> fetch_assoc()){  //Convierte $resultado, que es un objeto mySQL en un array asociativo (clave, valor)
-        echo ("<tr><td>".$arrayusuarios["id"]."</td><td>".$arrayusuarios["usuario"]."</td><td>".$arrayusuarios["contrasena"]."</td><td>".$arrayusuarios["email"]."</td><td>".$arrayusuarios["nombre"]."</td><td>".$arrayusuarios["apellido"]."</td><td>".$arrayusuarios["privilegios"]."</td><td><input type='button' value='Modificar' onclick=modalModif(&#34;".$arrayusuarios["usuario"]."&#34;);></td><td><input type='button' value='Borrar' class='botonmodif' onclick=modalBorr(&#34;".$arrayusuarios["usuario"]."&#34;);></td></tr>");
+        echo ("<tr><td>".$arrayusuarios["id"]."</td><td>".$arrayusuarios["usuario"]."</td><td>".$arrayusuarios["contrasena"]."</td><td>".$arrayusuarios["email"]."</td><td>".$arrayusuarios["nombre"]."</td><td>".$arrayusuarios["apellido"]."</td><td>".$arrayusuarios["privilegios"]."</td><td><input class='btn-mio1' type='button' value='Modificar' onclick=modalModif(&#34;".$arrayusuarios["usuario"]."&#34;);></td><td><input class='btn-mio1' type='button' value='Borrar' class='botonmodif' onclick=modalBorr(&#34;".$arrayusuarios["usuario"]."&#34;);></td></tr>");
     }
     echo ("</table>");
 
     ?>
     
     <h2>Lista de salas</h2>
-    <input type="button" value="Crear nueva sala" onclick="window.location = 'nuevasala.php';">
+    <input class="btn-mio1" type="button" value="Crear nueva sala" onclick="window.location = 'nuevasala.php';">
     
     <form method="POST" action="" id="salasmodborr" name="salasmodborr"> 
         
@@ -93,7 +93,7 @@
         $contsala = 0;
         echo ("<table class='tabla_admin'>");
         while($arraysalas = $bbddsalas -> fetch_assoc()){
-            echo ("<tr><td>" . $arraysalas["id"] . "<td><td>" . $arraysalas["nombre"] . "<td><input type='button' value='Modificar' onclick=modalModifSala(&#34;".$arraysalas["id"]."&#34;);></td><td><input type='button' value='Borrar' class='botonmodif' onclick=modalBorrSala(&#34;".$arraysalas["id"]."&#34;);></td></tr>");
+            echo ("<tr><td>" . $arraysalas["id"] . "<td><td>" . $arraysalas["nombre"] . "<td><input class='btn-mio1' type='button' value='Modificar' onclick=modalModifSala(&#34;".$arraysalas["id"]."&#34;);></td><td><input class='btn-mio1' type='button' value='Borrar' class='botonmodif' onclick=modalBorrSala(&#34;".$arraysalas["id"]."&#34;);></td></tr>");
         } 
         
         echo ("</table>");
@@ -103,7 +103,7 @@
     </form>
         
     </div>
-    
+     <?php include 'footer.php'; ?>
 </body>
     
 </html>
