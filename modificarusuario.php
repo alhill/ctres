@@ -1,4 +1,26 @@
-<?php include 'config.php'; ?>
+<?php include 'config.php';
+
+    $url = $_SERVER['REQUEST_URI'];
+    $usuario = parse_url($url, PHP_URL_QUERY);
+    if (session_status() == PHP_SESSION_NONE) {session_start();}
+
+    if (
+        (!isset($_SESSION['privilegios']))
+        || 
+                (isset($_SESSION['privilegios']) 
+                && 
+                ($_SESSION['privilegios'] == 1 || $_SESSION['privilegios'] == 2) 
+                && 
+                ($_SESSION['usuario'] != $usuario))
+        )
+    {
+        die();
+    }
+
+
+
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -69,14 +91,19 @@
                 if($row["privilegios"]==3){$elegida3="selected";}
             ?>
             
-             <div class="form-group">
-                <select id="privilegios" name="privilegios" form="formregistro">
-                  <option value="1" <?php echo($elegida1); ?> >Usuario</option>
-                  <option value="2" <?php echo($elegida2); ?> >Propietario</option>
-                  <option value="3" <?php echo($elegida3); ?> >Administrador</option>
-                </select> 
-             </div>
-
+            <?php
+                 
+          if (isset($_SESSION['privilegios']) && $_SESSION['privilegios'] > 1){ //CODIGO QUE CONDICIONE QUE ESTO APAREZCA SOLO SI EL USUARIO TIENE PRIVILEGIOS DE ADMINISTRACIÓN
+                echo ('<div class="form-group">
+                            <select id="privilegios" name="privilegios" form="formregistro">
+                              <option value="1">Usuario</option>
+                              <option value="2">Propietario</option>
+                              <option value="3">Administrador</option>
+                            </select> 
+                        </div>');
+            }                         
+            ?>          
+  
 			<button type="submit" id="butt" class="btn btn-default" name="modificar">Modificar usuario</button>
 
 			 				
