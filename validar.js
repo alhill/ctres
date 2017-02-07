@@ -36,14 +36,16 @@ function validar() {
 		}else if (contrasena === "") {
 			alert("Por favor, introduzca una contrasena");
 			return false;
-		}else if (contrasena.length < 4 || contrasena.length > 10) {
-			alert("La contraseña debe contener entre 4 y 10 caracteres");
+		}else if (contrasena.length < 4 || contrasena.length > 20) {
+			alert("La contraseña debe contener entre 4 y 20 caracteres");
 			return false;
 		}else if (contrasena2 === "") {
-			alert("Por favor, introduzca su contraseña muevamente");
+			alert("Por favor, introduzca su contraseña nuevamente");
 			return false;
 		}else if (contrasena != contrasena2) {
 			alert("Las contraseñas deben ser iguales");
 			return false;
-		}
+		}else{
+            document.registro.submit();
+        }
 }
