@@ -42,9 +42,11 @@
 			  <div class="form-group">
 			    <input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Escriba su contraseña">
 			  </div>
+			  
+			  <p><a href="recuperar_pass.php">Recuperar contraseña</a></p> <br>
 
 			   <button  class="btn btn-mio1" type="submit" id="butt" class="btn btn-default" name="log">Acceder</button>
-			   <p><a href="recuperar_pass.<?php?>">Recuperar cuenta</a></p> <br>
+			   
 		</form>
 	</div>
 

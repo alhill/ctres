@@ -14,6 +14,12 @@ die(); */
 		$email = mysqli_real_escape_string ($conexion, $_POST['email']);
 		$contrasena = mysqli_real_escape_string ($conexion, $_POST['contrasena']);
 		$contrasena2 = mysqli_real_escape_string ($conexion, $_POST['contrasena2']);
+
+		//Email que se enviará al nuevo usuario
+		$from = "Equipo C3PO";
+		$to = $email;
+		$subject = "Registro Ctres";
+		$body = "Bienvenido a la Central de Reservas Ctres.\n Ya puede comenzar a utilizar nuestros servicios.\n Su usuario es: $usuario\n Su contraseña es: $contrasena\n Gracias por confiar en nosotros.\n Atentamente el equipo C3PO.";
 		
 		if (isset($_POST['privilegios'])){
 			$privilegios = mysqli_real_escape_string ($conexion, $_POST['privilegios']);
@@ -69,6 +75,10 @@ die(); */
 				$query = "INSERT INTO registro (nombre, apellido, usuario, email, contrasena, privilegios) VALUES ('$nombre','$apellido', '$usuario', '$email','$contrasena', '$privilegios')";
 				
 				$ejecutar = mysqli_query($conexion, $query) or die('Hubo un error durante el registro: ' . mysqli_error($conexion));
+
+				//Enviamos email al usuario y le mostramos el mensaje de que se ha registrado correctamente
+
+				mail ($to, $subject, $body, $from);  
                     
 				echo "<script> alert('El registro se completó correctamente');
 					 window.open('index.php','_self');

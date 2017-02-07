@@ -73,7 +73,7 @@ THE SOFTWARE.
             useStrict: false,
             direction: "auto",
             sideBySide: false,
-            daysOfWeekDisabled: false
+            daysOfWeekDisabled: [0,6],
         },
 
 		icons = {
