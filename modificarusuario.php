@@ -75,11 +75,11 @@
 			  </div>
 
 			  <div class="form-group">
-			    <input type="password" class="form-control" id="contrasena" name="contrasena" pattern="[A-Za-z0-9!?-]{4,6}" required="required">
+			    <input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Contraseña sin modificar" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{4,20}">
 			  </div>
 
 			 <div class="form-group">
-			    <input type="password" class="form-control" id="contrasena2" name="contrasena2" pattern="[A-Za-z0-9!?-]{4,6}" required="required">
+			    <input type="password" class="form-control" id="contrasena2" name="contrasena2" placeholder="Contraseña sin modificar" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{4,20}">
 			  </div>
             
             <?php
