@@ -45,7 +45,7 @@
                 
                         <h3><i class="fa fa-user nom" aria-hidden="true"></i> Álvaro Gil</h3>
 
-                        <p><i class="fa fa-hand-o-right" aria-hidden="true"></i> Chef</p> 
+                        <p><i class="fa fa-hand-o-right" aria-hidden="true"></i> Full-stack developer</p> 
                         <p><i class="fa fa-map-marker" aria-hidden="true"></i> Madrid</p>
                           
                 </div></div>           
@@ -57,8 +57,8 @@
             
                     <h3><i class="fa fa-user nom" aria-hidden="true"></i> Carla Écija</h3>
 
-                    <p><i class="fa fa-hand-o-right" aria-hidden="true"></i> Chef</p>  
-                    <p><i class="fa fa-map-marker" aria-hidden="true"></i> Sevilla</p>
+                    <p><i class="fa fa-hand-o-right" aria-hidden="true"></i> Back-end developer</p>  
+                    <p><i class="fa fa-map-marker" aria-hidden="true"></i> Madrid</p>
                    
     			
                 </div></div>
@@ -68,8 +68,8 @@
                    <a href="https://es.linkedin.com/in/mariavirginiarivas" target="_blank"><img src="img/Equipo/maria_foto.png" title="Maria Virginia Rivas" class="img-responsive profile_foto" ></a>
             
                     <h3><i class="fa fa-user nom" aria-hidden="true"></i> Mª Virginia Rivas</h3>
-                    <p><i class="fa fa-hand-o-right" aria-hidden="true"></i> Chef</p> 
-                     <p><i class="fa fa-map-marker" aria-hidden="true"></i> Sevilla</p> 
+                    <p><i class="fa fa-hand-o-right" aria-hidden="true"></i> Full-stack Developer</p> 
+                     <p><i class="fa fa-map-marker" aria-hidden="true"></i> Madrid</p> 
                                  
             </div></div>
         </div>
@@ -81,31 +81,29 @@
                        <a href="https://es.linkedin.com/in/egonzalezn" target="_blank"><img src="img/Equipo/eva_foto.png" alt="Eva Gonzalez" title="Eva Gonzalez" class="img-responsive profile_foto" ></a> 
                 
                         <h3><i class="fa fa-user nom" aria-hidden="true"></i> Eva González</h3>
-
-                        <p><i class="fa fa-hand-o-right" aria-hidden="true"></i> Chef</p> 
+                        <p><i class="fa fa-hand-o-right" aria-hidden="true"></i> Back-end developer</p> 
                         <p><i class="fa fa-map-marker" aria-hidden="true"></i> Madrid</p>
                           
                 </div></div>          
                 
                 <div class="col-md-4 equipo"> <div class="borde_equipo">
                 
-                    <a href="https://es.linkedin.com/in/carlaecijaharo" target="_blank"><img src="img/Equipo/carlos_foto.png" alt="Carlos de Miguel" title="Carlos de Miguel " class="img-responsive profile_foto"> </a>
+                    <a href="https://es.linkedin.com/" target="_blank"><img src="img/Equipo/carlos_foto.png" alt="Carlos de Miguel" title="Carlos de Miguel " class="img-responsive profile_foto"> </a>
 
             
                     <h3><i class="fa fa-user nom" aria-hidden="true"></i> Carlos de Miguel</h3>
-
-                    <p><i class="fa fa-hand-o-right" aria-hidden="true"></i> Chef</p>  
-                    <p><i class="fa fa-map-marker" aria-hidden="true"></i> Sevilla</p>                   
+                    <p><i class="fa fa-hand-o-right" aria-hidden="true"></i> Front-end developer</p>  
+                    <p><i class="fa fa-map-marker" aria-hidden="true"></i> Madrid</p>                   
                 
                 </div></div>
 
              <div class="col-md-4 equipo"> <div class="borde_equipo">
               
-                   <a href="https://es.linkedin.com/in/mariavirginiarivas" target="_blank"><img src="img/Equipo/marc_foto.png" title="Maria Virginia Rivas" class="img-responsive profile_foto" ></a>
+                   <a href="https://www.linkedin.com/in/marcbarcelo " target="_blank"><img src="img/Equipo/marc_foto.png" title="Marc Barcelo" class="img-responsive profile_foto" ></a>
             
                     <h3><i class="fa fa-user nom" aria-hidden="true"></i> Marc Barcelo</h3>
-                    <p><i class="fa fa-hand-o-right" aria-hidden="true"></i> Chef</p> 
-                     <p><i class="fa fa-map-marker" aria-hidden="true"></i> Sevilla</p> 
+                    <p><i class="fa fa-hand-o-right" aria-hidden="true"></i> Owner</p> 
+                     <p><i class="fa fa-map-marker" aria-hidden="true"></i> Barcelona</p> 
                                  
             </div></div>
         </div>                

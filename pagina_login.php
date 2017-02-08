@@ -3,7 +3,7 @@
 <head>
 	<title>Bienvenido</title>
 
-
+	<meta charset="utf-8">
 
 	<!--BOOTSTRAP-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> 
@@ -13,6 +13,8 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<!--HOJA CSS-->
 	<link rel="stylesheet" type="text/css" href="css/estilo.css">
+	<link href="https://fonts.googleapis.com/css?family=Sansita" rel="stylesheet">  
+	<link href="https://fonts.googleapis.com/css?family=Lato:100,100i,400,700" rel="stylesheet">
 </head>
 <body>
     
@@ -33,8 +35,6 @@
 		
 		<form method="POST" action="login.php">
 
-
-
 			  <div class="form-group" >
 			    <input  type="text" class="form-control" id="user" name="usuario" placeholder="Escriba su usuario">
 			  </div>
@@ -43,17 +43,20 @@
 			    <input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Escriba su contraseña">
 			  </div>
 			  
-			  <p><a href="recuperar_pass.php">Recuperar contraseña</a></p> <br>
+			  <a href="recuperar_pass.php"><p class="recupera">Recuperar contraseña</p></a> <br>
 
-			   <button  class="btn btn-mio1" type="submit" id="butt" class="btn btn-default" name="log">Acceder</button>
+			   <button  class="btn btn-mio1 butt" type="submit" id="butt" name="log">Acceder</button>
 			   
 		</form>
 	</div>
 
 	<div class="col-md-4 col-md-offset-2" id="nocliente" >
-		<h2 class="titulo">Soy nuev@ - Quiero registrarme</h2>
-			<p>Al crear tu cuenta, podrás acceder y realizar reservas de salas o materiales de forma más rápida</p>
-			  <a  href="registro.php" id="butt" class="btn btn-mio1">Crear cuenta</a><br>	
+		<h2 class="titulo">Soy nuev@ - Quiero registrarme</h2><br>
+			<p>Al crear tu cuenta, podrás acceder y realizar reservas de salas o materiales de forma más rápida</p><br><br>
+				<a  href="registro.php"> <button class="btn btn-mio1 butt">Crear cuenta</button></a><br>
+
+
+			  <!-- <a  href="registro.php" class="btn btn-mio1 butt">Crear cuenta</a>	 -->
 	</div>
 </div>
 

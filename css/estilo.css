@@ -1,10 +1,11 @@
 body{
 	overflow-x: hidden;
+	height: 100%;
+	margin:0;
 
 }
 
 /*MENU*/
-
 .menu_header{
 	background-color: #0b7b96;
 	font-family: 'Roboto', sans-serif;
@@ -23,18 +24,17 @@ body{
     background-color: #0b7b96;
 }
 
-
 .logo_menu{
 	padding-top: 10px;
 }
 
-
 /* FOOTER*/
 .nb-footer{
-   background-color: #4D5359;
-   position: relative;
- 
-   	
+	background-color: #4D5359;
+	width: 100%;
+	bottom: 0;
+	/*position: absolute;*/
+	height: auto;
 }
 
 .iconos{
@@ -45,7 +45,6 @@ body{
 	padding-top: 27px;
 }
 
-
 .span_pie{
 	margin-left: 20px;
 }
@@ -54,8 +53,7 @@ body{
 	color: white;	
 	text-decoration: none;
 	text-align: center;
-	font-family: 'Roboto', sans-serif;
-	
+	font-family: 'Roboto', sans-serif;	
 }
 
 .enlace_pie{
@@ -75,17 +73,15 @@ body{
 	
 }
 
-@media (min-width: 1200px){
-.container {
-
-	}
-}	
-
-/* EQUIPO*/
-
-.fila_equipo1,
+/*EQUIPO*/
+.fila_equipo1{
+	padding-top: 50px;
+	padding-bottom: 40px;
+}
 .fila_equipo2 {
-	padding-bottom: 20px;
+	padding-top: 50px;
+	padding-bottom: 182px;
+
 }
 .profile_foto{
 	    width: 96px;
@@ -113,7 +109,6 @@ body{
 	padding-bottom: 10px;
 }
 
-
 .equipo h3{
 	font-size: 17px;
 	font-weight: bold;
@@ -127,7 +122,7 @@ body{
 
 .borde_equipo{
     border-radius: 8px;
-    background-color: rgba(232, 232, 232, 0.28);
+    background-color:#D9DADE;
     margin-bottom: 10px;
     padding-left: 30px;
     padding-bottom: 20px;
@@ -143,9 +138,8 @@ body{
 	    color: #0b7b96;
 }
 
-
-
 /* PROYECTO*/
+
 @media (min-width: 1200px){
 .in_grid{
 	width: 1100px;
@@ -200,7 +194,8 @@ body{
 }
 
 .no_ingrid1{
-background-color: rgba(232, 232, 232, 0.28);
+	background-color: #D9DADE;
+/*background-color: rgba(232, 232, 232, 0.28);*/
 }
 
 .imagen_calendario{
@@ -230,7 +225,6 @@ background-color: rgba(232, 232, 232, 0.28);
 	padding-top: 15px;
 	padding-bottom: 10px;
 	padding-right: 55px;
-
 }
 
 .lista_calendario span{
@@ -254,6 +248,15 @@ background-color: rgba(232, 232, 232, 0.28);
 	color: #0b7b96;
 	
 }
+
+.fila_iconos i:hover{	
+	transform:scale(1.2);
+    -ms-transform:scale(1.1); // IE 9 
+    -moz-transform:scale(1.1); // Firefox 
+    -webkit-transform:scale(1.1); // Safari and Chrome 
+    -o-transform:scale(1.1); // Opera	
+}
+
 .fila_iconos h3{	
 
 	font-family: 'Sansita', sans-serif;
@@ -299,13 +302,10 @@ background-color: rgba(232, 232, 232, 0.28);
 .ultima hr{	
 	border-top: 2px solid white;
 	width: 20%;
-	padding-top: 10px;
-
-	
+	padding-top: 10px;	
 }
 
 /*CALENDARIO*/
-
 .btn,
 .btn:active,
 .btn:hover{
@@ -326,20 +326,15 @@ a:hover{
    text-decoration: none; 
 }
 
-a li{
-	
-	list-style:none;
-	
+a li{	
+	list-style:none;	
 }
 
 /*Para img responsivas*/
-#sala img {
-
-	
-	 width:100%;
-
+#sala img {	
+ width:100%;
 }
-/**/
+
 .bloquesala{
     margin-top: 1%;
 }
@@ -348,7 +343,6 @@ a li{
 .tabla_admin td, .tabla_admin th{
     padding: 0.25em 0.5em 0.25em 0.5em;
 }
-
 .ventanamodal{
     background: white;
     border: 2px solid black;
@@ -365,7 +359,6 @@ a li{
 }
 
 #Pie_ajuste{
-
 	width: 100%;
 }
 
@@ -418,66 +411,125 @@ fieldset[disabled] .btn-mio1.active {
 }
 
 /*pagina login*/
-
 #inicio{
-	margin-top: 10%;
-	margin-right: 0;
-	padding-bottom: 6.7%;
+	margin-top: 18%;
+    margin-right: 0;
+    padding-bottom: 21.8%;
+}
+
+#cliente{
+/*border:1px solid rgba(9,64,116,0.8);*/
+background-color: #D9DADE;
+/*background-color: rgba(11,123,150,0.7);*/
+padding-bottom: 29px;
+border-radius: 5px;
+}
+
+ #nocliente{
+/*border:1px solid rgba(9,64,116,0.8);*/  
+padding-bottom: 29px;
+background-color: #D9DADE;
+/*background-color: rgba(11,123,150,0.7);
+*/border-radius: 5px;
+}
+
+#inicio p{
+  color: #0b7b96;
+font-family: 'Lato', sans-serif;
+}
+
+.recupera{
+	padding-right: 50px;
+	text-align: right;
 }
 
 .titulo {
 	text-align: center;
 	padding-bottom: 5%;
 	font-size: 1.8em;
+  	color: #0b7b96;
+	font-family: 'Sansita', sans-serif;
 }
 
 #nocliente .titulo{
 	padding-bottom: 7%;
-
+	font-family: 'Sansita', sans-serif;
 }
 
 #nocliente p {
-    padding-bottom: 8%;
-    font-size: 1.2em;
+	font-size: 1.21em;
+    color: #0b7b96;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
 }
 
-#butt{
-	padding-top: 14px;
+.butt{
 	display: block;
 	text-align: center;
-	width: 30%;
+	/*width: 30%;*/
 	margin-left: auto;
 	margin-right: auto;
+	border-radius: 5px;
+	font-family: 'Lato', sans-serif;
 }
 
+/* RECUPERAR CONTRASEÑA*/
+#inicio_contraseña{
+	padding-top: 20%;
+	padding-bottom: 25.5%;
+}
+
+.col-center{
+    float: none;
+    margin: 0 auto;
+}
+
+.titulo2{
+	font-size: 25px;
+	color: #0b7b96;
+	text-align: center;
+	padding-bottom: 10px;
+	font-family: 'Sansita', sans-serif;
+
+}
+#cliente_contraseña{
+	width: 30%;
+	background-color: #D9DADE;
+	/*background-color: rgba(11,123,150,0.7);*/
+	border-radius: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.form-control {
+    display: block;
+    width: 80%;
+    height: 34px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #fff;
+    background-image: none;
+    }
+
+/*FORMULARIO REGISTRO*/
+.form_registro{
+	padding-top: 8%;
+	padding-bottom: 17.4%;
+}
 
 #registro{
-	margin-right: 0 !important;
+	padding-top: 20px;
+	padding-bottom: 12px;	
+	background-color: #D9DADE;
+	/*background-color: rgba(11,123,150,0.7);*/
+	border-radius: 5px;
 }
 
-#cliente{
-border:1px solid rgba(9,64,116,0.8); 
-background-color: rgba(11,123,150,0.7);
-
-
-}
-
- #nocliente{
-border:1px solid rgba(9,64,116,0.8);  
-padding-bottom: 29px;
-background-color: rgba(11,123,150,0.7);
-
-
-}
-
-
-/*registro*/
-
-#registro{
-	margin-top: 3%;
-	margin-right: 0;
-	padding-bottom: 2%;
-    margin-bottom: 23px;
-	border:1px solid rgba(9,64,116,0.8); 
-	background-color: rgba(11,123,150,0.7);
-}
+#formregistro p{
+	color: #0b7b96;
+	padding-right: 50px;
+	text-align: right;
+	font-family: 'Lato', sans-serif;
+} 

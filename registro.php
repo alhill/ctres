@@ -5,15 +5,20 @@
 
 <head>
 	<title>Registro de usuarios</title>
-	<!--HOJA CSS provisional-->
-	<link rel="stylesheet" type="text/css" href="css/estilo.css">
 
+	<meta charset="utf-8">
+	
 	<!--BOOTSTRAP-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script type="text/javascript" src="validar.js"></script>
+
+	<!--HOJA CSS provisional-->
+	<link rel="stylesheet" type="text/css" href="css/estilo.css">
+	<link href="https://fonts.googleapis.com/css?family=Sansita" rel="stylesheet">  
+	<link href="https://fonts.googleapis.com/css?family=Lato:100,100i,400,700" rel="stylesheet">
 </head>
 
 <body>
@@ -22,16 +27,16 @@
     include 'header.php';
  ?>
 
-<div class="row">
+<div class="row form_registro">
     
     <?php if (session_status() == PHP_SESSION_NONE) {session_start();} ?>
 
 	<div class="col-md-4 col-md-offset-4" id="registro">
 
-		<h2 class="titulo">Crear cuenta</h2>
+		<h2 class="titulo2">Crear cuenta</h2>
 
 		<form method="POST" action="insertar.php" id="formregistro" name="registro">
-			  <div class="form-group" >
+			  <div class="form-group " >
 			    <input type="text" class="form-control" id="nom" name="nombre" placeholder="Nombre">
 			  </div>
 
@@ -68,9 +73,9 @@
             }                         
             ?>
 
-            <p><a href="pagina_login.php">¿Ya eres usuario?</a></p> <br>
+            <a href="pagina_login.php"><p>¿Ya eres usuario?</p></a> <br>
 
-			<button type="button" id="butt" class="btn btn-mio1" name="insertar" onclick=validar();>Entrar</button> 				
+			<button type="button" class="btn btn-mio1 butt" name="insertar" onclick=validar();>Entrar</button> 				
 		</form>
 
 	</div>

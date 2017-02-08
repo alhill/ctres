@@ -67,7 +67,7 @@ if (isset($_POST['from'])) {
                 $id = trim($row[0]);   
 
         // redireccionamos a nuestro calendario
-        header("Location:inicio_ejemplo.php"); 
+        header("Location:calendario_index.php"); 
         
        }
       }

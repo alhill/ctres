@@ -1,47 +1,39 @@
 /* TEAM */
 	Desarrolladores: Mª Virginia Rivas
 	Profesión: Periodista
-	Contacto: mariav53@gmail.com
-	Twitter: @NorfiCarrodegua
+	Contacto: mariav53[at]gmail.com
 	Ciudad: Madrid
 	
 	Desarrolladores: Eva González
 	Profesión: E-learning
-	Contacto: evamgonzalezn@gmail.com
-	Twitter: @NorfiCarrodegua
+	Contacto: evamgonzalezn[at]gmail.com
 	Ciudad: Madrid
 
 	Desarrolladores: Carla Écija
 	Profesión: Ambientóloga 
-	Contacto: karlaecija@gmail.com
-	Twitter: @
+	Contacto: karlaecija[at]gmail.com	
 	Ciudad: Madrid
 
 	Desarrolladores: Álvaro Gil
 	Profesión: Técnico de sonido
-	Contacto: alvarogil91@gmail.com
-	Twitter: @NorfiCarrodegua
+	Contacto: alvarogil91[at]gmail.com
 	Ciudad: Madrid
 
 	Desarrolladores: Carlos de Miguel
 	Profesión: Programador Junior PHP
-	Contacto: carlosdmm93@gmail.com
-	Twitter: @Carlosdmm93
+	Contacto: carlosdmm93[at]gmail.com	
 	Ciudad: Madrid	
 
 /* SITE */
-	Last update: 2017/2/115
+	Last update: 2017/2/08
 	Idioma: Spanish
 	Standards: HTML5, CSS3, PHP, MySql, JavaScript.
 	Software utilizado para el desarrollo:Sublime Text, FileZilla, Xampp.
-	Protocolos: IPv4, IPv6, HTTP 1.1, SPDY y HTTP/2
-	Servicio de Hosting: https://ifastnet.com/
-	Tipo de alojamiento: Servidor VPS
+	
 
-/* THANKS */
- 
-Name: Marc Barcelo xxxxxxxx (email)
-Name: Diego Collado (email) mbarcelo@itteria.cat 
+/* THANKS */ 
+Name: Marc Barcelo (mbarcelo[at]itteria.cat)
+Name: Diego Collado  
 	
 
 	

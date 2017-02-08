@@ -3,6 +3,8 @@
 <head>
 
 	<title>Recuperar contrasena</title>
+
+	<meta charset="utf-8">
 	<!--BOOTSTRAP-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
@@ -11,22 +13,24 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<!--HOJA CSS-->
 	<link rel="stylesheet" type="text/css" href="css/estilo.css">
+	<link href="https://fonts.googleapis.com/css?family=Sansita" rel="stylesheet">  
+	<link href="https://fonts.googleapis.com/css?family=Lato:100,100i,400,700" rel="stylesheet">
 </head>
 
 <body>
 
 <?php include 'header.php'; ?>
 
-<div class="row" id="inicio">	
+<div class="row" id="inicio_contraseña">	
 
-	<div class="col-md-12" id="cliente" >
-		<h2 class="titulo">Recuperar Contraseña</h2>
+	<div class="col-md-12  col-center" id="cliente_contraseña" >
+		<h2 class="titulo2">Recuperar Contraseña</h2>
 			<form method="POST" action="#">
 
-				<div class="form-group" >
+				<div class="form-group cliente_contra" >
 				    <input type="email" class="form-control" id="email" name="email" placeholder="Email" >
 				</div>
-				<button type="submit" id="butt" class="btn btn-mio1" name="log">Enviar</button>
+				<button type="submit" class="btn btn-mio1 butt" name="log">Enviar</button>
 			</form>
 	</div>
 </div>
