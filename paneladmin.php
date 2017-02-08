@@ -23,6 +23,29 @@
 
 <body>
     
+    <?php 
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+    if(!isset($_SESSION['privilegios']) || ($_SESSION['privilegios']<2 && isset($_SESSION['privilegios'])))
+    {
+        header('Location: index.php');
+        die();
+    }
+
+    $bbddusuarios = mysqli_query($conexion, "SELECT * FROM registro"); 
+
+    if(isset($_SESSION['privilegios']) && $_SESSION['privilegios']==3){
+        $propi = "";
+    }else{
+        $propi = "WHERE propietario='" . $_SESSION['usuario'] . "'";
+    }
+    
+    $querita = "SELECT * FROM salas " . $propi;
+    $bbddsalas = mysqli_query($conexion, $querita);
+
+    ?>
+    
     <div id="borrar" class="modal fade ventanamodal" role="dialog">
         <div class="loginaso">
             <p>¿Está seguro de que desea borrar el usuario <span class="nombredeusuario"></span>?</p>
@@ -59,44 +82,59 @@
     
     <div class="container">
     
-    <?php 
-    if($_SESSION['privilegios']<3)
-    {
-        die("No tienes privilegios para acceder a esta zona");
-    }
-    $bbddusuarios = mysqli_query($conexion, "SELECT * FROM registro"); 
-    $bbddsalas = mysqli_query($conexion, "SELECT * FROM salas");
+    
+    <?php
+        if(isset($_SESSION["privilegios"]) && ($_SESSION["privilegios"]==3))
+        {
+            echo("<input class='btn-mio1' type='button' value='Crear nuevo usuario' onclick=window.location=" . '"registro.php"; >');
+            echo("<input class='btn-mio1' type='button' value='Crear nueva sala' onclick=window.location=" . '"nuevasala.php"; >');
+        }
+    ?>
+  
+    
+    <?php
+        if(isset($_SESSION["privilegios"]) && ($_SESSION["privilegios"]==2))
+        {
+            echo("<input class='btn-mio1' type='button' value='Editar usuario' onclick='enlaceEditar(". '"' . $_SESSION['usuario'] . '"' . ")'>");
+        }    
+        
     ?>
     
-    <input class="btn-mio1" type="button" value="Crear nuevo usuario" onclick="window.location = 'registro.php';">
-    
-    <h2>Lista de usuarios</h2>
-        
     <?php
+        if(isset($_SESSION["privilegios"]) && ($_SESSION["privilegios"]==3))
+        {
+            echo("<h2>Lista de usuarios</h2>");
     
-    echo ("<table class='tabla_admin'><th><b>ID</b></th><th><b>Usuario</b></th><th><b>Contraseña</b></th><th><b>Email</b></th><th><b>Nombre</b></th><th><b>Apellidos</b></th><th><b>Privilegios</b></th>");
-    while($arrayusuarios = $bbddusuarios -> fetch_assoc()){  //Convierte $resultado, que es un objeto mySQL en un array asociativo (clave, valor)
-        echo ("<tr><td>".$arrayusuarios["id"]."</td><td>".$arrayusuarios["usuario"]."</td><td>".$arrayusuarios["contrasena"]."</td><td>".$arrayusuarios["email"]."</td><td>".$arrayusuarios["nombre"]."</td><td>".$arrayusuarios["apellido"]."</td><td>".$arrayusuarios["privilegios"]."</td><td><input class='btn-mio1' type='button' value='Modificar' onclick=modalModif(&#34;".$arrayusuarios["usuario"]."&#34;);></td><td><input class='btn-mio1' type='button' value='Borrar' class='botonmodif' onclick=modalBorr(&#34;".$arrayusuarios["usuario"]."&#34;);></td></tr>");
-    }
-    echo ("</table>");
+            echo ("<table class='tabla_admin'><thead><th><b>ID</b></th><th><b>Usuario</b></th><th><b>Contraseña</b></th><th><b>Email</b></th><th><b>Nombre</b></th><th><b>Apellidos</b></th><th><b>Privilegios</b></th></thead>");
+            while($arrayusuarios = $bbddusuarios -> fetch_assoc()){  //Convierte $resultado, que es un objeto mySQL en un array asociativo (clave, valor)
+            echo ("<tr><td>".$arrayusuarios["id"]."</td><td>".$arrayusuarios["usuario"]."</td><td>".$arrayusuarios["contrasena"]."</td><td>".$arrayusuarios["email"]."</td><td>".$arrayusuarios["nombre"]."</td><td>".$arrayusuarios["apellido"]."</td><td>".$arrayusuarios["privilegios"]."</td><td><input class='btn-mio1' type='button' value='Modificar' onclick=modalModif(&#34;".$arrayusuarios["usuario"]."&#34;);></td><td><input class='btn-mio1' type='button' value='Borrar' class='botonmodif' onclick=modalBorr(&#34;".$arrayusuarios["usuario"]."&#34;);></td></tr>");
+            }
+            echo ("</table>");
+        }
 
     ?>
-    
+        
     <h2>Lista de salas</h2>
-    <input class="btn-mio1" type="button" value="Crear nueva sala" onclick="window.location = 'nuevasala.php';">
     
     <form method="POST" action="" id="salasmodborr" name="salasmodborr"> 
         
     <?php 
-        
-        $numerodesalas = $bbddsalas->num_rows;
-        $contsala = 0;
-        echo ("<table class='tabla_admin'>");
-        while($arraysalas = $bbddsalas -> fetch_assoc()){
-            echo ("<tr><td>" . $arraysalas["id"] . "<td><td>" . $arraysalas["nombre"] . "<td><input class='btn-mio1' type='button' value='Modificar' onclick=modalModifSala(&#34;".$arraysalas["id"]."&#34;);></td><td><input class='btn-mio1' type='button' value='Borrar' class='botonmodif' onclick=modalBorrSala(&#34;".$arraysalas["id"]."&#34;);></td></tr>");
-        } 
-        
-        echo ("</table>");
+        if(isset($_SESSION["privilegios"]) && ($_SESSION["privilegios"]==3))
+        {
+            echo ('<table class="tabla_admin"><thead><th><b>ID</b></th><th><b>Nombre</b></th><th><b>Propietario</b></th></thead>');
+            while($arraysalas = $bbddsalas -> fetch_assoc()){
+                echo ("<tr><td>" . $arraysalas["id"] . "</td><td>" . $arraysalas["nombre"] . "</td><td>" . $arraysalas["propietario"] . "</td><td><input class='btn-mio1' type='button' value='Modificar' onclick=modalModifSala(&#34;".$arraysalas["id"]."&#34;);></td><td><input class='btn-mio1' type='button' value='Borrar' class='botonmodif' onclick=modalBorrSala(&#34;".$arraysalas["id"]."&#34;);></td></tr>");
+            } 
+
+            echo ("</table>");
+        }else{
+            echo ('<table class="tabla_admin"><thead><th><b>ID</b></th><th><b>Nombre</b></th></thead>');
+            while($arraysalas = $bbddsalas -> fetch_assoc()){
+                echo ("<tr><td>" . $arraysalas["id"] . "</td><td>" . $arraysalas["nombre"] . "</td><td><input class='btn-mio1' type='button' value='Modificar' onclick=modalModifSala(&#34;".$arraysalas["id"]."&#34;);></td></tr>");
+            } 
+
+            echo ("</table>");
+        }
     
     ?>
         

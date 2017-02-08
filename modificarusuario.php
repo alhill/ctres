@@ -42,12 +42,13 @@
 
 </head>
 <body>
+    
+<?php include "header.php"; ?>
 
 <div class="row" id="registro">
     
 <?php 
       
-    include "header.php";
     $url = $_SERVER['REQUEST_URI'];
     $usuario = parse_url($url, PHP_URL_QUERY);
     $resultado = mysqli_query($conexion, "SELECT * FROM registro WHERE usuario='$usuario'");
@@ -86,30 +87,32 @@
                 $elegida1 = "";
                 $elegida2 = "";
                 $elegida3 = "";
-                if($row["privilegios"]==1){$elegida1="selected"; }
+                if($row["privilegios"]==1){$elegida1="selected";}
                 if($row["privilegios"]==2){$elegida2="selected";}
                 if($row["privilegios"]==3){$elegida3="selected";}
             ?>
             
             <?php
                  
-          if (isset($_SESSION['privilegios']) && $_SESSION['privilegios'] > 1){ //CODIGO QUE CONDICIONE QUE ESTO APAREZCA SOLO SI EL USUARIO TIENE PRIVILEGIOS DE ADMINISTRACIÓN
+          if (isset($_SESSION['privilegios']) && $_SESSION['privilegios'] > 2){ //CODIGO QUE CONDICIONE QUE ESTO APAREZCA SOLO SI EL USUARIO TIENE PRIVILEGIOS DE ADMINISTRACIÓN
                 echo ('<div class="form-group">
                             <select id="privilegios" name="privilegios" form="formregistro">
-                              <option value="1">Usuario</option>
-                              <option value="2">Propietario</option>
-                              <option value="3">Administrador</option>
+                              <option value="1"' . $elegida1 . '>Usuario</option>
+                              <option value="2"' . $elegida2 . '>Propietario</option>
+                              <option value="3"' . $elegida3 . '>Administrador</option>
                             </select> 
                         </div>');
             }                         
             ?>          
   
-			<button type="submit" id="butt" class="btn btn-default" name="modificar">Modificar usuario</button>
+			<button type="submit" id="butt" class="btn btn-mio1" name="modificar">Modificar usuario</button>
 
 			 				
 		</form>
 	</div>
 </div>
+    
+<?php include "footer.php"; ?>
 
 </body>
 </html>

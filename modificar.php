@@ -4,13 +4,22 @@ include 'config.php';
 
 if (session_status() == PHP_SESSION_NONE) {session_start();}
 
-    if ((isset($_SESSION['privilegios']) && $_SESSION['privilegios'] < 3) || !isset($_SESSION['privilegios']))
+$url = $_SERVER['REQUEST_URI'];
+$usuario = parse_url($url, PHP_URL_QUERY);
+
+        if (
+        (!isset($_SESSION['privilegios']))
+        || 
+                (isset($_SESSION['privilegios']) 
+                && 
+                ($_SESSION['privilegios'] == 1 || $_SESSION['privilegios'] == 2) 
+                && 
+                ($_SESSION['usuario'] != $usuario))
+        )
     {
         die();
     }
 
-$url = $_SERVER['REQUEST_URI'];
-$usuario = parse_url($url, PHP_URL_QUERY);
 
     //DEBUG
     /* print_r($_POST);
@@ -20,8 +29,8 @@ $usuario = parse_url($url, PHP_URL_QUERY);
         $nombre = mysqli_real_escape_string ($conexion, $_POST['nombre']); // mysqli_real_escape_string ($con,...) EVITA INYECCIONES SQL
         $apellido = mysqli_real_escape_string ($conexion, $_POST['apellido']);
         $email = mysqli_real_escape_string ($conexion, $_POST['email']);
-        $privilegios = mysqli_real_escape_string ($conexion, $_POST['privilegios']);
         
+
         if (isset($_POST['contrasena'])){
             $contrasena = mysqli_real_escape_string ($conexion, $_POST['contrasena']);
             $contrasena2 = mysqli_real_escape_string ($conexion, $_POST['contrasena2']); 
@@ -34,12 +43,20 @@ $usuario = parse_url($url, PHP_URL_QUERY);
                 $buscarUser = "SELECT * FROM registro WHERE usuario ='$usuario'";
                 $ejecutar= mysqli_query($conexion, $buscarUser); 
                 $check = mysqli_num_rows($ejecutar); 
+                $fila = $ejecutar->fetch_assoc();
+            
                 if(isset($_POST['contrasena']) && $_POST['contrasena']!=''){
                     $contrasena = md5($_POST['contrasena']);
                 }else
                 {
-                    $fila = $ejecutar->fetch_assoc();
                     $contrasena = $fila['contrasena'];
+                }
+            
+                if(isset($_POST['privilegios'])){
+                    $privilegios = mysqli_real_escape_string ($conexion, $_POST['privilegios']);
+                }else
+                {
+                    $privilegios = $fila['privilegios'];
                 }
 
                 if ($check>0) {

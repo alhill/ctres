@@ -34,7 +34,7 @@ function modalBorrSala(sala){
         $("#borrarsala").modal();
         
         $("#aceptaborrarsala").click(function(){
-            window.location.href = 'borrar.php?' + sala; 
+            window.location.href = 'borrarsala.php?' + sala; 
         });
         $("#cancelaborrarsala").click(function(){
             $("#borrarsala").modal('hide');
@@ -49,12 +49,18 @@ function modalModifSala(sala){
         $("#modifsala").modal();
         
         $("#aceptamodifsala").click(function(){
-            window.location.href = 'modificarusuario.php?' + sala; 
+            window.location.href = 'modificarsala.php?' + sala; 
         });
         $("#cancelamodifsala").click(function(){
             $("#modifsala").modal('hide');
         });
+    });
+}
 
+function enlaceEditar(usuario){
+    $(document).ready(function(){
+        var link = "modificarusuario.php?" + usuario;
+        window.location.href = link;
     });
 }
 
