@@ -47,7 +47,7 @@ if (session_status() == PHP_SESSION_NONE) {session_start();}
 </head>
 <body>
 
-<div class="row" id="registro">
+<div class="row" >
     
 <?php 
       
@@ -61,7 +61,7 @@ if (session_status() == PHP_SESSION_NONE) {session_start();}
     
 ?>
 
-	<div class="col-md-4 col-md-offset-4" >
+	<div class="col-md-4 col-md-offset-4" id="registro">
 		<h2 class="titulo">Modificación de sala</h2>
 		<form method="POST" action="<?php echo('modificarsalascr.php?' . $id); ?>"  id="formregistro" name="registro">
 			  <div class="form-group" >
@@ -88,7 +88,8 @@ if (session_status() == PHP_SESSION_NONE) {session_start();}
 			  <div class="form-group">
                   <label>Descripción</label>
                   <textarea class="form-control" id="descripcion" name="descripcion" maxlength="295"></textarea>
-                  <script>document.getElementById("descripcion").value = "<?php echo($row["descripcion"]); ?>";</script>
+                  <script>document.getElementById("descripcion").value = `<?php echo($row["descripcion"]); ?>`;
+                  </script>
 			  </div>
             
                 <?php 
@@ -124,6 +125,6 @@ if (session_status() == PHP_SESSION_NONE) {session_start();}
 
 	</div>
 </div>
-    
+<?php include "footer.php"; ?>
 </body>
 </html>
