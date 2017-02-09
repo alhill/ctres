@@ -88,7 +88,7 @@ if (session_status() == PHP_SESSION_NONE) {session_start();}
 			  <div class="form-group">
                   <label>Descripción</label>
                   <textarea class="form-control" id="descripcion" name="descripcion" maxlength="295"></textarea>
-                  <script>document.getElementById("descripcion").value = "<?php echo($row["descripcion"]); ?>";</script>
+                  <script>document.getElementById("descripcion").value = `<?php echo($row["descripcion"]); ?>`;</script>
 			  </div>
             
                 <?php 
