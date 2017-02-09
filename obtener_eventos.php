@@ -1,6 +1,7 @@
 <?php
 
 
+
 // Incluimos nuestro archivo config
 include 'config.php'; 
 

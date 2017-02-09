@@ -10,4 +10,6 @@
 	mysqli_select_db($conexion, $db) or die('No se pudo seleccionar la base de datos');
 
     //if ($conexion){echo ("La conexión con la base de datos funciona correctamente");}
+
+    $base_url="http://localhost/repo2/";
 ?>

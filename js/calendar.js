@@ -1,4 +1,10 @@
-
+/**
+ * Bootstrap based calendar full view.
+ *
+ * https://github.com/Serhioromano/bootstrap-calendar
+ *
+ * User: Sergey Romanov <serg4172@mail.ru>
+ */
 "use strict";
 
 Date.prototype.getWeek = function() {
@@ -40,8 +46,8 @@ if(!String.prototype.formatNum) {
 		// Initial date. No matter month, week or day this will be a starting point. Can be 'now' or a date in format 'yyyy-mm-dd'
 		day:                'now',
 		// Day Start time and end time with time intervals. Time split 10, 15 or 30.
-		time_start:         '09:00',// antes 06
-		time_end:           '20:00', //antes
+		time_start:         '06:00',
+		time_end:           '22:00',
 		time_split:         '30',
 		// Source of events data. It can be one of the following:
 		// - URL to return JSON list of events in special format.
@@ -96,11 +102,8 @@ if(!String.prototype.formatNum) {
 			day:   {
 				enable: 1
 			}
-
-			
-
 		},
-		merge_holidays:     true,
+		merge_holidays:     false,
 		// ------------------------------------------------------------
 		// CALLBACKS. Events triggered by calendar class. You can use
 		// those to affect you UI
@@ -170,8 +173,8 @@ if(!String.prototype.formatNum) {
 
 		week:        'Week {0}',
 		all_day:     'All day',
-		time:        '',
-		events:      '',
+		time:        'Time',
+		events:      'Events',
 		before_time: 'Ends before timeline',
 		after_time:  'Starts after timeline',
 
@@ -1052,7 +1055,7 @@ if(!String.prototype.formatNum) {
 		}
 		var self = this;
 		var activecell = 0;
-		var downbox = $(document.createElement('div')).attr('id', 'cal-day-tick');
+		var downbox = $(document.createElement('div')).attr('id', 'cal-day-tick').html('<i class="icon-chevron-down glyphicon glyphicon-chevron-down"></i>');
 
 		$('.cal-month-day, .cal-year-box .span3')
 			.on('mouseenter', function() {
@@ -1121,7 +1124,7 @@ if(!String.prototype.formatNum) {
 		});
 
 		$('a.event-item').mouseenter(function() {
-			$('a[data-event-id="' + $(this).data('event-id') + '"]').closest('.cal-cell1').addClass('day-highlight dh-' + $(this).data('event-id'));
+			$('a[data-event-id="' + $(this).data('event-id') + '"]').closest('.cal-cell1').addClass('day-highlight dh-' + $(this).data('event-class'));
 		});
 		$('a.event-item').mouseleave(function() {
 			$('div.cal-cell1').removeClass('day-highlight dh-' + $(this).data('event-class'));

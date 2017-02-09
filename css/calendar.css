@@ -276,7 +276,7 @@
   z-index: -1;
 }
 #cal-day-box .day-event {
-  max-width: 200px;
+  max-width: 800px;
   overflow: hidden;
 }
 #cal-day-box .day-highlight {
@@ -450,10 +450,10 @@ span[data-cal-date]:hover {
   cursor: default;
 }
 .cal-day-today {
-  background-color: #e8fde7;
+  background-color: #D9DADE;
 }
 .cal-day-today span[data-cal-date] {
-  color: darkgreen;
+  color: #0b7b96;
 }
 .cal-month-box .cal-day-today span[data-cal-date] {
   font-size: 1.9em;
@@ -483,15 +483,15 @@ span[data-cal-date]:hover {
 }
 #cal-slide-content {
   padding: 20px;
-  color: #ffffff;
-  background-color: steelblue;
+  color: #0b7b96;
+  background-color: #c3c3c3;
 }
 #cal-slide-tick {
   background-image: url("../img/tick.png?2");
 }
 #cal-slide-content a.event-item {
-  color: #ffffff;
-  font-weight: normal;
+ color: #0b7b96;
+  font-weight: bold;
   line-height: 22px;
 }
 .events-list {
