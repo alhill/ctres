@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-02-2017 a las 08:51:25
+-- Tiempo de generación: 09-02-2017 a las 12:49:32
 -- Versión del servidor: 10.1.19-MariaDB
 -- Versión de PHP: 7.0.13
 
@@ -26,7 +26,6 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `salas`
 --
 
-DROP TABLE IF EXISTS `salas`;
 CREATE TABLE `salas` (
   `id` int(11) NOT NULL,
   `nombre` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
@@ -41,14 +40,14 @@ CREATE TABLE `salas` (
 --
 
 INSERT INTO `salas` (`id`, `nombre`, `urlimagen`, `descripcion`, `subtitulo`, `propietario`) VALUES
-(1, 'Sala Venecia', 'img/Salas/Sala1.jpg', '<li>Capacidad de 10 personas</li>\n<li>Ordenador de sobremesa</li>\n<li>25 m<sup>2</sup></li>', 'Especial para pequeñas reuniones', ''),
-(2, 'Salón Nelson Mandela', 'img/Salas/Sala2.jpg', '<li>Capacidad de 250 personas</li><li>Mesa para ponentes</li><li>325 m<sup>2</sup></li>', 'Especial para conferencias', ''),
-(3, 'Sala Salvador Dalí', 'img/Salas/Sala3.jpg', '<li>Capacidad de 12 personas</li><li>Mesa redonda</li><li>18 m<sup>2</sup></li', 'Especial para metodología Scrum', ''),
-(4, 'Sala Rafael Casanova', 'img/Salas/Sala4.jpg', '<li>Capacidad de 200 personas</li><li>Atril para ponencias</li><li>180 m<sup>2</sup></li', 'Formación para empleados', ''),
-(5, 'Sala Pep Guardiola', 'img/Salas/Sala5.jpg', '<li>Capacidad de 26 personas</li><li>Pizarra</li><li>30 m<sup>2</sup></li', 'Especial para trabajo en equipo', ''),
-(6, 'Sala Antoni Gaudí', 'img/Salas/Sala6.jpg', '<li>Capacidad de 60 personas</li><li>Proyector</li><li>80 m<sup>2</sup></li', 'Para reuniones de accionistas', ''),
-(7, 'Sala Londres', 'img/Salas/Sala7.jpg', '<li>Capacidad de 20 personas</li><li>Pizarra y proyector</li><li>27 m<sup>2</sup></li', 'Especial para formación', ''),
-(8, 'Materiales disponibles', 'img/Salas/Sala8.jpg', 'Proyector, PC sobremesa, portátiles\nmicrófonos de mesa, micrófonos de diadema,\n sistema de traducción simultanea, etc', '', '');
+(1, 'Sala de reuniones Caracas', 'img/Salas/Sala1.jpg', '<b>Equipada para realizar reuniones de trabajo</b>\r\n<li>Capacidad de 10 personas</li>\r\n<li>Pantalla</li>\r\n<li>25 m<sup>2</sup></li>', '', 'CTRES'),
+(2, 'Sal&oacuten de actos Segovia', 'img/Salas/Sala2.jpg', '<b>Equipada para realizar eventos\r\ny conferencias</b>\r\n<li>Capacidad de 250 personas</li><li>Mesa para ponentes</li><li>325 m<sup>2</sup></li>', '', 'CTRES'),
+(3, 'Sala de reuniones Madrid', 'img/Salas/Sala3.jpg', '<b>Equipada para realizar reuniones de trabajo</b>\r\n<li>Capacidad de 12 personas</li><li>Mesa redonda</li><li>18 m<sup>2</sup></li', '', 'CTRES'),
+(4, 'Sal&oacuten de actos Salamanca', 'img/Salas/Sala4.jpg', '<b>Equipada para eventos\r\ny conferencias</b>\r\n<li>Capacidad de 50 personas</li><li>Atril para ponencias</li><li>180 m<sup>2</sup></li', '', 'CTRES'),
+(5, 'Sala de reuniones Soria', 'img/Salas/Sala5.jpg', '<b>Equipada para realizar reuniones de trabajo</b>\r\n<li>Capacidad de 26 personas</li><li>Pizarra</li><li>30 m<sup>2</sup></li>\r\n<li>Proyector</li>', '', 'CTRES'),
+(6, 'Sala Biblioteca Valladolid', 'img/Salas/Sala6.jpg', '<b>Especial para lectura e investigaci&oacuten</b>\r\n<li>Capacidad de 80 personas</li><li>Sala lectura</li>\r\n<li>Sala investigaci&oacuten</li><li>120 m<sup>2</sup></li', '', 'CTRES'),
+(7, 'Sala de Formaci&oacuten Barcelona', 'img/Salas/Sala7.jpg', '<b>Equipado para realizar sesiones formativas</b>\r\n<li>Capacidad de 20 personas</li><li>Pizarra y proyector</li><li>27 m<sup>2</sup></li', '', 'CTRES'),
+(8, 'Materiales disponibles', 'img/Salas/Sala8.jpg', '<li>Proyectores.</li>\r\n<li>PCs y port&aacutetiles.</li>\r\n<li>Pizarras.</li>\r\n<li>Impresoras.</li>', '', 'CTRES');
 
 --
 -- Índices para tablas volcadas

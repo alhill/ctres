@@ -65,7 +65,7 @@ THE SOFTWARE.
             maxDate: new pMoment().add(100, "y"),
             showToday: true,
             collapse: true,
-            language: "en",
+            language: "es",
             defaultDate: "",
             disabledDates: false,
             enabledDates: false,
@@ -73,14 +73,14 @@ THE SOFTWARE.
             useStrict: false,
             direction: "auto",
             sideBySide: false,
-            daysOfWeekDisabled: [0,6],
+            daysOfWeekDisabled: [0,6]
         },
 
 		icons = {
-		    time: 'glyphicon glyphicon-time',
+		    time: 'glyphicon glyphicon-time', 
 		    date: 'glyphicon glyphicon-calendar',
-		    up: 'glyphicon glyphicon-chevron-up',
-		    down: 'glyphicon glyphicon-chevron-down'
+//		    up: 'glyphicon glyphicon-chevron-up',
+//		    down: 'glyphicon glyphicon-chevron-down'
 		},
 
         picker = this,
@@ -436,8 +436,10 @@ THE SOFTWARE.
                 } else if ((year == endYear && endMonth < i) || (year > endYear)) {
                     $(months[i]).addClass('disabled');
                 }
+				
             }
-
+			
+		
             html = '';
             year = parseInt(year / 10, 10) * 10;
             yearCont = picker.widget.find('.datepicker-years').find(
@@ -462,8 +464,8 @@ THE SOFTWARE.
             var table = picker.widget.find('.timepicker .timepicker-hours table'), html = '', current, i, j;
             table.parent().hide();
             if (picker.use24hours) {
-                current = 0;
-                for (i = 0; i < 6; i += 1) {
+                current = 9;
+                for (i = 9; i < 12; i += 1) {
                     html += '<tr>';
                     for (j = 0; j < 4; j += 1) {
                         html += '<td class="hour">' + padLeft(current.toString()) + '</td>';
@@ -624,11 +626,13 @@ THE SOFTWARE.
 
 		actions = {
 		    incrementHours: function () {
-		        checkDate("add", "hours", 1);
+		        checkDate("disable"); //deshabilito el checkdate para que no aparezca el incremento de horas 
+				                              //que está delimitado a un intervalo concreto de horas el código modificado
+				                              // checkDate("add", "hours", 1); Igual para los siguientes
 		    },
 
 		    incrementMinutes: function () {
-		        checkDate("add", "minutes", picker.options.minuteStepping);
+		        checkDate("disable");
 		    },
 
 		    incrementSeconds: function () {
@@ -918,7 +922,7 @@ THE SOFTWARE.
                         '<li' + (picker.options.collapse ? ' class="collapse in"' : '') + '>' +
                             '<div class="datepicker">' + dpGlobal.template + '</div>' +
                         '</li>' +
-                        '<li class="picker-switch accordion-toggle"><a class="btn" style="width:100%"><span class="' + picker.options.icons.time + '"></span></a></li>' +
+                        '<li class="picker-switch accordion-toggle"><a class="btn" style="width:50%"><span class="' + picker.options.icons.time + '"></span></a></li>' +
                         '<li' + (picker.options.collapse ? ' class="collapse"' : '') + '>' +
                             '<div class="timepicker">' + tpGlobal.getTemplate() + '</div>' +
                         '</li>' +
@@ -926,12 +930,12 @@ THE SOFTWARE.
                 }
                 ret += '</div>';
                 return ret;
-            } else if (picker.options.pickTime) {
-                return (
-                    '<div class="bootstrap-datetimepicker-widget dropdown-menu">' +
-                        '<div class="timepicker">' + tpGlobal.getTemplate() + '</div>' +
-                    '</div>'
-                );
+//            } else if (picker.options.pickTime) {
+//                return (
+//                    '<div class="bootstrap-datetimepicker-widget dropdown-menu">' +
+//                        '<div class="timepicker">' + tpGlobal.getTemplate() + '</div>' +
+//                    '</div>'
+//                );
             } else {
                 return (
                     '<div class="bootstrap-datetimepicker-widget dropdown-menu">' +
@@ -989,9 +993,9 @@ THE SOFTWARE.
             return (
                 '<div class="timepicker-picker">' +
                     '<table class="table-condensed">' +
-						'<tr>' +
-							'<td><a href="#" class="btn" data-action="incrementHours"><span class="' + picker.options.icons.up + '"></span></a></td>' +
-							'<td class="separator"></td>' +
+//						'<tr>' +
+//							'<td><a href="#" class="btn" data-action="incrementHours"><span class="' + picker.options.icons.up + '"></span></a></td>' +
+//							'<td class="separator"></td>' +
 							'<td>' + (picker.options.useMinutes ? '<a href="#" class="btn" data-action="incrementMinutes"><span class="' + picker.options.icons.up + '"></span></a>' : '') + '</td>' +
                             (picker.options.useSeconds ?
                                 '<td class="separator"></td><td><a href="#" class="btn" data-action="incrementSeconds"><span class="' + picker.options.icons.up + '"></span></a></td>' : '') +
