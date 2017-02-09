@@ -65,9 +65,7 @@ if (isset($_POST['from'])){
         // redireccionamos a nuestro calendario
         //header("Location:$base_url"); 
         header("Location:calendario_index.php"); 
-
-        }
-    
+        }    
 }
 
 ?>
@@ -315,10 +313,13 @@ if (isset($_POST['from'])){
                     </div>
                     <div id="content" style="display: none;">
                         <select class="form-control" name="listas[]" id="tipo1">
-                            <option value="Biblioteca">Sala Biblioteca</option>
-                            <option value="formacion">Sala de formación </option>
-                            <option value="informatica">Sala de informática </option>
-                            <option value="actos">Sala de actos</option>                        
+                             <option value="Biblioteca">Sala de Reuniones Caracas</option>
+                                <option value="informatica">Sala de Reuniones Madrid </option>
+                                <option value="actos">Sala de Reuniones Soria</option> 
+                                <option value="formacion">Salón de Actos Segovia </option>
+                                <option value="actos">Salón de Actos Salamanca</option> 
+                                <option value="actos">Sala Biblioteca Valladolid</option> 
+                                <option value="actos">Sala de Formación Barcelona</option>               
                         </select>
                     </div>
 
@@ -350,6 +351,8 @@ if (isset($_POST['from'])){
         checkedd = document.getElementById("checkbox2");
             if (checkedd.checked) {
             document.getElementById('tipo1').disabled = true;
+            } else{
+                document.getElementById('tipo1').disabled = false;
             }
         }
     </script>          
@@ -357,9 +360,8 @@ if (isset($_POST['from'])){
                        <label for="tipo">  <input type="checkbox" name="opciones" id="checkbox2" value="material" onchange="javascript:showContent2(); hideContent2(); disableLista()" />Materiales (Presione Ctrl + click de ratón para seleccionar varias opciones) </label>
                     </div>
 
-                    <div id="content2" style="display: none;">
-                        <select multiple class="form-control" name="listas[]" id="tipo2">
-                            
+                     <div id="content2" style="display: none;">
+                        <select multiple class="form-control" name="listas[]" id="tipo2">              
                             <option value="Proyector">Proyector</option>
                             <option value="Ordenador">Ordenador</option>
                             <option value="Impresora">Impresora </option>
