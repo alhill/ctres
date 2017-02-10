@@ -394,5 +394,6 @@ if (isset($_POST['from'])){
   </div>
 </div>
 </div>
+  <?php include 'footer.php'; ?>
 </body>
 </html>

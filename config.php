@@ -11,5 +11,5 @@
 
     //if ($conexion){echo ("La conexión con la base de datos funciona correctamente");}
 
-    $base_url="http://localhost/repo2/";
+    $base_url="http://localhost/ctres/";
 ?>
