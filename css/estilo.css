@@ -524,7 +524,6 @@ font-family: 'Lato', sans-serif;
 #cliente_contraseña{
 	width: 30%;
 	background-color: #D9DADE;
-	/*background-color: rgba(11,123,150,0.7);*/
 	border-radius: 5px;
 	margin-left: auto;
 	margin-right: auto;
@@ -552,7 +551,6 @@ font-family: 'Lato', sans-serif;
 	padding-top: 20px;
 	padding-bottom: 12px;	
 	background-color: #D9DADE;
-	/*background-color: rgba(11,123,150,0.7);*/
 	border-radius: 5px;
 }
 
@@ -567,4 +565,67 @@ font-family: 'Lato', sans-serif;
 
 	margin-left: 10%
 
+}
+
+/*Nuevas class e id con _admin para colores verdes*/
+
+.titulo_admin {
+	text-align: center;
+	padding-bottom: 5%;
+	font-size: 1.8em;
+  	color: #5C9566;
+	font-family: 'Sansita', sans-serif;
+}
+
+#registro_admin{
+	padding-top: 20px;
+	padding-bottom: 12px;	
+	background-color: #C3D8C7;
+	border-radius: 5px;
+}
+
+.btn-mio1_admin { 
+  color: #FFFFFF; 
+  background-color: #5C9566; 
+  border-color: none; 
+} 
+
+.btn-mio1_admin:hover, 
+.btn-mio1_admin:focus, 
+.btn-mio1_admin:active, 
+.btn-mio1_admin.active, 
+.open .dropdown-toggle.btn-mio1_admin { 
+  color: #FFFFFF; 
+  background-color: #4D5359; 
+  border-color: none; 
+} 
+ 
+.btn-mio1_admin:active, 
+.btn-mio1_admin.active, 
+.open .dropdown-toggle.btn-mio1_admin { 
+  background-image: none; 
+} 
+ 
+.btn-mio1_admin.disabled, 
+.btn-mio1_admin[disabled], 
+fieldset[disabled] .btn-mio1_admin, 
+.btn-mio1_admin.btn-mio1_admin.disabled:hover, 
+.btn-mio1_admin[disabled]:hover, 
+fieldset[disabled] .btn-mio1_admin:hover, 
+.btn-mio1_admin.disabled:focus, 
+.btn-mio1_admin[disabled]:focus, 
+fieldset[disabled] .btn-mio1_admin:focus, 
+.btn-mio1_admin.disabled:active, 
+.btn-mio1_admin[disabled]:active, 
+fieldset[disabled] .btn-mio1_admin:active, 
+.btn-mio1_admin.disabled.active, 
+.btn-mio1_admin[disabled].active, 
+fieldset[disabled] .btn-mio1_admin.active { 
+  background-color: #0B7B96; 
+  border-color: none; 
+} 
+ 
+.btn-mio1_admin .badge { 
+  color: #0B7B96; 
+  background-color: #FFFFFF; 
 }
