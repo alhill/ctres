@@ -39,11 +39,19 @@
     // cuerpo
     $evento=$row['body'];
 
-    $opciones=$row['opciones'];
-    //$lista=$row['listas'];
+    // Salas o materiales
+    
+    if (isset($row['opciones'])){
+        $opciones=$row['opciones'];
 
-    $listas = $row['lista'];
+        if (isset($row['lista_salas'])){
+            $lista_salas = $row['lista_salas'];
+        }
 
+        if (isset($row['lista_materiales'])){
+            $lista_salas = $row['lista_materiales'];
+        }
+    }  
     // Fecha inicio
     $inicio=$row['inicio_normal'];
 
@@ -81,7 +89,17 @@ if (isset($_POST['eliminar_evento']))
      <br>    
  	 <b>Tipo de reserva: </b><?=$opciones?>
 
-    <p><b>Selección: </b><?=$listas?></p> 
+    <p><b>Selección:</b>
+        <?
+        if (isset($row['lista_salas'])){
+            echo $lista_salas;
+        }
+
+        if (isset($row['lista_materiales'])){
+            echo $lista_materiales;
+        }
+        ?>
+    </p> 
      <!--<p><?=$evento?></p>-->
 </body>
 <!-- <form action="" method="post">

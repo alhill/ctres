@@ -1,72 +1,72 @@
 <?php
 
- date_default_timezone_set("Europe/Madrid");
+date_default_timezone_set("Europe/Madrid");
 
 include 'funciones.php';
 include 'config.php';
 
-if (isset($_POST['from'])){
+// if (isset($_POST['from'])){
 
-    if ($_POST['from']!="" AND $_POST['to']!=""){
+//     if ($_POST['from']!="" AND $_POST['to']!=""){
 
-        // Recibimos el fecha de inicio y la fecha final desde el form
-        $inicio = _formatear($_POST['from']);
-        // y la formateamos con la funcion _formatear
-        $final  = _formatear($_POST['to']);
-        // Recibimos el fecha de inicio y la fecha final desde el form
-        $inicio_normal = $_POST['from'];
-        // y la formateamos con la funcion _formatear
-        $final_normal  = $_POST['to'];
-        // Recibimos los demas datos desde el form
-        $titulo = evaluar($_POST['title']);
-        // y con la funcion evaluar
-        $body   = evaluar($_POST['event']);
-        // reemplazamos los caracteres no permitidos
-        //$clase  = evaluar($_POST['class']);
-        $opciones = $_POST['opciones'];
-        $listas = $_POST['listas'];
-        $valor ='';
+//         // Recibimos el fecha de inicio y la fecha final desde el form
+//         $inicio = _formatear($_POST['from']);
+//         // y la formateamos con la funcion _formatear
+//         $final  = _formatear($_POST['to']);
+//         // Recibimos el fecha de inicio y la fecha final desde el form
+//         $inicio_normal = $_POST['from'];
+//         // y la formateamos con la funcion _formatear
+//         $final_normal  = $_POST['to'];
+//         // Recibimos los demas datos desde el form
+//         $titulo = evaluar($_POST['title']);
+//         // y con la funcion evaluar
+//         $body   = evaluar($_POST['event']);
+//         // reemplazamos los caracteres no permitidos
+//         //$clase  = evaluar($_POST['class']);
+//         $opciones = $_POST['opciones'];
+//         $listas = $_POST['listas'];
+//         $valor ='';
 
-        // $fin = "end";
-        //al seleccionar la opcion de reservas...
-        if (isset ($_POST['listas'])){
-           // for ($i=0; $i<sizeof($listas); $i++) {
-         foreach ($_POST['listas'] as $seleccion)
-            {
-                //echo $seleccion."<br>";///para imprimirla
-            $valor.=$seleccion.",";//para almacenarla
-            } 
+//         // $fin = "end";
+//         //al seleccionar la opcion de reservas...
+//         if (isset ($_POST['listas'])){
+//            // for ($i=0; $i<sizeof($listas); $i++) {
+//          foreach ($_POST['listas'] as $seleccion)
+//             {
+//                 //echo $seleccion."<br>";///para imprimirla
+//             $valor.=$seleccion.",";//para almacenarla
+//             } 
              
-            $valor=substr($valor,0,-1);       
+//             $valor=substr($valor,0,-1);       
 
-        }
+//         }
 
-        // insertamos el evento
-        $query="INSERT INTO lista_reservas VALUES(null,'$titulo','$body','$opciones','$valor','','$inicio', '$final', '$inicio_normal', '$final_normal')";
+//         // insertamos el evento
+//         $query="INSERT INTO lista_reservas VALUES(null,'$titulo','$body','$opciones','$valor','','$inicio', '$final', '$inicio_normal', '$final_normal')";
 
-        // Ejecutamos nuestra sentencia sql
-        $conexion->query($query); 
+//         // Ejecutamos nuestra sentencia sql
+//         $conexion->query($query); 
 
  
-        //Obtenemos el ultimo id insetado
-        $im=$conexion->query("SELECT MAX(id) AS id FROM lista_reservas");
-        $row = $im->fetch_row();  
-        $id = trim($row[0]);
+//         //Obtenemos el ultimo id insetado
+//         $im=$conexion->query("SELECT MAX(id) AS id FROM lista_reservas");
+//         $row = $im->fetch_row();  
+//         $id = trim($row[0]);
 
-        // para generar el link del evento
-        $link = "$base_url"."descripcion_evento.php?id=$id";
+//         // para generar el link del evento
+//         $link = "$base_url"."descripcion_evento.php?id=$id";
 
-        // y actualizamos su link
-        $query="UPDATE lista_reservas SET url = '$link' WHERE id = $id";
+//         // y actualizamos su link
+//         $query="UPDATE lista_reservas SET url = '$link' WHERE id = $id";
 
-        // Ejecutamos nuestra sentencia sql
-        $conexion->query($query); 
+//         // Ejecutamos nuestra sentencia sql
+//         $conexion->query($query); 
 
-        // redireccionamos a nuestro calendario
-        //header("Location:$base_url"); 
-        header("Location:calendario_index.php"); 
-        }    
-}
+//         // redireccionamos a nuestro calendario
+//         //header("Location:$base_url"); 
+//         header("Location:calendario_index.php"); 
+//         }    
+// }
 
 ?>
 
@@ -133,7 +133,7 @@ if (isset($_POST['from'])){
         <div class="modal fade" id="events-modal">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="modal-body" style="height: 300px">
+                    <div class="modal-body" style="height: 400px">
                         <p>One fine body&hellip;</p>
                     </div>
                     <div class="modal-footer">
@@ -254,7 +254,7 @@ if (isset($_POST['from'])){
         <h4 class="modal-title" id="myModalLabel">Agregar nueva reserva</h4>
       </div>
       <div class="modal-body">
-        <form action="" method="post">
+        <form action="prueba.php" method="post">
                     <label for="from">Fecha inicio</label>
                     <div class='input-group date' id='from'>
                         <input type='text' id="from" name="from" class="form-control" readonly />
@@ -312,14 +312,14 @@ if (isset($_POST['from'])){
                        <label for="tipo"><input type="checkbox" name="opciones" id="checkbox1" value="sala" onchange="javascript:showContent(); hideContent()" /> Salas</label>
                     </div>
                     <div id="content" style="display: none;">
-                        <select class="form-control" name="listas[]" id="tipo1">
-                             <option value="Sala de Reuniones Caracas">Sala de Reuniones Caracas</option>
-                                <option value="Sala de Reuniones Madrid">Sala de Reuniones Madrid </option>
-                                <option value="Sala de Reuniones Soria">Sala de Reuniones Soria</option> 
-                                <option value="Salón de Actos Segovia">Salón de Actos Segovia </option>
-                                <option value="Salón de Actos Salamanca">Salón de Actos Salamanca</option> 
-                                <option value="Sala Biblioteca Valladolid">Sala Biblioteca Valladolid</option> 
-                                <option value="Sala de Formación Barcelona">Sala de Formación Barcelona</option>               
+                        <select class="form-control" name="lista_salas" id="tipo1">
+                             <option value="caracas">Sala de Reuniones Caracas</option>
+                                <option value="reuniones_madrid">Sala de Reuniones Madrid </option>
+                                <option value="reuniones_soria">Sala de Reuniones Soria</option> 
+                                <option value="actos_segovia">Salón de Actos Segovia </option>
+                                <option value="actos_salamanca">Salón de Actos Salamanca</option> 
+                                <option value="biblio_valladolid">Sala Biblioteca Valladolid</option> 
+                                <option value="formacion_barcelona">Sala de Formación Barcelona</option>               
                         </select>
                     </div>
 
@@ -361,7 +361,7 @@ if (isset($_POST['from'])){
                     </div>
 
                      <div id="content2" style="display: none;">
-                        <select multiple class="form-control" name="listas[]" id="tipo2">              
+                        <select multiple class="form-control" name="lista_materiales[]" id="tipo2">              
                             <option value="Proyector">Proyector</option>
                             <option value="Ordenador">Ordenador</option>
                             <option value="Impresora">Impresora </option>
@@ -394,6 +394,5 @@ if (isset($_POST['from'])){
   </div>
 </div>
 </div>
-  <?php include 'footer.php'; ?>
 </body>
 </html>
