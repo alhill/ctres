@@ -73,11 +73,14 @@ if (isset($_POST['eliminar_evento']))
 	<title><?=$titulo?></title>
 </head>
 <body>
-	 <h3> titulo de la reserva: <?=$titulo?></h3>
+	 <h3> Título de la reserva: <?=$titulo?></h3>
 	 <hr>
      <b>Fecha inicio:</b> <?=$inicio?>
-     <b>Fecha termino:</b> <?=$final?>     
- 	 <p><b>Tipo de reserva: </b><?=$opciones?></p> 
+     <br>
+     <b>Fecha final:</b> <?=$final?> 
+     <br>    
+ 	 <b>Tipo de reserva: </b><?=$opciones?>
+
     <p><b>Selección: </b><?=$listas?></p> 
      <!--<p><?=$evento?></p>-->
 </body>
