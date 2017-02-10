@@ -133,7 +133,7 @@ if (isset($_POST['from'])){
         <div class="modal fade" id="events-modal">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="modal-body" style="height: 400px">
+                    <div class="modal-body" style="height: 300px">
                         <p>One fine body&hellip;</p>
                     </div>
                     <div class="modal-footer">
@@ -313,13 +313,13 @@ if (isset($_POST['from'])){
                     </div>
                     <div id="content" style="display: none;">
                         <select class="form-control" name="listas[]" id="tipo1">
-                             <option value="Biblioteca">Sala de Reuniones Caracas</option>
-                                <option value="informatica">Sala de Reuniones Madrid </option>
-                                <option value="actos">Sala de Reuniones Soria</option> 
-                                <option value="formacion">Salón de Actos Segovia </option>
-                                <option value="actos">Salón de Actos Salamanca</option> 
-                                <option value="actos">Sala Biblioteca Valladolid</option> 
-                                <option value="actos">Sala de Formación Barcelona</option>               
+                             <option value="Sala de Reuniones Caracas">Sala de Reuniones Caracas</option>
+                                <option value="Sala de Reuniones Madrid">Sala de Reuniones Madrid </option>
+                                <option value="Sala de Reuniones Soria">Sala de Reuniones Soria</option> 
+                                <option value="Salón de Actos Segovia">Salón de Actos Segovia </option>
+                                <option value="Salón de Actos Salamanca">Salón de Actos Salamanca</option> 
+                                <option value="Sala Biblioteca Valladolid">Sala Biblioteca Valladolid</option> 
+                                <option value="Sala de Formación Barcelona">Sala de Formación Barcelona</option>               
                         </select>
                     </div>
 
