@@ -24,7 +24,7 @@
     include 'header.php';
     ?>
     
- <div class="container-fluid">
+ <div class="container-fluid" id="estilo_index">
         
    <?php
     if (session_status() == PHP_SESSION_NONE) {session_start();}
@@ -36,7 +36,7 @@
         
 
         
-    <?php
+      <?php
         $posicion = 0;
         $bbddsalas = mysqli_query($conexion, 'SELECT * FROM salas');
         
@@ -65,7 +65,7 @@
 
 
          
-    </div> 
+   </div>
  
         <?php include 'footer.php'; ?>
    

@@ -45,7 +45,7 @@
     
 <?php include "header.php"; ?>
 
-<div class="row">
+<div class="row" id="estilo_modusuario">
     
 <?php 
       
@@ -101,7 +101,7 @@
             <?php
                  
           if (isset($_SESSION['privilegios']) && $_SESSION['privilegios'] > 2){ //CODIGO QUE CONDICIONE QUE ESTO APAREZCA SOLO SI EL USUARIO TIENE PRIVILEGIOS DE ADMINISTRACIÓN
-                echo ('<div class="form-group">
+                echo ('<div class="form-group" id="opciones">
                             <select id="privilegios" name="privilegios" form="formregistro">
                               <option value="1"' . $elegida1 . '>Usuario</option>
                               <option value="2"' . $elegida2 . '>Propietario</option>

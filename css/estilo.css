@@ -410,6 +410,38 @@ fieldset[disabled] .btn-mio1.active {
   background-color: #FFFFFF; 
 }
 
+/*Pagina index*/
+#estilo_index{
+ padding-bottom: 11.8%;
+
+}
+
+/*pagina modificación usuario*/
+
+#estilo_modusuario{
+margin-top: 5%;
+ padding-bottom: 6.8%;
+
+}
+
+#estilo_modusuario label{
+
+	margin-left: 11%
+}
+#estilo_modusuario button{
+
+	margin-left: 33.5%;
+	
+}
+#estilo_modusuario #opciones {
+
+	margin-left: 10%
+	
+	
+}
+
+
+
 /*pagina login*/
 #inicio{
 	margin-top: 18%;
@@ -418,19 +450,16 @@ fieldset[disabled] .btn-mio1.active {
 }
 
 #cliente{
-/*border:1px solid rgba(9,64,116,0.8);*/
+
 background-color: #D9DADE;
-/*background-color: rgba(11,123,150,0.7);*/
 padding-bottom: 29px;
 border-radius: 5px;
 }
 
- #nocliente{
-/*border:1px solid rgba(9,64,116,0.8);*/  
+ #nocliente{  
 padding-bottom: 29px;
 background-color: #D9DADE;
-/*background-color: rgba(11,123,150,0.7);
-*/border-radius: 5px;
+border-radius: 5px;
 }
 
 #inicio p{
