@@ -61,8 +61,10 @@ if (session_status() == PHP_SESSION_NONE) {session_start();}
     
 ?>
 
-	<div class="col-md-4 col-md-offset-4" id="registro">
-		<h2 class="titulo">Modificación de sala</h2>
+<div class="col-md-4 col-md-offset-4" id="estilo_modusuario">
+<div  id="registro">
+	
+		<h2 class="titulo2">Modificación de sala</h2>
 		<form method="POST" action="<?php echo('modificarsalascr.php?' . $id); ?>"  id="formregistro" name="registro">
 			  <div class="form-group" >
                   <label>ID</label>
@@ -100,7 +102,7 @@ if (session_status() == PHP_SESSION_NONE) {session_start();}
                     ?>
             
                       <label>Asignar a propietario</label>
-                      <div class="form-group">
+                      <div class="form-group" id="opciones">
                                     <?php echo('<select id="propietario" name="propietario" form="formregistro" ' . $movidota2 . ">"); ?>
                                       <option value="" <?php if($propdelasala == ""){echo ('selected');}?> >No</option>
                                         
@@ -120,10 +122,11 @@ if (session_status() == PHP_SESSION_NONE) {session_start();}
                                     <?php echo("</select>"); ?> 
                         </div>
 
-			<button type="submit" id="butt" class="btn btn-default" name="modificar">Modificar sala</button> 				
+			<button type="submit" id="butt" class="btn btn-mio1" name="modificar">Modificar sala</button> 				
 		</form>
 
 	</div>
+  </div>
 </div>
 <?php include "footer.php"; ?>
 </body>
