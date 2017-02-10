@@ -42,6 +42,8 @@ if (session_status() == PHP_SESSION_NONE) {session_start();}
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <link href="https://fonts.googleapis.com/css?family=Sansita" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,400,700" rel="stylesheet">
 
 
 </head>
@@ -62,7 +64,7 @@ if (session_status() == PHP_SESSION_NONE) {session_start();}
 ?>
 
 <div class="col-md-4 col-md-offset-4" id="estilo_modusuario">
-<div  id="registro">
+<div  id="registro_sala">
 	
 		<h2 class="titulo2">Modificación de sala</h2>
 		<form method="POST" action="<?php echo('modificarsalascr.php?' . $id); ?>"  id="formregistro" name="registro">
@@ -122,7 +124,7 @@ if (session_status() == PHP_SESSION_NONE) {session_start();}
                                     <?php echo("</select>"); ?> 
                         </div>
 
-			<button type="submit" id="butt" class="btn btn-mio1" name="modificar">Modificar sala</button> 				
+			<button type="submit" id="butt" class="btn btn-mio1_admin" name="modificar">Modificar sala</button> 				
 		</form>
 
 	</div>

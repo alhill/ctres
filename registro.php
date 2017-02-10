@@ -63,7 +63,7 @@
           <?php
                  
           if (isset($_SESSION['privilegios']) && $_SESSION['privilegios'] > 1){ //CODIGO QUE CONDICIONE QUE ESTO APAREZCA SOLO SI EL USUARIO TIENE PRIVILEGIOS DE ADMINISTRACIÓN
-                echo ('<div class="form-group">
+                echo ('<div class="form-group privi">
                             <select id="privilegios" name="privilegios" form="formregistro">
                               <option value="1">Usuario</option>
                               <option value="2">Propietario</option>
@@ -81,7 +81,7 @@
 	</div>
 </div>
 
-<?php include 'footer.php'; ?>
-
+<!-- <?php include 'footer.php'; ?>
+ -->
 </body>
 </html>

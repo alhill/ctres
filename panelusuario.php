@@ -17,6 +17,9 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="css/estilo.css" type="text/css" />
+
+    <link href="https://fonts.googleapis.com/css?family=Sansita" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,400,700" rel="stylesheet">
 	
 	<title>C3PO</title>
 </head>
@@ -49,31 +52,52 @@
     <div id="borrar" class="modal fade ventanamodal" role="dialog">
         <div class="loginaso">
             <p>¿Está seguro de que desea borrar el usuario <span class="nombredeusuario"></span>?</p>
-                <button class="btn-mio1" type="button" id="aceptaborrar">Aceptar</button>
-                <button class="btn-mio1" type="button" id="cancelaborrar">Cancelar</button>
+                <button class="btn btn-mio1" type="button" id="aceptaborrar">Aceptar</button>
+                <button class="btn btn-mio1" type="button" id="cancelaborrar">Cancelar</button>
         </div>
     </div>
     
     <div id="modif" class="modal fade ventanamodal" role="dialog">
         <div class="loginaso">
             <p>¿Está seguro de que desea modificar el usuario <span class="nombredeusuario"></span>?</p>
-                <button class="btn-mio1" type="button" id="aceptamodif">Aceptar</button>
-                <button class="btn-mio1" type="button" id="cancelamodif">Cancelar</button>
+                <button class="btn btn-mio1" type="button" id="aceptamodif">Aceptar</button>
+                <button class="btn btn-mio1" type="button" id="cancelamodif">Cancelar</button>
         </div>
     </div>
 
     
     <?php include "header.php"; ?>
     
-    <div class="container">
+    <div class="container user">
+
+        <h2 class="titulo_usuario">Perfil del usuario</h2>
+
+        <table class="table table-striped tabla_usuario">
+            <thead>
+                <tr>
+                    <th>Datos de usuario</th>
+                </tr>
+            </thead>
+            <tbody>
+
+    <?php
+        if (isset($_SESSION['usuario'])) {          
+    ?>
+        <tr>
+            <td><?php echo "Nombre: " . $_SESSION['nombre']; echo "<br>"; echo "Apellido: " . $_SESSION['apellido']; echo "<br>";  echo "Usuario: " .  $_SESSION['usuario']; echo "<br>"; echo "Email: " .  $_SESSION['email']; echo "<br>"; ?></td>
+        </tr>
+    
+    <?php } ?>
+            </tbody>
+        </table>
     
     
     <?php
-            echo("<input class='btn-mio1' type='button' value='Editar usuario' onclick='enlaceEditar(". '"' . $_SESSION['usuario'] . '"' . ")'>");           
-    ?>
+            echo("<input class='btn btn-mio1' type='button' value='Modificar datos' onclick='enlaceEditar(". '"' . $_SESSION['usuario'] . '"' . ")'>");           
+    ?>        <!--btn-usuario-->
 
     </div>
-     <?php include 'footer.php'; ?>
+ <!--     <?php include 'footer.php'; ?> -->
 </body>
     
 </html>

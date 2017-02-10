@@ -6,29 +6,33 @@
 	<title>Creación de sala nueva</title>
 
 
-	<!--HOJA CSS provisional-->
-	<link rel="stylesheet" type="text/css" href="css/estilo.css">
-
-	<!--BOOTSTRAP-->
+	
+		<!--BOOTSTRAP-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
+	<link rel="stylesheet" type="text/css" href="css/estilo.css">
+	<link href="https://fonts.googleapis.com/css?family=Sansita" rel="stylesheet">  
+	<link href="https://fonts.googleapis.com/css?family=Lato:100,100i,400,700" rel="stylesheet">
+
 
 </head>
 <body>
 
-<div class="row" id="registro">
-    
+
+
+
+<div class="row form_registro">    
     <?php if (session_status() == PHP_SESSION_NONE) {session_start();} 
     $bbddpropietarios = mysqli_query($conexion, 'SELECT * FROM registro WHERE privilegios="2";');
 
     
     ?>
-
-	<div class="col-md-4 col-md-offset-4" >
-		<h2 class="titulo">Nueva sala</h2>
+	<div class="col-md-4 col-md-offset-4" id="registro_sala">
+	<!--<div class="col-md-12 col-center formregistrosala" >-->
+		<h2 class="titulo_admin">Nueva sala</h2>
 		<form method="POST" action="" id="formregistro" name="registro">
 			  <div class="form-group" >
 			    <input type="text" class="form-control" id="nom" name="nombre" placeholder="Nombre" required="required">
@@ -46,8 +50,8 @@
 			    <input type="text" class="form-control" id="url" name="url" placeholder="URL a la imagen" required="required">
 			  </div>
             
-            <label>Asignar a propietario</label>
-			  <div class="form-group">
+            <label class="propieta">Asignar a propietario</label>
+			  <div class="form-group propieta">
                             <select id="propietario" name="propietario" form="formregistro">
                               <option value="">No</option>
                             
@@ -60,7 +64,7 @@
                             </select> 
                 </div>
 
-			<button type="submit" id="butt" class="btn btn-default" name="nuevasala">Crear sala</button>
+			<button type="submit"  class="btn btn-mio1_admin butt" name="nuevasala">Crear sala</button>
 			 				
 		</form>
 	</div>

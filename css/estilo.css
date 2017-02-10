@@ -305,18 +305,6 @@ body{
 	padding-top: 10px;	
 }
 
-/*CALENDARIO*/
-.btn,
-.btn:active,
-.btn:hover{
-    border-radius: 0%;
-}
-.btn-mio,
-.btn-mio:active,
-.btn-mio:hover{
-    background-color: #0b7b96;
-}
-
 /* INDEX - GALERIA */
 a{
     color: black;
@@ -340,9 +328,39 @@ a li{
 }
 
 /*  ADMIN */
-.tabla_admin td, .tabla_admin th{
-    padding: 0.25em 0.5em 0.25em 0.5em;
+
+.tabla_admin{
+border-radius: 10px;
+	width: 50%;
 }
+
+.tabla_admin th{
+    padding: 0.25em 0.5em 0.25em 0.5em;
+    /*background-color: #0B7B96;*/
+     color: #5C9566;
+     text-align: center;
+     font-family: 'Lato', sans-serif;
+     font-size: 1.2em;
+     border-radius: 2px;
+}
+.tabla_admin td{
+    padding: 0.25em 0.5em 0.25em 0.5em;
+    /*background-color: #E0E1E5;*/
+    text-align: center;
+    border-spacing:  5px 15px;
+    font-family: 'Lato', sans-serif;
+     padding: 10px;
+}
+
+
+.titulo_panelad{
+	text-align: left;
+	padding-bottom: 2%;
+	font-size: 2.5em;
+  	color: #5C9566;
+	font-family: 'Sansita', sans-serif;
+}
+
 .ventanamodal{
     background: white;
     border: 2px solid black;
@@ -361,6 +379,98 @@ a li{
 #Pie_ajuste{
 	width: 100%;
 }
+
+
+/*panel usuario*/
+
+.user{
+	width: 50%;
+	padding-top:80px;
+	margin-left: 90px;
+}
+
+.titulo_usuario{
+	text-align: left;
+	padding-top: 60px;
+	padding-bottom: 20px;
+	font-size: 2.5em;
+  	color: #0b7b96;
+	font-family: 'Sansita', sans-serif;	
+}
+
+
+.tabla_usuario{
+
+	border-spacing:  20px;
+}
+
+.tabla_usuario thead{
+	font-size: 1.9em;
+	font-family: 'Lato', sans-serif;
+	color: #0b7b96;		
+	 padding: 50px;
+}
+
+.tabla_usuario td{
+	font-size: 1.2em;
+	 font-family: 'Lato', sans-serif;
+	  padding: 50px;
+	
+}
+
+.tabla_usuario th{
+	 padding: 50px;
+	
+}
+
+/*.btn-usuario{
+background-color: #5C9566;
+color: #FFFFFF; 
+border-color: none; 
+}
+.btn-usuario:hover, 
+.btn-usuario:focus, 
+.btn-usuario:active, 
+.btn-usuario.active, 
+.open .dropdown-toggle.btn-usuario { 
+  color: #FFFFFF; 
+  background-color: #4D5359; 
+  border-color: none; 
+}  
+.btn-usuario:active, 
+.btn-usuario.active, 
+.open .dropdown-toggle.btn-usuario { 
+  background-image: none; 
+} 
+ 
+.btn-usuario.disabled, 
+.btn-usuario[disabled], 
+fieldset[disabled] .btn-usuario, 
+.btn-usuario.disabled:hover, 
+.btn-usuario[disabled]:hover, 
+fieldset[disabled] .btn-usuario:hover, 
+.btn-usuario.disabled:focus, 
+.btn-usuario[disabled]:focus, 
+fieldset[disabled] .btn-usuario:focus, 
+.btn-usuario.disabled:active, 
+.btn-usuario[disabled]:active, 
+fieldset[disabled] .btn-usuario:active, 
+.btn-usuario.disabled.active, 
+.btn-usuario[disabled].active, 
+fieldset[disabled] .btn-usuario.active { 
+background-color: #5C9566; 
+border-color: none; 
+}  
+.btn-usuario .badge { 
+  color: #5C9566; 
+  background-color: #FFFFFF; 
+}*/
+
+/*NUEVA SALA*/
+
+ .propieta{
+ 	padding-left: 50px;
+ }	
 
 /*CALENDARIO*/
 
@@ -440,8 +550,6 @@ margin-top: 5%;
 	
 }
 
-
-
 /*pagina login*/
 #inicio{
 	margin-top: 18%;
@@ -515,7 +623,7 @@ font-family: 'Lato', sans-serif;
 
 .titulo2{
 	font-size: 25px;
-	color: #0b7b96;
+	color: #5C9566;
 	text-align: center;
 	padding-bottom: 10px;
 	font-family: 'Sansita', sans-serif;
@@ -562,11 +670,22 @@ font-family: 'Lato', sans-serif;
 } 
 
 #privilegios{
-
-	margin-left: 10%
-
+	margin-left: 0;
 }
 
+
+.privi{
+	padding-left: 50px;
+}
+
+
+/*registro salas*/
+#registro_sala{
+	padding-top: 20px;
+	padding-bottom: 12px;	
+	background-color: #C3D8C7;
+	border-radius: 5px;
+}
 /*Nuevas class e id con _admin para colores verdes*/
 
 .titulo_admin {
