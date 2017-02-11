@@ -22,7 +22,6 @@ if (isset($_POST['from'])) {
         //Creamos una nueva variable para evitar problemas con la palabra reservada "end"
         $fin = "end";
        
-
         // $opciones = $_POST['opciones'];
         // $lista_salas = $_POST['lista_salas'];
         // $lista_materiales = $_POST['lista_materiales'];
@@ -32,10 +31,9 @@ if (isset($_POST['from'])) {
             $opciones = $_POST['opciones'];
 
             if (isset($_POST['lista_salas'])){
-                $lista_salas = $_POST['lista_salas'];
-            
-                $buscarSala = "SELECT * FROM lista_reservas WHERE (lista_salas = '$lista_salas')";
 
+                $lista_salas = $_POST['lista_salas'];
+                $buscarSala = "SELECT * FROM lista_reservas WHERE (lista_salas = '$lista_salas')";
                 $buscar = mysqli_query($conexion, $buscarSala);
                 $check = mysqli_num_rows($buscar);
 
@@ -50,20 +48,22 @@ if (isset($_POST['from'])) {
                     $buscar2 = mysqli_query($conexion, $buscarFecha);
                     $check2 = mysqli_num_rows($buscar2);
 
-                    if ($check2>0){
+                        if ($check2>0){
 
-                        echo "<script>
-                            alert('Esa sala ya se encuentra reservada en esa franja horaria. Seleccione otra hora o fecha');history.back();
-                            </script>";
+                            echo "<script>
+                                alert('Esa sala ya se encuentra reservada en esa franja horaria. Seleccione otra hora o fecha');
+                                history.back();
+                                </script>";
 
-                        die();    
-                    }                                        
-                }
+                            die();    
+                        }                                        
+                    } 
+                    
+                    //$lista_salas = null;
+                
+            }
 
-            }else{
-                    $lista_salas = null;
-                }
-
+                
             if (isset ($_POST['lista_materiales'])){
                 foreach ($_POST['lista_materiales'] as $seleccion){
                     $valor.=$seleccion.",";//para almacenarla

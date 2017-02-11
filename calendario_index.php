@@ -76,7 +76,7 @@ include 'config.php';
         <meta charset="utf-8">
         <title>Calendario</title>
         <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="<?=$base_url?>css/calendar.css">
+        
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
         <script type="text/javascript" src="<?=$base_url?>js/es-ES.js"></script>
         <script src="<?=$base_url?>js/jquery.min.js"></script>
@@ -84,8 +84,13 @@ include 'config.php';
         <script src="<?=$base_url?>js/bootstrap.min.js"></script>
         <script src="<?=$base_url?>js/bootstrap-datetimepicker.js"></script>
         <link rel="stylesheet" href="<?=$base_url?>css/bootstrap-datetimepicker.min.css" />
-       <script src="<?=$base_url?>js/bootstrap-datetimepicker.es.js"></script>
+        <script src="<?=$base_url?>js/bootstrap-datetimepicker.es.js"></script>
+        
+        <link rel="stylesheet" href="<?=$base_url?>css/calendar.css">
         <link rel="stylesheet" href="<?=$base_url?>css/estilo.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,400,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Sansita" rel="stylesheet">  
+
     </head>
 
 
@@ -130,7 +135,7 @@ include 'config.php';
         </div>
 
        <!--ventana modal para el calendario-->
-        <div class="modal fade" id="events-modal">
+        <div class="modal fade modal_mio" id="events-modal" >
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-body" style="height: 400px">
@@ -309,17 +314,17 @@ include 'config.php';
 
                 <label for="opcion">Seleccione una de las siguientes opciones</label> <!--antes for="tipo"-->
                     <div class="checkbox">
-                       <label for="tipo"><input type="checkbox" name="opciones" id="checkbox1" value="sala" onchange="javascript:showContent(); hideContent()" /> Salas</label>
+                       <label for="tipo"><input type="checkbox" name="opciones" id="checkbox1" value="Sala" onchange="javascript:showContent(); hideContent()" /> Salas</label>
                     </div>
                     <div id="content" style="display: none;">
                         <select class="form-control" name="lista_salas" id="tipo1">
-                             <option value="caracas">Sala de Reuniones Caracas</option>
-                                <option value="reuniones_madrid">Sala de Reuniones Madrid </option>
-                                <option value="reuniones_soria">Sala de Reuniones Soria</option> 
-                                <option value="actos_segovia">Salón de Actos Segovia </option>
-                                <option value="actos_salamanca">Salón de Actos Salamanca</option> 
-                                <option value="biblio_valladolid">Sala Biblioteca Valladolid</option> 
-                                <option value="formacion_barcelona">Sala de Formación Barcelona</option>               
+                             <option value="Sala Reuniones Caracas">Sala de Reuniones Caracas</option>
+                                <option value="Sala Reuniones Madrid">Sala de Reuniones Madrid </option>
+                                <option value="Sala Reuniones Soria">Sala de Reuniones Soria</option> 
+                                <option value="Sala Actos Segovia">Salón de Actos Segovia </option>
+                                <option value="Sala Actos Salamanca">Salón de Actos Salamanca</option> 
+                                <option value="Sala Biblioteca Valladolid">Sala Biblioteca Valladolid</option> 
+                                <option value="Sala Formacion Barcelona">Sala de Formación Barcelona</option>               
                         </select>
                     </div>
 
@@ -357,7 +362,7 @@ include 'config.php';
         }
     </script>          
                      <div class="checkbox">
-                       <label for="tipo">  <input type="checkbox" name="opciones" id="checkbox2" value="material" onchange="javascript:showContent2(); hideContent2(); disableLista()" />Materiales (Presione Ctrl + click de ratón para seleccionar varias opciones) </label>
+                       <label for="tipo">  <input type="checkbox" name="opciones" id="checkbox2" value="Material" onchange="javascript:showContent2(); hideContent2(); disableLista()" />Materiales (Presione Ctrl + click de ratón para seleccionar varias opciones) </label>
                     </div>
 
                      <div id="content2" style="display: none;">

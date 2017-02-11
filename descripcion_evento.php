@@ -38,27 +38,18 @@
 
     // cuerpo
     $evento=$row['body'];
-
-    // Salas o materiales
-    
-    if (isset($row['opciones'])){
-        $opciones=$row['opciones'];
-
-        if (isset($row['lista_salas'])){
-            $lista_salas = $row['lista_salas'];
-        }
-
-        if (isset($row['lista_materiales'])){
-            $lista_salas = $row['lista_materiales'];
-        }
-    }  
-    // Fecha inicio
+    // opcion de reserva sala o material 
+    $opciones=$row['opciones'];
+    // Selecccion de materiales
+    $lista_materiales = $row['lista_materiales'];
+    // Selecccion de salas
+    $lista_salas = $row['lista_salas'];
+     // Fecha inicio
     $inicio=$row['inicio_normal'];
-
     // Fecha Termino
     $final=$row['final_normal'];
 
-// Eliminar evento
+/*// Eliminar evento
 if (isset($_POST['eliminar_evento'])) 
 {
     $id  = evaluar($_GET['id']);
@@ -71,34 +62,41 @@ if (isset($_POST['eliminar_evento']))
     {
         echo "El evento no se pudo eliminar";
     }
-}
+}*/
  ?>
 
 <!DOCTYPE html>
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title><?=$titulo?></title>
+
+    <title><?=$titulo?></title>
+    <link rel="stylesheet" href="<?=$base_url?>css/calendar.css">
+        <link rel="stylesheet" href="<?=$base_url?>css/estilo.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,400,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Sansita" rel="stylesheet">  
+	
 </head>
 <body>
-	 <h3> Título de la reserva: <?=$titulo?></h3>
-	 <hr>
-     <b>Fecha inicio:</b> <?=$inicio?>
-     <br>
-     <b>Fecha final:</b> <?=$final?> 
-     <br>    
- 	 <b>Tipo de reserva: </b><?=$opciones?>
+	<h3 class="modal_mio"> Título de la reserva: <span class="sin_estilo"><?=$titulo?></span> </h3>
+	<hr>
+    <p  class="modal_mio">Fecha inicio: <span class="sin_estilo"><?=$inicio?></span></p> 
+    <p class="modal_mio">Fecha final: <span class="sin_estilo"><?=$final?> </span></p> 
+    <p  class="modal_mio">Tipo de reserva: <span class="sin_estilo"><?=$opciones?> </span></p> 
+    <p class="modal_mio">Selección: 
+        <?php
+        if (isset($row['lista_salas'])){            
+        ?>    
+            <span class="sin_estilo"><?=$lista_salas?></span>
 
-    <p><b>Selección:</b>
-        <?
-        if (isset($row['lista_salas'])){
-            echo $lista_salas;
-        }
+        <?php } ?>
 
+        <?php
         if (isset($row['lista_materiales'])){
-            echo $lista_materiales;
-        }
         ?>
+            <span class="sin_estilo"><?=$lista_materiales?></span>
+        <?php } ?>
+       
     </p> 
      <!--<p><?=$evento?></p>-->
 </body>

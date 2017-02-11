@@ -29,11 +29,7 @@ if (session_status() == PHP_SESSION_NONE) {session_start();}
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Modificación de salas</title>
-
-
-	<!--HOJA CSS-->
-	<link rel="stylesheet" type="text/css" href="estilo.css">
+	<title>Modificación de salas</title>	
 
 	<!--BOOTSTRAP-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> 
@@ -53,7 +49,7 @@ if (session_status() == PHP_SESSION_NONE) {session_start();}
     
 <?php 
       
-    include "header.php";
+    include "header_admin.php";
     $url = $_SERVER['REQUEST_URI'];
     $id = parse_url($url, PHP_URL_QUERY);
     $resultado = mysqli_query($conexion, "SELECT * FROM salas WHERE id='$id'");
@@ -130,6 +126,6 @@ if (session_status() == PHP_SESSION_NONE) {session_start();}
 	</div>
   </div>
 </div>
-<?php include "footer.php"; ?>
+<!-- <?php include "footer.php"; ?> -->
 </body>
 </html>

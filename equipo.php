@@ -68,7 +68,7 @@
                    <a href="https://es.linkedin.com/in/mariavirginiarivas" target="_blank"><img src="img/Equipo/maria_foto.png" title="Maria Virginia Rivas" class="img-responsive profile_foto" ></a>
             
                     <h3><i class="fa fa-user nom" aria-hidden="true"></i> Mª Virginia Rivas</h3>
-                    <p><i class="fa fa-hand-o-right" aria-hidden="true"></i> Full-stack Developer</p> 
+                    <p><i class="fa fa-hand-o-right" aria-hidden="true"></i> Full-stack developer</p> 
                      <p><i class="fa fa-map-marker" aria-hidden="true"></i> Madrid</p> 
                                  
             </div></div>

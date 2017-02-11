@@ -1,8 +1,7 @@
-
-<nav class="navbar menu_header">
-    <div class="menu_header">
+<nav class="navbar menu_header_admin">
+    <div class="menu_header_admin">
         <div class="navbar-header">
-            <img src="logo_peq.png" class="logo_menu">           
+            <img src="logo_peq.png" class="logo_menu">
             <div onclick="myFunction(this)">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                     <div class="icon-bar1"></div>
@@ -18,7 +17,7 @@
             } </script>
     
         <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-nav_admin navbar-right">
                 <li><a href="index.php">Inicio</a></li>
                 <li><a href="calendario_index.php">Reservas</a></li>
                 <li><a href="proyecto.php">Proyecto</a></li>

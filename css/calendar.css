@@ -512,3 +512,15 @@ a.cal-event-week {
 .badge-important {
   background-color: #b94a48;
 }
+
+.modal_mio{
+  font-family: 'Lato', sans-serif;  
+   color: #0b7b96;
+   font-weight: bold;
+}
+
+.sin_estilo{
+  color: black;
+  font-weight: lighter;
+  font-family: 'Lato', sans-serif;
+}

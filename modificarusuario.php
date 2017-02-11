@@ -43,7 +43,7 @@
 </head>
 <body>
     
-<?php include "header.php";?>
+<?php include "header_admin.php"; ?>
 
 <div class="row" id="estilo_modusuario">
     
@@ -57,7 +57,7 @@
 ?>
 
 	<div class="col-md-4 col-md-offset-4" id="registro_admin">
-		<h2 class="titulo_admin">Modificación de usuario</h2>
+		<h2 class="titulo_admin">Modificar usuario</h2>
 		<form method="POST" action="<?php echo('modificar.php?' . $usuario); ?>"  id="formregistro" name="registro">
 			  <div class="form-group" >
               <label>Nombre</label>
@@ -118,7 +118,7 @@
 	</div>
 </div>
     
-<?php include "footer.php"; ?>
-
+<!-- <?php include "footer.php"; ?>
+ -->
 </body>
 </html>
