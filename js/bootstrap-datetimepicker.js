@@ -79,8 +79,8 @@ THE SOFTWARE.
         icons = {
             time: 'glyphicon glyphicon-time',
             date: 'glyphicon glyphicon-calendar',
-            up: 'glyphicon glyphicon-chevron-up',
-            down: 'glyphicon glyphicon-chevron-down'
+            // up: 'glyphicon glyphicon-chevron-up',
+            // down: 'glyphicon glyphicon-chevron-down',
         },
 
         picker = this,
@@ -462,8 +462,8 @@ THE SOFTWARE.
             var table = picker.widget.find('.timepicker .timepicker-hours table'), html = '', current, i, j;
             table.parent().hide();
             if (picker.use24hours) {
-                current = 0;
-                for (i = 0; i < 6; i += 1) {
+                current = 9;
+                for (i = 9; i < 12; i += 1) {
                     html += '<tr>';
                     for (j = 0; j < 4; j += 1) {
                         html += '<td class="hour">' + padLeft(current.toString()) + '</td>';
@@ -990,16 +990,11 @@ THE SOFTWARE.
                 '<div class="timepicker-picker">' +
                     '<table class="table-condensed">' +
                         '<tr>' +
-                            '<td><a href="#" class="btn" data-action="incrementHours"><span class="' + picker.options.icons.up + '"></span></a></td>' +
-                            '<td class="separator"></td>' +
-                            '<td>' + (picker.options.useMinutes ? '<a href="#" class="btn" data-action="incrementMinutes"><span class="' + picker.options.icons.up + '"></span></a>' : '') + '</td>' +
-                            (picker.options.useSeconds ?
-                                '<td class="separator"></td><td><a href="#" class="btn" data-action="incrementSeconds"><span class="' + picker.options.icons.up + '"></span></a></td>' : '') +
                             (picker.use24hours ? '' : '<td class="separator"></td>') +
                         '</tr>' +
                         '<tr>' +
                             '<td>' + tpGlobal.hourTemplate + '</td> ' +
-                            '<td class="separator">:</td>' +
+                            // '<td class="separator">:</td>' +
                             '<td>' + (picker.options.useMinutes ? tpGlobal.minuteTemplate : '<span class="timepicker-minute">00</span>') + '</td> ' +
                             (picker.options.useSeconds ?
                                 '<td class="separator">:</td><td>' + tpGlobal.secondTemplate + '</td>' : '') +
@@ -1007,9 +1002,6 @@ THE SOFTWARE.
                             '<td><button type="button" class="btn btn-primary" data-action="togglePeriod"></button></td>') +
                         '</tr>' +
                         '<tr>' +
-                            '<td><a href="#" class="btn" data-action="decrementHours"><span class="' + picker.options.icons.down + '"></span></a></td>' +
-                            '<td class="separator"></td>' +
-                            '<td>' + (picker.options.useMinutes ? '<a href="#" class="btn" data-action="decrementMinutes"><span class="' + picker.options.icons.down + '"></span></a>' : '') + '</td>' +
                             (picker.options.useSeconds ?
                                 '<td class="separator"></td><td><a href="#" class="btn" data-action="decrementSeconds"><span class="' + picker.options.icons.down + '"></span></a></td>' : '') +
                             (picker.use24hours ? '' : '<td class="separator"></td>') +
