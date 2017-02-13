@@ -27,7 +27,7 @@
             $_SESSION['privilegios'] = $k_privilegios;
 
             if($k_privilegios>1){
-                header('Location: paneladmin.php');
+                header('Location: panel.php');
             }
             else{
                 header('Location: index.php');

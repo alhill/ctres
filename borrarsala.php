@@ -24,6 +24,6 @@ if (session_status() == PHP_SESSION_NONE) {session_start();}
     $url = $_SERVER['REQUEST_URI'];
     $idsala = parse_url($url, PHP_URL_QUERY);
     mysqli_query($conexion, "DELETE FROM salas WHERE id='$idsala'") or die('Hubo un problema al borrar la sala: ' . mysqli_error($conexion));
-    header("Location: paneladmin.php");
+    header("Location: panel.php");
 
 ?>

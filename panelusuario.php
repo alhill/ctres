@@ -32,7 +32,7 @@
     }
     if(!isset($_SESSION['privilegios']) || ($_SESSION['privilegios']>1 && isset($_SESSION['privilegios'])))
     {
-        header('Location: paneladmin.php');
+        header('Location: panel.php');
         die();
     }
 

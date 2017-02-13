@@ -68,7 +68,7 @@ $usuario = parse_url($url, PHP_URL_QUERY);
                 }
 
                 echo "Modificación realizada correctamente";
-                header("Location: paneladmin.php");                  
+                header("Location: panel.php");                  
 
                 }
                 else{

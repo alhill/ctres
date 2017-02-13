@@ -42,7 +42,7 @@ if (session_status() == PHP_SESSION_NONE) {session_start();}
         }
 
         echo "Modificación realizada correctamente";
-        header("Location: paneladmin.php");                  
+        header("Location: panel.php");                  
 
         }
         else{

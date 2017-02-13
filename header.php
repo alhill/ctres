@@ -29,7 +29,7 @@
                         echo ('<li><a href="');
                         if ($_SESSION['privilegios']>1)
                         {
-                            echo('paneladmin.php');
+                            echo('panel.php');
                         }
                         else
                         {

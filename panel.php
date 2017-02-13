@@ -120,13 +120,18 @@ if ($_SESSION['privilegios']>=2){
             <button type="submit" class="btn btn-mio1 butt" name="salas">Salas</button>   
         </form>    
     </div>
-    <div class="col-md-4 col-sm-4 col-xs-12 panel">
+    
+    <?php
+    if($_SESSION["privilegios"]==3){
+        echo('<div class="col-md-4 col-sm-4 col-xs-12 panel">
         <form action="" method="post">
             <i class="fa fa-users fa-4x" aria-hidden="true"></i>
             <hr>
             <button type="submit" class="btn btn-mio1 butt" name="usuarioslista">Usuarios</button>   
         </form>       
-    </div>
+    </div>');
+    }
+    ?>
 </div>
 
 <form method="POST" action="" id="salasmodborr" name="salasmodborr"> 
