@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-02-2017 a las 13:18:55
+-- Tiempo de generación: 13-02-2017 a las 14:07:58
 -- Versión del servidor: 10.1.19-MariaDB
 -- Versión de PHP: 7.0.13
 
@@ -28,6 +28,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `lista_reservas` (
   `id` int(10) UNSIGNED NOT NULL,
+  `usuario` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `title` varchar(150) COLLATE utf8_spanish_ci NOT NULL,
   `body` text COLLATE utf8_spanish_ci NOT NULL,
   `opciones` varchar(45) COLLATE utf8_spanish_ci NOT NULL DEFAULT 'event-important',
@@ -44,12 +45,9 @@ CREATE TABLE `lista_reservas` (
 -- Volcado de datos para la tabla `lista_reservas`
 --
 
-INSERT INTO `lista_reservas` (`id`, `title`, `body`, `opciones`, `lista_salas`, `lista_materiales`, `url`, `start`, `end`, `inicio_normal`, `final_normal`) VALUES
-(88, 'aaa', 'aaa', 'sala', 'caracas', '', 'http://localhost/ctres_2/descripcion_evento.php?id=88', '1506938400000', '1506942000000', '02/10/2017 12:00', '02/10/2017 13:00'),
-(92, 'bbb', 'bbb', 'sala', 'reuniones_soria', '', 'http://localhost/ctres_2/descripcion_evento.php?id=92', '1506938400000', '1506942000000', '02/10/2017 12:00', '02/10/2017 13:00'),
-(93, 'ccc', 'ccc', 'sala', 'formacion_barcelona', '', 'http://localhost/ctres_2/descripcion_evento.php?id=93', '1506938400000', '1506942000000', '02/10/2017 12:00', '02/10/2017 13:00'),
-(94, 'jjj', 'jjj', 'sala', 'caracas', '', 'http://localhost/ctres_2/descripcion_evento.php?id=94', '1506945600000', '1506949200000', '02/10/2017 14:00', '02/10/2017 15:00'),
-(95, 'uuu', 'uuu', 'sala', 'reuniones_soria', '', 'http://localhost/ctres_2/descripcion_evento.php?id=95', '1506940200000', '1506943800000', '02/10/2017 12:30', '02/10/2017 13:30');
+INSERT INTO `lista_reservas` (`id`, `usuario`, `title`, `body`, `opciones`, `lista_salas`, `lista_materiales`, `url`, `start`, `end`, `inicio_normal`, `final_normal`) VALUES
+(127, 'carla', 'Formacion', 'Formacion PHP', 'Sala', 'Sala de Formaci&oacuten Barcelona', '', 'http://localhost/ctres/descripcion_evento.php?id=127', '1487602800000', '1487610000000', '20/02/2017 16:00', '20/02/2017 18:00'),
+(128, 'carla', 'Taller Infantil', 'Taller de Manualidades', 'Material', '', 'Proyector,Ordenador,Impresora,Pizarra', 'http://localhost/ctres/descripcion_evento.php?id=128', '1487750400000', '1487768400000', '22/02/2017 9:00', '22/02/2017 14:00');
 
 --
 -- Índices para tablas volcadas
@@ -69,7 +67,7 @@ ALTER TABLE `lista_reservas`
 -- AUTO_INCREMENT de la tabla `lista_reservas`
 --
 ALTER TABLE `lista_reservas`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
