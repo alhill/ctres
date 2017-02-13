@@ -12,9 +12,11 @@ $r_usuario = "";
 if (session_status() == PHP_SESSION_NONE) {session_start();} 
     if (isset($_SESSION['usuario'])){
         $r_usuario = $_SESSION['usuario'];
+        $r_email = $_SESSION['email'];
     }
 
     // echo $r_usuario;
+    // echo $r_email;
     // die("bye bye!!");
 
 if (isset($_POST['from'])) {
@@ -113,14 +115,22 @@ if (isset($_POST['from'])) {
         // Ejecutamos nuestra sentencia sql
         $conexion->query($query);
 
+        // Enviamos un email de confirmación
+        $from = "Equipo C3PO";
+        $to = $r_email;
+        $subject = "Confirmación de Reserva";
+        $body = "Bienvenido a la Central de Reservas Ctres.\n\n\n Los datos de su reserva son:\n\n Tipo de reserva: $opciones\n Selección: $lista_salas $valor\n\n Gracias por confiar en nosotros.\n\n\n Atentamente el equipo C3PO.";
+        
+        mail ($to, $subject, $body, $from);
+
         // redireccionamos a nuestro calendario
-        // echo "<script>
-        //         alert('Reserva realizada con éxito');
-        //      </script>"; 
+        echo "<script>
+                alert('Reserva realizada con éxito. En breve recibirá un email de confirmación');window.open('calendario_index.php','_self');
+             </script>"; 
 
         // die('bye bye');
 
-        header("Location:calendario_index.php"); 
+        // header("Location:calendario_index.php"); 
  
     }
 }

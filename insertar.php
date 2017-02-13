@@ -19,7 +19,7 @@ die(); */
 		$from = "Equipo C3PO";
 		$to = $email;
 		$subject = "Registro Ctres";
-		$body = "Bienvenido a la Central de Reservas Ctres.\n Ya puede comenzar a utilizar nuestros servicios.\n Su usuario es: $usuario\n Su contraseña es: $contrasena\n Gracias por confiar en nosotros.\n Atentamente el equipo C3PO.";
+		$body = "Bienvenido a la Central de Reservas Ctres.\n\n\n Ya puede comenzar a utilizar nuestros servicios.\n\n Su usuario es: $usuario\n Su contraseña es: $contrasena\n\n Gracias por confiar en nosotros.\n\n\n Atentamente el equipo C3PO.";
 		
 		if (isset($_POST['privilegios'])){
 			$privilegios = mysqli_real_escape_string ($conexion, $_POST['privilegios']);
@@ -80,7 +80,7 @@ die(); */
 
 				mail ($to, $subject, $body, $from);  
                     
-				echo "<script> alert('El registro se completó correctamente');
+				echo "<script> alert('El registro se completó correctamente. En breve recibirá un email de bienvenida');
 					 window.open('index.php','_self');
 					 </script>";
 			
