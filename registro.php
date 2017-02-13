@@ -33,7 +33,7 @@
 
 	<div class="col-md-4 col-md-offset-4" id="registro">
 
-		<h2 class="titulo2">Crear cuenta</h2>
+		<h2 class="titulo">Crear cuenta</h2>
 
 		<form method="POST" action="insertar.php" id="formregistro" name="registro">
 			  <div class="form-group " >
