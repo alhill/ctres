@@ -86,7 +86,7 @@
             
     
         echo "<script> alert('La sala se creó correctamente');
-					 window.open('index_cms.php','_self');  
+					 window.open('paneladmin.php','_self');  
 					 </script>";
         
         }

@@ -43,6 +43,35 @@ function modalBorrSala(sala){
     });
 }
 
+function modalModifReserva(id){
+    $(document).ready(function(){
+        $(".numreserva").html(id);
+        $("#modifreserva").modal();
+        
+        $("#aceptamodifreserva").click(function(){
+            window.location.href = 'modificarreserva.php?' + id; 
+        });
+        $("#cancelamodifreserva").click(function(){
+            $("#modifreserva").modal('hide');
+        });
+    });
+}
+
+function modalBorrReserva(id){
+    $(document).ready(function(){
+        $(".numreserva").html(id);
+        $("#borrarreserva").modal();
+        
+        $("#aceptaborrarreserva").click(function(){
+            window.location.href = 'borrarreserva.php?' + id; 
+        });
+        $("#cancelaborrarreserva").click(function(){
+            $("#borrarreserva").modal('hide');
+        });
+
+    });
+}
+
 function modalModifSala(sala){
     $(document).ready(function(){
         $(".nombredesala").html(sala);

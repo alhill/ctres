@@ -83,7 +83,7 @@
         </div>
     </div>
     
-    <?php include "header.php"; ?>
+    <?php include "header_admin.php"; ?>
     
     <div class="container">
     
@@ -115,7 +115,6 @@
             echo ("<tr><td>".$arrayusuarios["id"]."</td><td>".$arrayusuarios["usuario"]."</td><td>".$arrayusuarios["contrasena"]."</td><td>".$arrayusuarios["email"]."</td><td>".$arrayusuarios["nombre"]."</td><td>".$arrayusuarios["apellido"]."</td><td>".$arrayusuarios["privilegios"]."</td><td><input class='btn btn-mio1_admin' type='button' value='Modificar' onclick=modalModif(&#34;".$arrayusuarios["usuario"]."&#34;);></td><td><input class='btn btn btn-mio1_admin' type='button' value='Borrar' class='botonmodif' onclick=modalBorr(&#34;".$arrayusuarios["usuario"]."&#34;);></td></tr>");
             }
             echo ("</table>");
-            
         }
 
     ?>
@@ -129,14 +128,14 @@
         {
             echo ('<table class="table table-striped tabla_admin"><thead><th><b>ID</b></th><th><b>Nombre</b></th><th><b>Propietario</b></th><th><b></b></th><th><b></b></th></thead>');
             while($arraysalas = $bbddsalas -> fetch_assoc()){
-                echo ("<tr><td>" . $arraysalas["id"] . "</td><td>" . $arraysalas["nombre"] . "</td><td>" . $arraysalas["propietario"] . "</td><td><input class='btn btn-mio1_admin' type='button' value='Modificar' onclick=modalModifSala(&#34;".$arraysalas["id"]."&#34;);></td><td><input class='btn btn-mio1_admin' type='button' value='Borrar' class='botonmodif' onclick=modalBorrSala(&#34;".$arraysalas["id"]."&#34;);></td></tr>");
+                echo ("<tr><td>" . $arraysalas["id"] . "</td><td>" . $arraysalas["nombre"] . "</td><td>" . $arraysalas["propietario"] . "</td><td><input class='btn btn-mio1_admin' type='button' value='Reservas' onclick=modalModifSala(&#34;".$arraysalas["id"]."&#34;);></td><td><input class='btn btn-mio1_admin' type='button' value='Modificar sala' onclick=modalModifSala(&#34;".$arraysalas["id"]."&#34;);></td><td><input class='btn btn-mio1_admin' type='button' value='Borrar' class='botonmodif' onclick=modalBorrSala(&#34;".$arraysalas["id"]."&#34;);></td></tr>");
             } 
 
             echo ("</table>");
         }else{
             echo ('<table class="table table-striped tabla_admin"><thead><th><b>ID</b></th><th><b>Nombre</b></th></thead>');
             while($arraysalas = $bbddsalas -> fetch_assoc()){
-                echo ("<tr><td>" . $arraysalas["id"] . "</td><td>" . $arraysalas["nombre"] . "</td><td><input class='btn btn-mio1_admin' type='button' value='Modificar' onclick=modalModifSala(&#34;".$arraysalas["id"]."&#34;);></td></tr>");
+                echo ("<tr><td>" . $arraysalas["id"] . "</td><td>" . $arraysalas["nombre"] . "</td><td><input class='btn btn-mio1_admin' type='button' value='Reservas' onclick=modalModifSala(&#34;".$arraysalas["id"]."&#34;);></td><td><input class='btn btn-mio1_admin' type='button' value='Modificar sala' onclick=modalModifSala(&#34;".$arraysalas["id"]."&#34;);></td></tr>");
             } 
 
             echo ("</table>");

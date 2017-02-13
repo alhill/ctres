@@ -5,6 +5,9 @@ date_default_timezone_set("Europe/Madrid");
 include 'funciones.php';
 include 'config.php';
 
+$querita = "SELECT * FROM salas";
+$bbddsalas = mysqli_query($conexion, $querita);
+
 // if (isset($_POST['from'])){
 
 //     if ($_POST['from']!="" AND $_POST['to']!=""){
@@ -263,7 +266,7 @@ include 'config.php';
                     <label for="from">Fecha inicio</label>
                     <div class='input-group date' id='from'>
                         <input type='text' id="from" name="from" class="form-control" readonly />
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
                     </div>
 
                     <br>
@@ -271,7 +274,7 @@ include 'config.php';
                     <label for="to">Fecha final</label>
                     <div class='input-group date' id='to'>
                         <input type='text' name="to" id="to" class="form-control" readonly />
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
                     </div>
                     <!-- <label for="tipo">Tipo de evento</label>
                     <select class="form-control" name="class" id="tipo">
@@ -317,14 +320,13 @@ include 'config.php';
                        <label for="tipo"><input type="checkbox" name="opciones" id="checkbox1" value="Sala" onchange="javascript:showContent(); hideContent()" /> Salas</label>
                     </div>
                     <div id="content" style="display: none;">
-                        <select class="form-control" name="lista_salas" id="tipo1">
-                             <option value="Sala Reuniones Caracas">Sala de Reuniones Caracas</option>
-                                <option value="Sala Reuniones Madrid">Sala de Reuniones Madrid </option>
-                                <option value="Sala Reuniones Soria">Sala de Reuniones Soria</option> 
-                                <option value="Sala Actos Segovia">Salón de Actos Segovia </option>
-                                <option value="Sala Actos Salamanca">Salón de Actos Salamanca</option> 
-                                <option value="Sala Biblioteca Valladolid">Sala Biblioteca Valladolid</option> 
-                                <option value="Sala Formacion Barcelona">Sala de Formación Barcelona</option>               
+                        <select class="form-control" name="lista_salas" id="tipo1">                          
+                            <?php while($arraysalas = $bbddsalas -> fetch_assoc()){
+                                if ($arraysalas['id'] != 8){ //PARA QUE NO MUESTRE 'MATERIALES DISPONIBLES' COMO SALA
+                                    echo ("<option value='".$arraysalas['nombre']."'>".$arraysalas['nombre']."</option>");
+                                    }
+                                }
+                            ?>          
                         </select>
                     </div>
 
