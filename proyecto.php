@@ -35,9 +35,9 @@
     <div class="row in_grid">
         <div class="col-md-12 ">
             <h2 class="titulo_proyecto">¿Qué es CTRES?</h2>
-            <p class="subtitulo_proyecto">Una herramienta diseñada para hacer reservas on-line. </p>
+            <p class="subtitulo_proyecto">Una herramienta diseñada para hacer reservas on-line.</p>
 
-            <p class="texto_proyecto">CTRES Es un sistema que permite realizar y gestionar reservas tanto de salas para reuniones, eventos, cursos de formación, etc, como de materiales como ordenadores, proyectores o pizarras, entre muchos más.</p>               
+            <p class="texto_proyecto">CTRES Es un sistema que permite realizar y gestionar reservas tanto de salas para reuniones, eventos, cursos de formación, etc, como de materiales tales como ordenadores, proyectores o pizarras, entre muchos más.</p>               
         </div>
     </div>
 
@@ -47,7 +47,7 @@
         </div>
 
         <div class="col-md-6 cuadro_calendario">
-            <p class="texto_calendario">En este sistema de gestión de reservas, e incluye un panel de control con tres roles de usuarios:</p>
+            <p class="texto_calendario">En este sistema de gestión de reservas, se incluye un panel de control con tres roles de usuarios:</p>
             
             <ul class="lista_calendario">    
                 <li><i class="fa fa-check check_calendario" aria-hidden="true"></i> <span>Perfil Administrador</span>: Además de gestionar las reservas de salas y materiales, también tiene control sobre la base de datos de usuarios y los distintos perfiles de propietarios.</li>

@@ -1,16 +1,27 @@
- <?php
+<?php
 
- date_default_timezone_set("Europe/Madrid");
+date_default_timezone_set("Europe/Madrid");
 
 
 include 'funciones.php';
 include 'config.php';
+include 'login.php';
+
+//Buscamos que usuario es el que va a realizar la reserva
+$r_usuario = "";
+if (session_status() == PHP_SESSION_NONE) {session_start();} 
+    if (isset($_SESSION['usuario'])){
+        $r_usuario = $_SESSION['usuario'];
+    }
+
+    // echo $r_usuario;
+    // die("bye bye!!");
 
 if (isset($_POST['from'])) {
      // verificamos que no vengan vacios
     if ($_POST['from']!="" AND $_POST['to']!="") {
 
-        // Recibimos el fecha de inicio y la fecha final con la funcion formatear
+        // Recibimos la fecha de inicio y la fecha final con la funcion formatear
         $inicio = _formatear($_POST['from']);    
         $final  = _formatear($_POST['to']);
 
@@ -83,7 +94,7 @@ if (isset($_POST['from'])) {
         //al seleccionar la opcion de reservas...
      
         // insertamos la reserva
-        $query="INSERT INTO lista_reservas (title, body, opciones, lista_salas, lista_materiales, start, $fin, inicio_normal, final_normal) VALUES('$ref', '$body', '$opciones', '$lista_salas', '$valor', '$inicio', '$final', '$inicio_normal', '$final_normal')";
+        $query="INSERT INTO lista_reservas (usuario, title, body, opciones, lista_salas, lista_materiales, start, $fin, inicio_normal, final_normal) VALUES('$r_usuario', '$ref', '$body', '$opciones', '$lista_salas', '$valor', '$inicio', '$final', '$inicio_normal', '$final_normal')";
 
         // Ejecutamos nuestra sentencia sql
         $conexion->query($query);
