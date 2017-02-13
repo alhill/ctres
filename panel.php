@@ -1,4 +1,9 @@
-<?php include "config.php" ?>
+<?php include "config.php";
+
+if (session_status() == PHP_SESSION_NONE) {session_start();} 
+    
+
+?>
 
 <!DOCTYPE html>
 
@@ -17,21 +22,25 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	
-    <link rel="stylesheet" href="css/estilo.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="css/estilo.css">
     <link href="https://fonts.googleapis.com/css?family=Sansita" rel="stylesheet">  
     <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,400,700" rel="stylesheet">
+
+<?php
+
+if ($_SESSION['privilegios']>=2){
+    echo "<link rel='stylesheet' type='text/css' href='css/estilo_admin.css'>"; 
+}
+?>
 
 	
 	<title>C3PO</title>
 </head>
 
 <body>
+
+ <?php 
     
-    <?php 
-    if (session_status() == PHP_SESSION_NONE) {
-        session_start();
-    }
     if(!isset($_SESSION['privilegios']) || ($_SESSION['privilegios']<2 && isset($_SESSION['privilegios'])))
     {
         header('Location: index.php');
@@ -50,7 +59,7 @@
     $bbddsalas = mysqli_query($conexion, $querita);
 
     ?>
-    
+
     <div id="borrar" class="modal fade ventanamodal" role="dialog">
         <div class="loginaso">
             <p>¿Está seguro de que desea borrar el usuario <span class="nombredeusuario"></span>?</p>
@@ -83,31 +92,49 @@
         </div>
     </div>
     
-    <?php include "header.php"; ?>
-    
-    <div class="container">
-    
-    
-    <?php
-        if(isset($_SESSION["privilegios"]) && ($_SESSION["privilegios"]==3))
-        {
-            echo("<input class='btn btn-mio1_admin' type='button' value='Crear nuevo usuario' onclick=window.location=" . '"registro.php"; >');
-            echo("<input class='btn btn-mio1_admin' type='button' value='Crear nueva sala' onclick=window.location=" . '"nuevasala.php"; >');
-        }
-    ?>
-  
-    
-    <?php
+
+
+<?php include "header.php"; ?>
+
+<?php
         if(isset($_SESSION["privilegios"]) && ($_SESSION["privilegios"]==2))
         {
-            echo("<input class='btn btn-mio1_admin' type='button' value='Editar usuario' onclick='enlaceEditar(". '"' . $_SESSION['usuario'] . '"' . ")'>");
+            echo("<input class='btn btn-mio1_admin butt2' type='button' value='Editar usuario' onclick='enlaceEditar(". '"' . $_SESSION['usuario'] . '"' . ")'>");
         }    
-        
-    ?>
-    
-    <?php
-        if(isset($_SESSION["privilegios"]) && ($_SESSION["privilegios"]==3))
-        {
+?>
+
+
+<div class="row fila_panel">
+    <div class="col-md-4 col-sm-4 col-xs-12 panel">
+        <form action="" method="post">
+            <i class="fa fa-calendar fa-4x" aria-hidden="true"></i>
+            <hr>
+        <button type="button" class="btn btn-mio1 butt" name="reservas">Reservas</button>              
+        </form>                
+    </div>
+
+    <div class="col-md-4 col-sm-4 col-xs-12 panel">
+         <form action="" method="post">
+            <i class="fa fa-folder fa-4x" aria-hidden="true"></i>
+            <hr>
+            <button type="submit" class="btn btn-mio1 butt" name="salas">Salas</button>   
+        </form>    
+    </div>
+    <div class="col-md-4 col-sm-4 col-xs-12 panel">
+        <form action="" method="post">
+            <i class="fa fa-users fa-4x" aria-hidden="true"></i>
+            <hr>
+            <button type="submit" class="btn btn-mio1 butt" name="usuarioslista">Usuarios</button>   
+        </form>       
+    </div>
+</div>
+
+<form method="POST" action="" id="salasmodborr" name="salasmodborr"> 
+<?php
+
+     if(isset($_POST['usuarioslista'])){
+        if($_SESSION["privilegios"]==3){           
+            
             echo("<h2 class='titulo_panelad'>Lista de usuarios</h2>");
     
             echo ("<table class='table table-striped tabla_admin'><thead><th><b>ID</b></th><th><b>Usuario</b></th><th><b>Contraseña</b></th><th><b>Email</b></th><th><b>Nombre</b></th><th><b>Apellidos</b></th><th><b>Privilegios</b></th><th><b><th><b></b></b></thead>");
@@ -115,39 +142,43 @@
             echo ("<tr><td>".$arrayusuarios["id"]."</td><td>".$arrayusuarios["usuario"]."</td><td>".$arrayusuarios["contrasena"]."</td><td>".$arrayusuarios["email"]."</td><td>".$arrayusuarios["nombre"]."</td><td>".$arrayusuarios["apellido"]."</td><td>".$arrayusuarios["privilegios"]."</td><td><input class='btn btn-mio1_admin' type='button' value='Modificar' onclick=modalModif(&#34;".$arrayusuarios["usuario"]."&#34;);></td><td><input class='btn btn btn-mio1_admin' type='button' value='Borrar' class='botonmodif' onclick=modalBorr(&#34;".$arrayusuarios["usuario"]."&#34;);></td></tr>");
             }
             echo ("</table>");
-            
+            echo("<input class='btn btn-mio1_admin butt2' type='button' value='Crear nuevo usuario' onclick=window.location=" . '"registro.php"; >');
         }
+    }
 
     ?>
+
+<?php
+if(isset($_POST['salas'])){
+     if($_SESSION["privilegios"]==3){
+
+            echo("<h2 class='titulo_panelad'>Lista de salas</h2>");
         
-    <h2  class='titulo_panelad'>Lista de salas</h2>
-    
-    <form method="POST" action="" id="salasmodborr" name="salasmodborr"> 
-        
-    <?php 
-        if(isset($_SESSION["privilegios"]) && ($_SESSION["privilegios"]==3))
-        {
-            echo ('<table class="table table-striped tabla_admin"><thead><th><b>ID</b></th><th><b>Nombre</b></th><th><b>Propietario</b></th><th><b></b></th><th><b></b></th></thead>');
+            echo ('<div class="tabla_panel"><table class="table table-striped tabla_admin"><thead><th><b>ID</b></th><th><b>Nombre</b></th><th><b>Propietario</b></th><th><b></b></th><th><b></b></th></thead>');
             while($arraysalas = $bbddsalas -> fetch_assoc()){
                 echo ("<tr><td>" . $arraysalas["id"] . "</td><td>" . $arraysalas["nombre"] . "</td><td>" . $arraysalas["propietario"] . "</td><td><input class='btn btn-mio1_admin' type='button' value='Modificar' onclick=modalModifSala(&#34;".$arraysalas["id"]."&#34;);></td><td><input class='btn btn-mio1_admin' type='button' value='Borrar' class='botonmodif' onclick=modalBorrSala(&#34;".$arraysalas["id"]."&#34;);></td></tr>");
             } 
 
-            echo ("</table>");
+            echo ("</table></div>");
+            echo("<input class='btn btn-mio1_admin butt2' type='button' value='Crear nueva sala' onclick=window.location=" . '"nuevasala.php"; >');
+
         }else{
-            echo ('<table class="table table-striped tabla_admin"><thead><th><b>ID</b></th><th><b>Nombre</b></th></thead>');
+            echo ('<div class="tabla_panel"><table class="table table-striped tabla_admin"><thead><th><b>ID</b></th><th><b>Nombre</b></th></thead>');
             while($arraysalas = $bbddsalas -> fetch_assoc()){
                 echo ("<tr><td>" . $arraysalas["id"] . "</td><td>" . $arraysalas["nombre"] . "</td><td><input class='btn btn-mio1_admin' type='button' value='Modificar' onclick=modalModifSala(&#34;".$arraysalas["id"]."&#34;);></td></tr>");
             } 
 
             echo ("</table>");
+
+            echo("<input class='btn btn-mio1_admin butt2' type='button' value='Crear nueva sala' onclick=window.location=" . '"nuevasala.php"; >');
+
+            echo("</div>");
         }
+    }
     
     ?>
-        
     </form>
-        
-    </div>
-     <!--<?php include 'footer.php'; ?>-->
+
 </body>
     
 </html>

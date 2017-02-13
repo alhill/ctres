@@ -2,7 +2,6 @@ body{
 	overflow-x: hidden;
 	height: 100%;
 	margin:0;
-
 }
 
 /*MENU*/
@@ -12,7 +11,6 @@ body{
 	font-size: 16px;
     padding: 0 1em 0 1em;
 }
-
 .navbar-brand, .navbar-nav>li>a {
     text-shadow: none;
     color: white;
@@ -23,16 +21,13 @@ body{
     text-decoration: underline;
     background-color: #0b7b96;
 }
-
 .logo_menu{
 	padding-top: 10px;
 }
-
 .navbar-toggle{
 	padding-top: 0;
     margin-top: 0; 
 }
-
 .icon-bar1, 
 .icon-bar2,
 .icon-bar3{
@@ -62,7 +57,6 @@ body{
 	font-size: 16px;
     padding: 0 1em 0 1em;
 }
-
 .navbar-brand_admin, .navbar-nav_admin>li>a {
     text-shadow: none;
     color: white;
@@ -73,7 +67,6 @@ body{
     text-decoration: underline;
     background-color: #4D5359;
 }
-
 /* FOOTER*/
 .nb-footer{
 	background-color: #4D5359;
@@ -82,26 +75,21 @@ body{
 	/*position: absolute;*/
 	height: auto;
 }
-
 .iconos{
 	display: inline !important;
 }
-
 .pie{
 	padding-top: 27px;
 }
-
 .span_pie{
 	margin-left: 20px;
 }
-
 .pie_texto {	
 	color: white;	
 	text-decoration: none;
 	text-align: center;
 	font-family: 'Roboto', sans-serif;	
 }
-
 .enlace_pie{
 	color: white;
 }
@@ -111,12 +99,10 @@ body{
 }
 
 .copyright{
-	    background-color: #4D5359;
+	background-color: #4D5359;
 }
-
 .hr_footer{
-	margin-bottom: 1px;
-	
+	margin-bottom: 1px;	
 }
 
 /*EQUIPO*/
@@ -127,7 +113,6 @@ body{
 .fila_equipo2 {
 	padding-top: 50px;
 	padding-bottom: 182px;
-
 }
 .profile_foto{
 	    width: 96px;
@@ -136,13 +121,11 @@ body{
     margin-right: 10px;
     border: 2px solid rgba(119, 119, 119, 0.48);
 }
-
 .titulo_equipo{
 	text-align: center;
 	font-family: 'Sansita', sans-serif;
 	font-size: 50px;
 }
-
 .subtitulo_equipo{
 	text-align: center;
 	font-family: 'Lato', sans-serif;
@@ -160,12 +143,10 @@ body{
 	font-weight: bold;
 	font-family: 'Roboto', sans-serif;
 }
-
 .equipo p{
 	font-size: 15px;	
 	font-family: 'Lato', sans-serif;
 }
-
 .borde_equipo{
     border-radius: 8px;
     background-color:#D9DADE;
@@ -174,12 +155,10 @@ body{
     padding-bottom: 20px;
     padding-top: 20px;
 }
-
 .nom{
 	font-size: 13px;
 	vertical-align: 0;
 }
-
 .equipo .fa{
 	    color: #0b7b96;
 }
@@ -215,7 +194,6 @@ body{
 	padding-bottom: 20px;
 	}
 }
-
 .titulo_proyecto{
 	text-align: center;
 	padding-bottom: 15px;
@@ -223,7 +201,6 @@ body{
 	font-size: 38px;
 	font-weight: bold;
 }
-
 .subtitulo_proyecto{
 	font-size: 20px;
 	text-align: center;
@@ -232,18 +209,15 @@ body{
 	font-family: 'Open Sans', sans-serif;
 	color: #0b7b96;
 }
-
 .texto_proyecto{
 	font-size: 18px;
 	text-align: center;
 	font-family: 'Lato', sans-serif;
 }
-
 .no_ingrid1{
 	background-color: #D9DADE;
 /*background-color: rgba(232, 232, 232, 0.28);*/
 }
-
 .imagen_calendario{
 	width: 100%;
 	height: 100%;
@@ -254,14 +228,12 @@ body{
 	padding-top: 28px;	
 	padding-right: 55px;
 }
-
 .texto_calendario{
 	font-family: 'Roboto', sans-serif;
 	font-size: 25px;
 	text-align: center;
 	padding-bottom: 20px;
 }
-
 .lista_calendario li{
 	list-style-type: none;
 	font-family: 'Lato', sans-serif;
@@ -272,13 +244,11 @@ body{
 	padding-bottom: 10px;
 	padding-right: 55px;
 }
-
 .lista_calendario span{
 	color: #0b7b96;
 	font-weight: bold;
 	font-size: 16px;
 }
-
 .check_calendario{
 	color: #0b7b96;
 }
@@ -291,10 +261,8 @@ body{
 }
 .fila_iconos i{	
 	padding-bottom: 25px;
-	color: #0b7b96;
-	
+	color: #0b7b96;	
 }
-
 .fila_iconos i:hover{	
 	transform:scale(1.2);
     -ms-transform:scale(1.1); // IE 9 
@@ -302,7 +270,6 @@ body{
     -webkit-transform:scale(1.1); // Safari and Chrome 
     -o-transform:scale(1.1); // Opera	
 }
-
 .fila_iconos h3{	
 
 	font-family: 'Sansita', sans-serif;
@@ -312,20 +279,17 @@ body{
 	
 	font-family: 'Lato', sans-serif;
 	font-size: 18px;
-	text-align: center;
-	
+	text-align: center;	
 }
 .fila_iconos hr{	
 	border-top: 1px solid #0b7b96;
 	width: 50%;
-	padding-bottom: 20px;
-	
+	padding-bottom: 20px;	
 }
 .ultima{
 	background-image: url("../img/ultima.png");
 	background-position: 50% 50%;
 }
-
 .ultima h3{
 	font-family: 'Sansita', sans-serif;
 	font-size: 30px;
@@ -344,7 +308,6 @@ body{
 	margin-right: auto;
 	margin-left: auto;
 }
-
 .ultima hr{	
 	border-top: 2px solid white;
 	width: 20%;
@@ -368,18 +331,42 @@ a li{
 #sala img {	
  width:100%;
 }
-
 .bloquesala{
     margin-top: 1%;
 }
 
 /*  ADMIN */
 
-.tabla_admin{
-border-radius: 10px;
-	width: 50%;
+.fila_panel{
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 50px;
+	text-align: center;
+	width: 80%;	
+}
+.panel{
+	width: 30%;
+	margin-left: 5px;
+	margin-right: 5px;
+	padding-top: 20px;
+	background-color: #C3D8C7;
+	padding-bottom: 10px;
 }
 
+.panel i{		
+	color: #5C9566;
+}
+.panel h4{	
+	font-family: 'Sansita', sans-serif;
+	text-align: center;
+	color: #5C9566;
+}
+.tabla_admin{
+border-radius: 10px;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
 .tabla_admin th{
     padding: 0.25em 0.5em 0.25em 0.5em;
     /*background-color: #0B7B96;*/
@@ -396,17 +383,23 @@ border-radius: 10px;
     border-spacing:  5px 15px;
     font-family: 'Lato', sans-serif;
      padding: 10px;
-}
-
-
+ }
 .titulo_panelad{
-	text-align: left;
+	margin-left:150px;
 	padding-bottom: 2%;
+	padding-top: 2%;
 	font-size: 2.5em;
   	color: #5C9566;
 	font-family: 'Sansita', sans-serif;
 }
-
+.butt2{
+	display: block;
+	text-align: center;
+	/*width: 30%;*/
+	margin-left: 145px;
+	border-radius: 5px;
+	font-family: 'Lato', sans-serif;
+}
 .ventanamodal{
     background: white;
     border: 2px solid black;
@@ -421,20 +414,16 @@ border-radius: 10px;
 .barra_usuario li{
     list-style-type: none;
 }
-
 #Pie_ajuste{
 	width: 100%;
 }
 
-
 /*panel usuario*/
-
 .user{
 	width: 50%;
 	padding-top:80px;
 	margin-left: 90px;
 }
-
 .titulo_usuario{
 	text-align: left;
 	padding-top: 60px;
@@ -443,89 +432,34 @@ border-radius: 10px;
   	color: #0b7b96;
 	font-family: 'Sansita', sans-serif;	
 }
-
-
 .tabla_usuario{
-
 	border-spacing:  20px;
 }
-
 .tabla_usuario thead{
 	font-size: 1.9em;
 	font-family: 'Lato', sans-serif;
 	color: #0b7b96;		
 	 padding: 50px;
 }
-
 .tabla_usuario td{
 	font-size: 1.2em;
 	 font-family: 'Lato', sans-serif;
-	  padding: 50px;
-	
+	  padding: 50px;	
 }
-
 .tabla_usuario th{
-	 padding: 50px;
-	
+	 padding: 50px;	
 }
-
-/*.btn-usuario{
-background-color: #5C9566;
-color: #FFFFFF; 
-border-color: none; 
-}
-.btn-usuario:hover, 
-.btn-usuario:focus, 
-.btn-usuario:active, 
-.btn-usuario.active, 
-.open .dropdown-toggle.btn-usuario { 
-  color: #FFFFFF; 
-  background-color: #4D5359; 
-  border-color: none; 
-}  
-.btn-usuario:active, 
-.btn-usuario.active, 
-.open .dropdown-toggle.btn-usuario { 
-  background-image: none; 
-} 
- 
-.btn-usuario.disabled, 
-.btn-usuario[disabled], 
-fieldset[disabled] .btn-usuario, 
-.btn-usuario.disabled:hover, 
-.btn-usuario[disabled]:hover, 
-fieldset[disabled] .btn-usuario:hover, 
-.btn-usuario.disabled:focus, 
-.btn-usuario[disabled]:focus, 
-fieldset[disabled] .btn-usuario:focus, 
-.btn-usuario.disabled:active, 
-.btn-usuario[disabled]:active, 
-fieldset[disabled] .btn-usuario:active, 
-.btn-usuario.disabled.active, 
-.btn-usuario[disabled].active, 
-fieldset[disabled] .btn-usuario.active { 
-background-color: #5C9566; 
-border-color: none; 
-}  
-.btn-usuario .badge { 
-  color: #5C9566; 
-  background-color: #FFFFFF; 
-}*/
-
 /*NUEVA SALA*/
-
  .propieta{
  	padding-left: 50px;
  }	
-
 /*CALENDARIO*/
 
 .btn-mio1 { 
   color: #FFFFFF; 
   background-color: #0B7B96; 
   border-color: none; 
-} 
- 
+}  
 .btn-mio1:hover, 
 .btn-mio1:focus, 
 .btn-mio1:active, 
@@ -669,7 +603,7 @@ font-family: 'Lato', sans-serif;
 
 .titulo2{
 	font-size: 25px;
-	color: #5C9566;
+	color: #0b7b96;
 	text-align: center;
 	padding-bottom: 10px;
 	font-family: 'Sansita', sans-serif;
@@ -704,7 +638,7 @@ font-family: 'Lato', sans-serif;
 #registro{
 	padding-top: 20px;
 	padding-bottom: 12px;	
-	background-color: #D9DADE;
+	background-color: #D9DADE; 
 	border-radius: 5px;
 }
 
@@ -739,6 +673,14 @@ font-family: 'Lato', sans-serif;
 	padding-bottom: 5%;
 	font-size: 1.8em;
   	color: #5C9566;
+	font-family: 'Sansita', sans-serif;
+}
+
+.titulo2_admin{
+	font-size: 25px;
+	color: #5C9566;
+	text-align: center;
+	padding-bottom: 10px;
 	font-family: 'Sansita', sans-serif;
 }
 

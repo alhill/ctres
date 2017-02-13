@@ -16,10 +16,6 @@
     {
         die();
     }
-
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -40,10 +36,17 @@
     <link rel="stylesheet" type="text/css" href="css/estilo.css">
 
 
+<?php
+    if ($_SESSION['privilegios']>=2){
+  echo "<link rel='stylesheet' type='text/css' href='css/estilo_admin.css'>"; 
+}
+?>
+
+
 </head>
 <body>
     
-<?php include "header_admin.php"; ?>
+<?php include "header.php"; ?>
 
 <div class="row" id="estilo_modusuario">
     
@@ -56,8 +59,8 @@
     
 ?>
 
-	<div class="col-md-4 col-md-offset-4" id="registro_admin">
-		<h2 class="titulo_admin">Modificar usuario</h2>
+	<div class="col-md-4 col-md-offset-4" id="registro">
+		<h2 class="titulo">Modificar usuario</h2>
 		<form method="POST" action="<?php echo('modificar.php?' . $usuario); ?>"  id="formregistro" name="registro">
 			  <div class="form-group" >
               <label>Nombre</label>
@@ -111,7 +114,7 @@
             }                         
             ?>          
   
-			<button type="submit" id="butt" class="btn btn-mio1_admin" name="modificar">Modificar usuario</button>
+			<button type="submit" id="butt" class="btn btn-mio1" name="modificar">Modificar usuario</button>
 
 			 				
 		</form>

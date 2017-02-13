@@ -62,7 +62,7 @@ if (session_status() == PHP_SESSION_NONE) {session_start();}
 <div class="col-md-4 col-md-offset-4" id="estilo_modusuario">
 <div  id="registro_sala">
 	
-		<h2 class="titulo2">Modificación de sala</h2>
+		<h2 class="titulo2_admin">Modificación de sala</h2>
 		<form method="POST" action="<?php echo('modificarsalascr.php?' . $id); ?>"  id="formregistro" name="registro">
 			  <div class="form-group" >
                   <label>ID</label>
