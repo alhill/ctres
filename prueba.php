@@ -71,9 +71,6 @@ if (isset($_POST['from'])) {
                             die();    
                         }                                        
                     } 
-                    
-                    //$lista_salas = null;
-                
             }
 
                 
@@ -94,7 +91,9 @@ if (isset($_POST['from'])) {
         $body = evaluar($_POST['event']);
 
         //al seleccionar la opcion de reservas...
-     
+        if (!isset($lista_salas)){
+            $lista_salas = "";
+        }
         // insertamos la reserva
         $query="INSERT INTO lista_reservas (usuario, title, body, opciones, lista_salas, lista_materiales, start, $fin, inicio_normal, final_normal) VALUES('$r_usuario', '$ref', '$body', '$opciones', '$lista_salas', '$valor', '$inicio', '$final', '$inicio_normal', '$final_normal')";
 
@@ -116,20 +115,20 @@ if (isset($_POST['from'])) {
         $conexion->query($query);
 
         // Enviamos un email de confirmación
-        $from = "Equipo C3PO";
+        // $from = "Equipo C3PO";
         $to = $r_email;
         $subject = "Confirmación de Reserva";
         $body = "Bienvenido a la Central de Reservas Ctres.\n\n\n Los datos de su reserva son:\n\n Tipo de reserva: $opciones\n Selección: $lista_salas $valor\n\n Gracias por confiar en nosotros.\n\n\n Atentamente el equipo C3PO.";
         
-        mail ($to, $subject, $body, $from);
+        mail ($to, $subject, $body);
 
         // redireccionamos a nuestro calendario
         echo "<script>
                 alert('Reserva realizada con éxito. En breve recibirá un email de confirmación');window.open('calendario_index.php','_self');
-             </script>"; 
+             </script>";
 
-        // die('bye bye');
-
+        // die('bye bye');      
+        
         // header("Location:calendario_index.php"); 
  
     }
