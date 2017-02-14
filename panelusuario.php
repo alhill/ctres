@@ -27,25 +27,16 @@
 <body>
     
     <?php 
-    if (session_status() == PHP_SESSION_NONE) {
-        session_start();
-    }
-    if(!isset($_SESSION['privilegios']) || ($_SESSION['privilegios']>1 && isset($_SESSION['privilegios'])))
+    if (session_status() == PHP_SESSION_NONE) {session_start();}
+
+    /* if(!isset($_SESSION['privilegios']) || ($_SESSION['privilegios']>1 && isset($_SESSION['privilegios'])))
     {
         header('Location: panel.php');
         die();
-    }
+    }*/
 
     $bbddusuarios = mysqli_query($conexion, "SELECT * FROM registro"); 
-
-    if(isset($_SESSION['privilegios']) && $_SESSION['privilegios']==3){
-        $propi = "";
-    }else{
-        $propi = "WHERE propietario='" . $_SESSION['usuario'] . "'";
-    }
-    
-    $querita = "SELECT * FROM salas " . $propi;
-    $bbddsalas = mysqli_query($conexion, $querita);
+    $bbddsalas = mysqli_query($conexion, "SELECT * FROM salas");
 
     ?>
     
@@ -95,6 +86,37 @@
     <?php
             echo("<input class='btn btn-mio1' type='button' value='Modificar datos' onclick='enlaceEditar(". '"' . $_SESSION['usuario'] . '"' . ")'>");           
     ?>        <!--btn-usuario-->
+        
+    <?php
+            $contador = 0; $contador1 = 0;
+            
+            $bbddreservas = mysqli_query($conexion, "SELECT * FROM lista_reservas WHERE usuario='".$_SESSION['usuario']."' AND opciones!='Material' ORDER BY start ASC ;"); 
+            $bbddmateriales = mysqli_query($conexion, "SELECT * FROM lista_reservas WHERE opciones='Material' AND usuario='".$_SESSION['usuario']."' ORDER BY start ASC ;");
+            
+            echo ("<table class='table table-striped tabla_admin'><thead><th><b>ID</b></th><th><b>Sala</b></th><th><b>Desde</b></th><th><b>Hasta</b></th><th></th></thead>");
+            while($arraysalas = $bbddsalas -> fetch_assoc()){
+                
+                if($arraysalas['id'] != 8){
+                        while($arrayreservas = $bbddreservas -> fetch_assoc()){  
+                            echo ("<tr><td>".$arrayreservas["id"]."</td><td>".$arrayreservas['lista_salas']."</td><td>".$arrayreservas["inicio_normal"]."</td><td>".$arrayreservas["final_normal"]."</td><td><input class='btn btn-mio1_admin' type='button' value='Borrar' onclick=modalBorrReserva(&#34;".$arrayreservas["id"]."&#34;);></td></tr>");
+                        }
+                        if ($bbddreservas -> num_rows == 0 && $contador==0){echo("<tr><td colspan=5><b>No hay reservas</b></td></tr>");$contador++;}
+                        echo ("</table>");
+                }
+                
+                else{
+                        echo ("</table><table class='table table-striped tabla_admin'><thead><th><b>ID</b></th><th><b>Materiales</b></th><th><b>Desde</b></th><th><b>Hasta</b></th></thead>");
+                        while($arrayreservas = $bbddmateriales -> fetch_assoc()){  
+                            echo ("<tr><td>".$arrayreservas["id"]."</td><td>".$arrayreservas['lista_materiales']."</td><td>".$arrayreservas["inicio_normal"]."</td><td>".$arrayreservas["final_normal"]."</td><td><input class='btn btn-mio1_admin' type='button' value='Borrar' onclick=modalBorrReserva(&#34;".$arrayreservas["id"]."&#34;);></td></tr>");
+                        }
+                        if ($bbddmateriales -> num_rows == 0 && $contador1==0){echo("<tr><td colspan=5><b>No hay reservas</b></td></tr>");$contador1++;}
+                }
+                echo ("</table>");
+            }
+
+            
+      
+    ?>
 
     </div>
  <!--     <?php include 'footer.php'; ?> -->
