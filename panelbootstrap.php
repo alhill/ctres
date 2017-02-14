@@ -1,6 +1,7 @@
 <?php include "config.php";
 
-if (session_status() == PHP_SESSION_NONE) {session_start();}  
+if (session_status() == PHP_SESSION_NONE) {session_start();} 
+    
 
 ?>
 
@@ -117,43 +118,37 @@ if ($_SESSION['privilegios']>=2){
             echo("<input class='btn btn-mio1_admin butt2' type='button' value='Editar usuario' onclick='enlaceEditar(". '"' . $_SESSION['usuario'] . '"' . ")'>");
         }    
 ?>
-    
-
 
 
 <div class="row fila_panel">
     <div class="col-md-4 col-sm-4 col-xs-12 panel">
-        <form id="default" action="" method="post">
             <i class="fa fa-calendar fa-4x" aria-hidden="true"></i>
             <hr>
-        <button type="submit" class="btn btn-mio1 butt" name="reservas">Reservas</button>              
-        </form>                
+        <button class="btn btn-mio1 butt" data-toggle="collapse in" data-target="#reservas">Reservas</button>                
     </div>
 
     <div class="col-md-4 col-sm-4 col-xs-12 panel">
-         <form action="" method="post">
+
             <i class="fa fa-folder fa-4x" aria-hidden="true"></i>
             <hr>
-            <button type="submit" class="btn btn-mio1 butt" name="salas">Salas</button>   
-        </form>    
+            <button class="btn btn-mio1 butt" data-toggle="collapse" data-target="#salas">Salas</button>       
     </div>
     
     <?php
     if($_SESSION["privilegios"]==3){
         echo('<div class="col-md-4 col-sm-4 col-xs-12 panel">
-        <form action="" method="post">
             <i class="fa fa-users fa-4x" aria-hidden="true"></i>
             <hr>
-            <button type="submit" class="btn btn-mio1 butt" name="usuarioslista">Usuarios</button>   
-        </form>       
+            <button class="btn btn-mio1 butt" data-toggle="collapse" data-target="#usuarioslista" name="usuarioslista">Usuarios</button>          
     </div>');
     }
     ?>
 </div>
     
+
     
     <?php
-        if(isset($_POST['reservas']) || (!isset($_POST['reservas']) && !isset($_POST['salas']) && !isset($_POST['usuarioslista']))){
+        echo ('<div id="reservas" class="collapse">');
             $contador = 0;
             while($arraysalas = $bbddsalas -> fetch_assoc()){
 
@@ -193,8 +188,9 @@ if ($_SESSION['privilegios']>=2){
                 echo("</div><br>");
             }
             
+        echo("</div>")
             
-        }
+        
 
     ?>
     
@@ -221,7 +217,7 @@ if ($_SESSION['privilegios']>=2){
             echo("<input class='btn btn-mio1_admin butt2' type='button' value='Crear nuevo usuario' onclick=window.location=" . '"registro.php"; >');
         }
     }
-    $primeravez = false; 
+
 ?>
 
 <?php
