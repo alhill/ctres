@@ -26,7 +26,7 @@ if (session_status() == PHP_SESSION_NONE) {session_start();}
 
 <?php
 
-if ($_SESSION['privilegios']>=2){
+if (isset($_SESSION['privilegios']) && $_SESSION['privilegios']>=2){
 	echo "<link rel='stylesheet' type='text/css' href='css/estilo_admin.css'>";	
 }
 ?>

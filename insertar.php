@@ -70,22 +70,50 @@ die(); */
 						</script>";
 				}else{
 
-		        //Todo parece correcto procedemos con la insercion
+                    //Todo parece correcto procedemos con la insercion
 
-				$query = "INSERT INTO registro (nombre, apellido, usuario, email, contrasena, privilegios) VALUES ('$nombre','$apellido', '$usuario', '$email','$contrasena', '$privilegios')";
-				
-				$ejecutar = mysqli_query($conexion, $query) or die('Hubo un error durante el registro: ' . mysqli_error($conexion));
+                    $query = "INSERT INTO registro (nombre, apellido, usuario, email, contrasena, privilegios) VALUES ('$nombre','$apellido', '$usuario', '$email','$contrasena', '$privilegios')";
 
-				//Enviamos email al usuario y le mostramos el mensaje de que se ha registrado correctamente
+                    $ejecutar = mysqli_query($conexion, $query) or die('Hubo un error durante el registro: ' . mysqli_error($conexion));
 
-				mail ($to, $subject, $body, $from);  
+                    //Enviamos email al usuario y le mostramos el mensaje de que se ha registrado correctamente
+
+                    mail ($to, $subject, $body, $from);  
                     
-				echo "<script> alert('El registro se completó correctamente. En breve recibirá un email de bienvenida');
-					 window.open('index.php','_self');
-					 </script>";
+                    if (session_status() == PHP_SESSION_NONE) {session_start();}
+
+                    if((isset($_SESSION['privilegios']) && $_SESSION['privilegios']<3) || !isset($_SESSION['privilegios']))
+                    {
+                        $busca = "SELECT * FROM registro WHERE usuario ='$usuario' AND contrasena ='$contrasena'";
+                        $buscaResult = mysqli_query($conexion, $busca);
+                        $fila = mysqli_fetch_assoc($buscaResult);
+                        $k_usuario = $fila['usuario'];
+                        $k_contrasena = $fila['contrasena'];	
+                        $k_nombre = $fila['nombre'];
+                        $k_apellido = $fila['apellido'];
+                        $k_email = $fila['email'];
+                        $k_privilegios = $fila['privilegios'];
+
+                        if ($usuario == $k_usuario && $contrasena == $k_contrasena) {
+                            if (session_status() == PHP_SESSION_NONE) {session_start();}
+                            $_SESSION['usuario']= $k_usuario;
+                            $_SESSION['nombre']= $k_nombre;
+                            $_SESSION['apellido'] = $k_apellido;
+                            $_SESSION['email'] = $k_email;
+                            $_SESSION['privilegios'] = $k_privilegios;
+
+                            echo "<script> alert('El registro se completó correctamente. En breve recibirá un email de bienvenida');window.open('index.php','_self');</script>"; 
+
+                        }
+                        
+                    }
+
+                    echo "<script> alert('El registro se completó correctamente. En breve, el nuevo usuario recibirá un email de bienvenida');
+                         window.open('panel.php','_self');
+                         </script>"; 
+                }
+        }
 			
-				}
-			}
 		
 ?>
 
