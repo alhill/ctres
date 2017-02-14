@@ -40,19 +40,19 @@
 
     ?>
     
-    <div id="borrar" class="modal fade ventanamodal" role="dialog">
-        <div class="loginaso">
-            <p>¿Está seguro de que desea borrar el usuario <span class="nombredeusuario"></span>?</p>
-                <button class="btn btn-mio1" type="button" id="aceptaborrar">Aceptar</button>
-                <button class="btn btn-mio1" type="button" id="cancelaborrar">Cancelar</button>
-        </div>
-    </div>
-    
     <div id="modif" class="modal fade ventanamodal" role="dialog">
         <div class="loginaso">
             <p>¿Está seguro de que desea modificar el usuario <span class="nombredeusuario"></span>?</p>
                 <button class="btn btn-mio1" type="button" id="aceptamodif">Aceptar</button>
                 <button class="btn btn-mio1" type="button" id="cancelamodif">Cancelar</button>
+        </div>
+    </div>
+
+    <div id="borrarreserva" class="modal fade ventanamodal" role="dialog">
+        <div class="loginaso">
+            <p>¿Está seguro de que desea borrar la reserva número <span class="numreserva"></span>?</p>
+                <button class="btn btn-mio1" type="button" id="aceptaborrarreserva">Aceptar</button>
+                <button class="btn btn-mio1" type="button" id="cancelaborrarreserva">Cancelar</button>
         </div>
     </div>
 
@@ -93,21 +93,21 @@
             $bbddreservas = mysqli_query($conexion, "SELECT * FROM lista_reservas WHERE usuario='".$_SESSION['usuario']."' AND opciones!='Material' ORDER BY start ASC ;"); 
             $bbddmateriales = mysqli_query($conexion, "SELECT * FROM lista_reservas WHERE opciones='Material' AND usuario='".$_SESSION['usuario']."' ORDER BY start ASC ;");
             
-            echo ("<table class='table table-striped tabla_admin'><thead><th><b>ID</b></th><th><b>Sala</b></th><th><b>Desde</b></th><th><b>Hasta</b></th><th></th></thead>");
+            echo ("<table class='table table-striped tabla_usuario'><thead><th><b>ID</b></th><th><b>Sala</b></th><th><b>Desde</b></th><th><b>Hasta</b></th><th></th></thead>");
             while($arraysalas = $bbddsalas -> fetch_assoc()){
                 
                 if($arraysalas['id'] != 8){
                         while($arrayreservas = $bbddreservas -> fetch_assoc()){  
-                            echo ("<tr><td>".$arrayreservas["id"]."</td><td>".$arrayreservas['lista_salas']."</td><td>".$arrayreservas["inicio_normal"]."</td><td>".$arrayreservas["final_normal"]."</td><td><input class='btn btn-mio1_admin' type='button' value='Borrar' onclick=modalBorrReserva(&#34;".$arrayreservas["id"]."&#34;);></td></tr>");
+                            echo ("<tr><td>".$arrayreservas["id"]."</td><td>".$arrayreservas['lista_salas']."</td><td>".$arrayreservas["inicio_normal"]."</td><td>".$arrayreservas["final_normal"]."</td><td><input class='btn btn-mio1' type='button' value='Borrar' onclick=modalBorrReserva(&#34;".$arrayreservas["id"]."&#34;);></td></tr>");
                         }
                         if ($bbddreservas -> num_rows == 0 && $contador==0){echo("<tr><td colspan=5><b>No hay reservas</b></td></tr>");$contador++;}
                         echo ("</table>");
                 }
                 
                 else{
-                        echo ("</table><table class='table table-striped tabla_admin'><thead><th><b>ID</b></th><th><b>Materiales</b></th><th><b>Desde</b></th><th><b>Hasta</b></th></thead>");
+                        echo ("</table><table class='table table-striped tabla_usuario'><thead><th><b>ID</b></th><th><b>Materiales</b></th><th><b>Desde</b></th><th><b>Hasta</b></th></thead>");
                         while($arrayreservas = $bbddmateriales -> fetch_assoc()){  
-                            echo ("<tr><td>".$arrayreservas["id"]."</td><td>".$arrayreservas['lista_materiales']."</td><td>".$arrayreservas["inicio_normal"]."</td><td>".$arrayreservas["final_normal"]."</td><td><input class='btn btn-mio1_admin' type='button' value='Borrar' onclick=modalBorrReserva(&#34;".$arrayreservas["id"]."&#34;);></td></tr>");
+                            echo ("<tr><td>".$arrayreservas["id"]."</td><td>".$arrayreservas['lista_materiales']."</td><td>".$arrayreservas["inicio_normal"]."</td><td>".$arrayreservas["final_normal"]."</td><td><input class='btn btn-mio1' type='button' value='Borrar' onclick=modalBorrReserva(&#34;".$arrayreservas["id"]."&#34;);></td></tr>");
                         }
                         if ($bbddmateriales -> num_rows == 0 && $contador1==0){echo("<tr><td colspan=5><b>No hay reservas</b></td></tr>");$contador1++;}
                 }
