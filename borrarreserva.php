@@ -30,6 +30,6 @@ if (session_status() == PHP_SESSION_NONE) {session_start();}
     $url = $_SERVER['REQUEST_URI'];
     $idreservas = parse_url($url, PHP_URL_QUERY);
     mysqli_query($conexion, "DELETE FROM lista_reservas WHERE id='$idreservas'") or die('Hubo un problema al borrar la reserva');
-    header("Location: panelreservas.php");
+    header("Location: panel.php");
 
 ?>

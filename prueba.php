@@ -56,7 +56,9 @@ if (isset($_POST['from'])) {
 
                 if ($check>0){
 
-                    $buscarFecha = "SELECT * FROM lista_reservas WHERE (start = '$inicio' AND $fin = '$final') OR (start < '$final' AND $fin >= '$final') OR (start >= '$inicio' AND $fin <= '$final')";
+                    $buscarFecha = "SELECT * FROM lista_reservas WHERE (start = '$inicio' OR $fin = '$final') OR (start < '$final' AND $fin >= '$final') OR (start <= '$inicio' AND $fin > '$inicio') OR (start >= '$inicio' AND $fin <= '$final')";
+                    
+                    //$buscarFecha = "SELECT * FROM lista_reservas WHERE (start = '$inicio' AND $fin = '$final') OR (start < '$final' AND $fin >= '$final') OR (start >= '$inicio' AND $fin <= '$final')";
 
                     $buscar2 = mysqli_query($conexion, $buscarFecha);
                     $check2 = mysqli_num_rows($buscar2);

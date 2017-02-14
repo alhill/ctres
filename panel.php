@@ -42,7 +42,7 @@ if ($_SESSION['privilegios']>=2){
     
     if(!isset($_SESSION['privilegios']) || ($_SESSION['privilegios']<2 && isset($_SESSION['privilegios'])))
     {
-        header('Location: index.php');
+        header('Location: panelusuario.php');
         die();
     }
 
