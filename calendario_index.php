@@ -262,7 +262,7 @@ $bbddsalas = mysqli_query($conexion, $querita);
         <h4 class="modal-title" id="myModalLabel">Agregar nueva reserva</h4>
       </div>
       <div class="modal-body">
-        <form action="prueba.php" method="post">
+        <form action="reservas.php" method="post">
                     <label for="from">Fecha inicio</label>
                     <div class='input-group date' id='from'>
                         <input type='text' id="from" name="from" class="form-control" readonly />

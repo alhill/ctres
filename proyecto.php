@@ -43,7 +43,7 @@
 
     <div class="row no_ingrid1">
         <div class="col-md-6">
-            <img src="mockup.png" class="img-responsive imagen_calendario" title="" alt="">
+            <img src="img/mockup.png" class="img-responsive imagen_calendario" title="" alt="">
         </div>
 
         <div class="col-md-6 cuadro_calendario">

@@ -2,7 +2,7 @@
 <nav class="navbar menu_header">
     <div class="menu_header">
         <div class="navbar-header">
-            <img src="logo_peq.png" class="logo_menu">           
+            <img src="img/logo_peq.png" class="logo_menu">           
             <div onclick="myFunction(this)">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                     <div class="icon-bar1"></div>
